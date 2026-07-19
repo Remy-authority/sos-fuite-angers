@@ -31,8 +31,8 @@ export default function Zone() {
 
             <div className="space-y-4 pt-2">
               {[
-                { icon: '⚡', text: 'Intervention en moins de 2h sur Trélazé' },
-                { icon: '🗺️', text: "Rayon d'intervention : ~30 km autour de Trélazé" },
+                { icon: '⚡', text: `Intervention en moins de 2h sur ${SITE.commune}` },
+                { icon: '🗺️', text: `Rayon d'intervention : ~30 km autour de ${SITE.commune}` },
                 { icon: '📞', text: 'Disponible 7j/7 pour les urgences' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3 text-slate-300">
@@ -46,7 +46,7 @@ export default function Zone() {
             <div className="text-6xl mb-4">🗺️</div>
             <h3 className="text-white font-bold text-xl mb-4">Une fuite à {SITE.commune} ?</h3>
             <p className="text-slate-300 mb-6">
-              Notre équipe intervient rapidement sur {SITE.commune} et toute la région d&apos;Angers.
+              Notre équipe intervient rapidement sur {SITE.commune} et toutes les communes voisines.
             </p>
             <a href={SITE.phoneHref} className="btn-urgent px-8 py-4 text-lg w-full justify-center">
               <span>📞</span><span>{SITE.phone}</span>

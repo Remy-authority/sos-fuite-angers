@@ -1,18 +1,19 @@
 export const SITE = {
-  commune: 'Trélazé',
+  commune: 'Angers',
   communeCode: '49',
-  postalCode: '49800',
-  name: 'SOS Fuite Trélazé',
+  postalCode: '49000',
+  name: 'SOS Fuite Angers',
   phone: '0X XX XX XX XX',       // ⚠️ À remplacer après contrat artisan signé
   phoneHref: 'tel:+330000000000', // ⚠️ À remplacer après contrat artisan signé
-  email: 'contact@sosfuite-trelaze.fr',
+  email: 'contact@sosfuite-angers.fr',
   communesVoisines: [
-    'Angers',
+    'Trélazé',
+    'Avrillé',
+    'Beaucouzé',
     "Saint-Barthélemy-d'Anjou",
     'Les Ponts-de-Cé',
-    'Bouchemaine',
-    'Avrillé',
-    'Saint-Jean-de-Linières',
+    'Sainte-Gemmes-sur-Loire',
+    'Écouflant',
   ],
   prixRechercheMin: 150,
   prixRechercheMax: 600,
