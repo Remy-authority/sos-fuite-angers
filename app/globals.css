@@ -10,26 +10,55 @@
   }
   body {
     font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: #111111;
+    color: #F8F8F8;
   }
 }
 
 @layer components {
   .section-title {
-    @apply text-3xl md:text-4xl font-extrabold text-navy-900;
+    @apply text-3xl md:text-4xl font-extrabold text-white;
   }
   .section-subtitle {
-    @apply text-lg text-slate-500 mt-4 max-w-2xl mx-auto;
+    @apply text-lg text-gray-400 mt-4 max-w-2xl mx-auto;
   }
-  .btn-urgent {
-    @apply inline-flex items-center gap-3 bg-urgent-500 hover:bg-urgent-600 text-white font-bold rounded-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95;
+  .btn-red {
+    @apply inline-flex items-center gap-3 bg-rouge-600 hover:bg-rouge-500 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-rouge-600/30 hover:scale-[1.02] active:scale-95 px-6 py-3;
   }
-  .btn-outline {
-    @apply inline-flex items-center gap-3 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-navy-900 transition-all duration-200 px-6 py-3;
+  .btn-outline-red {
+    @apply inline-flex items-center gap-3 border-2 border-rouge-600 text-rouge-500 hover:bg-rouge-600 hover:text-white font-bold rounded-xl transition-all duration-200 px-6 py-3;
   }
-  .glass-card {
-    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl;
+  .btn-ghost {
+    @apply inline-flex items-center gap-3 text-gray-300 hover:text-white font-semibold transition-colors duration-200;
   }
-  .card {
-    @apply bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300;
+  .dark-card {
+    @apply bg-ch-750 border border-ch-600 rounded-2xl transition-all duration-300;
+  }
+  .dark-card-hover {
+    @apply dark-card hover:border-rouge-600/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-rouge-600/10;
+  }
+  .badge-trust {
+    @apply inline-flex items-center gap-1.5 bg-verdant-900/60 text-verdant-400 border border-verdant-800/50 text-xs font-semibold px-3 py-1.5 rounded-full;
+  }
+  .badge-red {
+    @apply inline-flex items-center gap-1.5 bg-rouge-900/40 text-rouge-400 border border-rouge-800/40 text-xs font-semibold px-3 py-1.5 rounded-full;
+  }
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 bg-or-700/20 text-or-400 border border-or-700/30 text-xs font-semibold px-3 py-1.5 rounded-full;
+  }
+  .red-line {
+    @apply w-12 h-1 bg-rouge-600 rounded-full;
+  }
+  .section-dark {
+    @apply bg-ch-900;
+  }
+  .section-darker {
+    @apply bg-ch-950;
+  }
+  .section-card-bg {
+    @apply bg-ch-800;
+  }
+  .input-dark {
+    @apply w-full bg-ch-700 border border-ch-500 hover:border-ch-400 focus:border-rouge-600 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-rouge-600/50 transition-colors;
   }
 }

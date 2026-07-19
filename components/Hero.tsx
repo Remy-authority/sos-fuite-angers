@@ -2,95 +2,133 @@ import { SITE } from '@/lib/config'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-navy-900">
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800" />
-      <div className="absolute top-20 right-10 w-80 h-80 bg-water-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-28 right-16 text-8xl select-none pointer-events-none hidden lg:block animate-float-slow" style={{ color: 'rgba(56,189,248,0.12)' }}>💧</div>
-      <div className="absolute bottom-28 left-16 text-6xl select-none pointer-events-none hidden lg:block animate-float-slow" style={{ animationDelay: '4s', color: 'rgba(56,189,248,0.08)' }}>💧</div>
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-ch-950">
+      {/* Background glow effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-ch-950 via-ch-900 to-ch-850" />
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none" style={{ background: 'rgba(220,38,38,0.06)' }} />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: 'rgba(220,38,38,0.04)' }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center w-full">
-        <div className="text-white space-y-6 animate-fade-up">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-200 text-sm font-semibold px-4 py-2 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-blue-300 animate-pulse" />
-            Expert certifié — Intervention rapide à {SITE.commune}
+      {/* Decorative grid pattern */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+        backgroundSize: '60px 60px',
+      }} />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-16 items-center w-full">
+        {/* Left column */}
+        <div className="space-y-7">
+          <div className="flex items-center gap-2">
+            <span className="badge-red">
+              <span className="w-1.5 h-1.5 rounded-full bg-rouge-500 animate-pulse" />
+              Expert certifié · Intervention rapide
+            </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
-            <span>Recherche de </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
-              fuite d&apos;eau
-            </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white">
+            Recherche de{' '}
+            <span className="text-rouge-500">fuite d&apos;eau</span>
             <br />
-            <span>&amp; assèchement</span>
+            &amp; assèchement
             <br />
-            <span style={{ color: '#FB923C' }}>à {SITE.commune}</span>
+            <span className="text-gray-400 text-3xl md:text-4xl font-extrabold">à {SITE.commune}</span>
           </h1>
 
-          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-lg">
-            Détection précise sans casse inutile.{' '}
-            <strong className="text-white">Caméra thermique, gaz traceur, acoustique.</strong>{' '}
-            Prix transparents, souvent pris en charge par votre assurance.
+          <p className="text-gray-400 text-lg leading-relaxed max-w-lg">
+            Détection précise <strong className="text-white">sans casse inutile</strong>.
+            Caméra thermique, gaz traceur, acoustique.
+            Prix transparents — souvent pris en charge par votre assurance.
           </p>
 
-          <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-            <span>✅ Sans engagement</span>
-            <span>🏠 Pris en charge assurance</span>
-            <span>⚡ Intervention rapide</span>
+          {/* Trust badges row */}
+          <div className="flex flex-wrap gap-3">
+            <span className="badge-trust">✓ Sans engagement</span>
+            <span className="badge-trust">✓ Pris en charge assurance</span>
+            <span className="badge-trust">✓ Intervention 24h/7j</span>
+            <span className="badge-trust">✓ Sans casse</span>
           </div>
 
+          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href={SITE.phoneHref} className="btn-urgent px-8 py-5 text-xl animate-pulse-cta">
+            <a
+              href={SITE.phoneHref}
+              className="btn-red text-xl py-5 px-8 animate-pulse-red justify-center sm:justify-start"
+            >
               <span>📞</span><span>{SITE.phone}</span>
             </a>
-            <a href="#contact" className="btn-outline">
+            <a
+              href="#contact"
+              className="btn-outline-red text-lg py-4 px-8 justify-center sm:justify-start"
+            >
               <span>✉️</span><span>Demander un devis</span>
             </a>
           </div>
+
+          {/* Social proof */}
+          <div className="flex items-center gap-4 pt-2 text-sm text-gray-500">
+            <div className="flex items-center gap-1.5">
+              <span className="text-or-400 text-base">★★★★★</span>
+              <span className="text-gray-400">5/5 Google</span>
+            </div>
+            <span className="w-px h-4 bg-ch-500" />
+            <span>Qualibat certifié</span>
+            <span className="w-px h-4 bg-ch-500" />
+            <span>RGE</span>
+          </div>
         </div>
 
+        {/* Right column — pricing card */}
         <div className="hidden lg:block">
-          <div className="glass-card p-8 space-y-5">
-            <h2 className="text-white font-bold text-xl">Nos tarifs — sans surprise</h2>
-            <div className="py-4 border-b border-white/10">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-white font-semibold">Recherche de fuite</p>
-                  <p className="text-slate-400 text-sm">Caméra / gaz traceur / acoustique</p>
+          <div className="dark-card p-8 space-y-6 shadow-2xl shadow-black/50 border-rouge-600/20">
+            <div className="flex items-center justify-between">
+              <h2 className="text-white font-bold text-xl">Nos tarifs — sans surprise</h2>
+              <span className="badge-red text-xs">Transparents</span>
+            </div>
+
+            <div className="space-y-4">
+              <div className="p-4 rounded-xl border border-ch-500 bg-ch-800/50">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <p className="text-white font-semibold">Recherche de fuite</p>
+                    <p className="text-gray-500 text-sm mt-1">Caméra / gaz traceur / acoustique</p>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <p className="font-black text-2xl text-rouge-500">{SITE.prixRechercheMin}€–{SITE.prixRechercheMax}€</p>
+                    <p className="text-gray-500 text-xs">Remboursé assurance</p>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-bold text-2xl" style={{ color: '#FB923C' }}>{SITE.prixRechercheMin}€–{SITE.prixRechercheMax}€</p>
-                  <p className="text-slate-400 text-xs">Souvent remboursé assurance</p>
+              </div>
+
+              <div className="p-4 rounded-xl border border-rouge-600/30 bg-rouge-600/5">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <p className="text-white font-semibold">Assèchement professionnel</p>
+                    <p className="text-gray-500 text-sm mt-1">Séchage sinistre certifié</p>
+                  </div>
+                  <div className="text-right shrink-0 ml-4">
+                    <p className="font-black text-2xl text-rouge-500">{SITE.prixAssechementMin}€–{SITE.prixAssechementMax}€</p>
+                    <p className="text-gray-500 text-xs">Pris en charge assurance</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="py-4 border-b border-white/10">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-white font-semibold">Assèchement</p>
-                  <p className="text-slate-400 text-sm">Séchage professionnel sinistre</p>
-                </div>
-                <div className="text-right">
-                  <p className="font-bold text-2xl" style={{ color: '#FB923C' }}>{SITE.prixAssechementMin}€–{SITE.prixAssechementMax}€</p>
-                  <p className="text-slate-400 text-xs">Pris en charge assurance habitation</p>
-                </div>
-              </div>
+
+            <div className="badge-trust w-full justify-center py-3">
+              🛡️ Nous travaillons avec votre assurance habitation
             </div>
-            <div className="bg-white/10 border border-white/20 rounded-xl p-4 text-center">
-              <p className="text-blue-200 font-semibold text-sm">🛡️ Nous travaillons avec votre assurance</p>
-            </div>
-            <a href={SITE.phoneHref} className="btn-urgent w-full justify-center py-4 text-lg">
+
+            <a href={SITE.phoneHref} className="btn-red w-full justify-center py-4 text-lg">
               <span>📞</span><span>Appeler maintenant</span>
             </a>
+
+            <p className="text-gray-600 text-xs text-center">
+              Devis précis après diagnostic. Urgences 7j/7.
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
-        <svg viewBox="0 0 1200 60" xmlns="http://www.w3.org/2000/svg" className="w-full" style={{ fill: '#f8fafc' }}>
-          <path d="M0 60L1200 60L1200 20C1100 45 900 5 600 30C300 55 100 15 0 35Z" />
-        </svg>
-      </div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-ch-900 to-transparent pointer-events-none" />
     </section>
   )
 }
