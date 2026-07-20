@@ -8,71 +8,67 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ch: {
-          950: '#0D0D0D',
-          900: '#111111',
-          850: '#141414',
-          800: '#1A1A1A',
-          750: '#1E1E1E',
-          700: '#222222',
-          650: '#262626',
-          600: '#2A2A2A',
-          500: '#333333',
-          400: '#444444',
-          300: '#555555',
+        // Tokens extraits du CSS réel d'instarocket-ai.com
+        cream: {
+          50: '#FBFAF8',
+          100: '#F6F3F0',
+          200: '#F4F5F8',
         },
-        rouge: {
-          950: '#450a0a',
-          900: '#7f1d1d',
-          800: '#991B1B',
-          700: '#B91C1C',
-          600: '#DC2626',
-          500: '#EF4444',
-          400: '#F87171',
-          300: '#FCA5A5',
+        ink: {
+          900: '#242A4F',
+          700: '#414458',
+          500: '#6b7280',
+          400: '#9ca3af',
         },
-        verdant: {
-          900: '#052e16',
-          800: '#14532d',
-          700: '#166534',
-          600: '#16a34a',
-          500: '#22c55e',
-          400: '#4ade80',
+        teal: {
+          600: '#0B7A7F',
+          500: '#0E8E93',
+          400: '#1FB2B7',
+          200: '#90E7EA',
+          50: '#f0f7f7',
         },
-        or: {
-          700: '#b45309',
-          600: '#d97706',
-          500: '#f59e0b',
-          400: '#fcd34d',
-          300: '#fde68a',
+        peach: {
+          200: '#F3E0D2',
+        },
+        line: {
+          200: '#e1e8ed',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sora)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        card: '28px',
+        blob: '2.4rem',
       },
       animation: {
-        'pulse-red': 'pulseRed 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float-slow': 'float 8s ease-in-out infinite',
-        'fade-up': 'fadeUp 0.6s ease-out forwards',
-        'slide-in': 'slideIn 0.5s ease-out forwards',
+        marquee: 'marquee 50s linear infinite',
+        'spin-slow': 'spinSlow 22s linear infinite',
+        'spin-slower': 'spinSlow 26s linear infinite reverse',
+        'cta-glow': 'ctaGlow 2.2s ease-in-out infinite',
+        'fade-slide-in': 'fadeSlideIn 0.7s ease-out forwards',
+        float: 'float 8s ease-in-out infinite',
       },
       keyframes: {
-        pulseRed: {
-          '0%, 100%': { boxShadow: '0 0 0 0 rgba(220, 38, 38, 0.4)' },
-          '70%': { boxShadow: '0 0 0 20px rgba(220, 38, 38, 0)' },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-          '33%': { transform: 'translateY(-15px) rotate(3deg)' },
-          '66%': { transform: 'translateY(-8px) rotate(-2deg)' },
+        spinSlow: {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
         },
-        fadeUp: {
+        ctaGlow: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(14, 142, 147, 0.45)' },
+          '55%': { boxShadow: '0 0 0 14px rgba(14, 142, 147, 0)' },
+        },
+        fadeSlideIn: {
           from: { opacity: '0', transform: 'translateY(24px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
         },
-        slideIn: {
-          from: { opacity: '0', transform: 'translateX(-20px)' },
-          to: { opacity: '1', transform: 'translateX(0)' },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-14px)' },
         },
       },
     },

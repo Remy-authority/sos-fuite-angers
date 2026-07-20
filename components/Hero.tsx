@@ -2,133 +2,122 @@ import { SITE } from '@/lib/config'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-ch-950">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-ch-950 via-ch-900 to-ch-850" />
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none" style={{ background: 'rgba(220,38,38,0.06)' }} />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[100px] pointer-events-none" style={{ background: 'rgba(220,38,38,0.04)' }} />
+    <section className="relative overflow-hidden section-cream">
+      {/* Cercles décoratifs animés */}
+      <div className="deco-ring w-[520px] h-[520px] -top-40 -right-40 animate-spin-slow">
+        <span className="absolute -top-1 left-1/2 w-2.5 h-2.5 rounded-full bg-teal-400" />
+      </div>
+      <div className="deco-ring w-[340px] h-[340px] top-56 -right-16 animate-spin-slower">
+        <span className="absolute -top-1 left-1/2 w-2 h-2 rounded-full bg-teal-200" />
+      </div>
+      <div className="deco-ring w-64 h-64 -bottom-24 -left-24" />
+      {/* Blobs flous */}
+      <div className="absolute top-1/3 right-0 w-[480px] h-[480px] rounded-full bg-teal-200/20 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-peach-200/30 blur-3xl pointer-events-none" />
 
-      {/* Decorative grid pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-        backgroundSize: '60px 60px',
-      }} />
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-2 gap-14 lg:gap-16 items-center w-full">
+        {/* Colonne gauche */}
+        <div className="space-y-7 animate-fade-slide-in">
+          <span className="badge-teal">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
+            Expert certifié · Intervention rapide
+          </span>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-16 items-center w-full">
-        {/* Left column */}
-        <div className="space-y-7">
-          <div className="flex items-center gap-2">
-            <span className="badge-red">
-              <span className="w-1.5 h-1.5 rounded-full bg-rouge-500 animate-pulse" />
-              Expert certifié · Intervention rapide
-            </span>
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white">
-            Recherche de{' '}
-            <span className="text-rouge-500">fuite d&apos;eau</span>
+          <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.08] tracking-tight text-ink-900">
+            Recherche de <span className="accent-underline">fuite d&apos;eau</span>
             <br />
-            &amp; assèchement
-            <br />
-            <span className="text-gray-400 text-3xl md:text-4xl font-extrabold">à {SITE.commune}</span>
+            &amp; assèchement à {SITE.commune}
           </h1>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-lg">
-            Détection précise <strong className="text-white">sans casse inutile</strong>.
-            Caméra thermique, gaz traceur, acoustique.
-            Prix transparents — souvent pris en charge par votre assurance.
+          <p className="text-ink-500 text-lg leading-relaxed max-w-lg">
+            Détection précise <strong className="text-ink-900 font-semibold">sans casse inutile</strong>.
+            Caméra thermique, gaz traceur, acoustique. Prix transparents — souvent
+            pris en charge par votre assurance habitation.
           </p>
 
-          {/* Trust badges row */}
-          <div className="flex flex-wrap gap-3">
-            <span className="badge-trust">✓ Sans engagement</span>
-            <span className="badge-trust">✓ Pris en charge assurance</span>
-            <span className="badge-trust">✓ Intervention 24h/7j</span>
-            <span className="badge-trust">✓ Sans casse</span>
+          {/* Badges de confiance */}
+          <div className="flex flex-wrap gap-2.5">
+            <span className="badge">✓ Sans engagement</span>
+            <span className="badge">✓ Pris en charge assurance</span>
+            <span className="badge">✓ Intervention 24h/7j</span>
+            <span className="badge">✓ Sans casse</span>
           </div>
 
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <a
-              href={SITE.phoneHref}
-              className="btn-red text-xl py-5 px-8 animate-pulse-red justify-center sm:justify-start"
-            >
+          {/* Double CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-1">
+            <a href={SITE.phoneHref} className="btn-cta text-lg">
               <span>📞</span><span>{SITE.phone}</span>
             </a>
-            <a
-              href="#contact"
-              className="btn-outline-red text-lg py-4 px-8 justify-center sm:justify-start"
-            >
+            <a href="#contact" className="btn-secondary text-lg">
               <span>✉️</span><span>Demander un devis</span>
             </a>
           </div>
 
-          {/* Social proof */}
-          <div className="flex items-center gap-4 pt-2 text-sm text-gray-500">
-            <div className="flex items-center gap-1.5">
-              <span className="text-or-400 text-base">★★★★★</span>
-              <span className="text-gray-400">5/5 Google</span>
-            </div>
-            <span className="w-px h-4 bg-ch-500" />
-            <span>Qualibat certifié</span>
-            <span className="w-px h-4 bg-ch-500" />
-            <span>RGE</span>
+          {/* Preuves */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1 text-sm text-ink-500">
+            <span className="font-semibold text-ink-700">Qualibat</span>
+            <span className="w-px h-4 bg-line-200" />
+            <span className="font-semibold text-ink-700">RGE</span>
+            <span className="w-px h-4 bg-line-200" />
+            <span className="font-semibold text-ink-700">Garantie décennale</span>
+            <span className="w-px h-4 bg-line-200" />
+            <span>Rapport assurance inclus</span>
           </div>
         </div>
 
-        {/* Right column — pricing card */}
-        <div className="hidden lg:block">
-          <div className="dark-card p-8 space-y-6 shadow-2xl shadow-black/50 border-rouge-600/20">
-            <div className="flex items-center justify-between">
-              <h2 className="text-white font-bold text-xl">Nos tarifs — sans surprise</h2>
-              <span className="badge-red text-xs">Transparents</span>
+        {/* Colonne droite — carte tarifs */}
+        <div className="relative hidden lg:block">
+          <div className="card p-8 space-y-6">
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-ink-900 font-bold text-xl tracking-tight">Nos tarifs — sans surprise</h2>
+              <span className="badge-teal shrink-0">Transparents</span>
             </div>
 
             <div className="space-y-4">
-              <div className="p-4 rounded-xl border border-ch-500 bg-ch-800/50">
-                <div className="flex justify-between items-start">
+              <div className="card-tinted p-5">
+                <div className="flex justify-between items-start gap-4">
                   <div>
-                    <p className="text-white font-semibold">Recherche de fuite</p>
-                    <p className="text-gray-500 text-sm mt-1">Caméra / gaz traceur / acoustique</p>
+                    <p className="text-ink-900 font-semibold">Recherche de fuite</p>
+                    <p className="text-ink-500 text-sm mt-1">Caméra / gaz traceur / acoustique</p>
                   </div>
-                  <div className="text-right shrink-0 ml-4">
-                    <p className="font-black text-2xl text-rouge-500">{SITE.prixRechercheMin}€–{SITE.prixRechercheMax}€</p>
-                    <p className="text-gray-500 text-xs">Remboursé assurance</p>
+                  <div className="text-right shrink-0">
+                    <p className="font-bold text-2xl text-teal-500 tracking-tight">{SITE.prixRechercheMin}€–{SITE.prixRechercheMax}€</p>
+                    <p className="text-ink-500 text-xs">Souvent remboursé assurance</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl border border-rouge-600/30 bg-rouge-600/5">
-                <div className="flex justify-between items-start">
+              <div className="card-tinted p-5">
+                <div className="flex justify-between items-start gap-4">
                   <div>
-                    <p className="text-white font-semibold">Assèchement professionnel</p>
-                    <p className="text-gray-500 text-sm mt-1">Séchage sinistre certifié</p>
+                    <p className="text-ink-900 font-semibold">Assèchement professionnel</p>
+                    <p className="text-ink-500 text-sm mt-1">Séchage sinistre certifié</p>
                   </div>
-                  <div className="text-right shrink-0 ml-4">
-                    <p className="font-black text-2xl text-rouge-500">{SITE.prixAssechementMin}€–{SITE.prixAssechementMax}€</p>
-                    <p className="text-gray-500 text-xs">Pris en charge assurance</p>
+                  <div className="text-right shrink-0">
+                    <p className="font-bold text-2xl text-teal-500 tracking-tight">{SITE.prixAssechementMin}€–{SITE.prixAssechementMax}€</p>
+                    <p className="text-ink-500 text-xs">Pris en charge assurance</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="badge-trust w-full justify-center py-3">
-              🛡️ Nous travaillons avec votre assurance habitation
-            </div>
-
-            <a href={SITE.phoneHref} className="btn-red w-full justify-center py-4 text-lg">
+            <a href={SITE.phoneHref} className="btn-primary w-full text-lg">
               <span>📞</span><span>Appeler maintenant</span>
             </a>
 
-            <p className="text-gray-600 text-xs text-center">
+            <p className="text-ink-400 text-xs text-center">
               Devis précis après diagnostic. Urgences 7j/7.
             </p>
           </div>
+
+          {/* Pastille flottante */}
+          <div className="absolute -top-6 -left-8 animate-float">
+            <span className="badge-peach shadow-[0_12px_30px_-12px_rgba(36,42,79,0.25)] text-sm px-4 py-2">
+              🛡️ Compatible assurance habitation
+            </span>
+          </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-ch-900 to-transparent pointer-events-none" />
     </section>
   )
 }

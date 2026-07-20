@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Sora } from 'next/font/google'
 import './globals.css'
 import { SITE } from '@/lib/config'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +39,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={sora.variable}>
       <head>
         <script
           type="application/ld+json"

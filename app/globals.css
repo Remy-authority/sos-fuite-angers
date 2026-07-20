@@ -9,56 +9,126 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    font-family: var(--font-inter), system-ui, sans-serif;
-    background-color: #111111;
-    color: #F8F8F8;
+    font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+    background-color: #F6F3F0;
+    color: #414458;
+  }
+  ::selection {
+    background: #90E7EA;
+    color: #242A4F;
   }
 }
 
 @layer components {
+  /* ---- Typo ---- */
   .section-title {
-    @apply text-3xl md:text-4xl font-extrabold text-white;
+    @apply text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-ink-900 tracking-tight leading-[1.12];
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 text-teal-500 text-sm font-semibold uppercase tracking-widest;
   }
   .section-subtitle {
-    @apply text-lg text-gray-400 mt-4 max-w-2xl mx-auto;
+    @apply text-lg text-ink-500 mt-4 max-w-2xl mx-auto leading-relaxed;
   }
-  .btn-red {
-    @apply inline-flex items-center gap-3 bg-rouge-600 hover:bg-rouge-500 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-rouge-600/30 hover:scale-[1.02] active:scale-95 px-6 py-3;
+
+  /* ---- Boutons ---- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 bg-ink-900 hover:bg-teal-500 text-white font-semibold rounded-full transition-all duration-300 px-7 py-3.5 shadow-[0_10px_30px_-10px_rgba(36,42,79,0.45)] hover:shadow-[0_14px_34px_-10px_rgba(14,142,147,0.5)] hover:-translate-y-0.5 active:translate-y-0;
   }
-  .btn-outline-red {
-    @apply inline-flex items-center gap-3 border-2 border-rouge-600 text-rouge-500 hover:bg-rouge-600 hover:text-white font-bold rounded-xl transition-all duration-200 px-6 py-3;
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-2.5 bg-teal-500 hover:bg-teal-400 text-white font-bold rounded-full transition-all duration-300 px-8 py-4 animate-cta-glow hover:-translate-y-0.5;
   }
-  .btn-ghost {
-    @apply inline-flex items-center gap-3 text-gray-300 hover:text-white font-semibold transition-colors duration-200;
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2.5 bg-white hover:bg-teal-50 text-ink-900 font-semibold rounded-full border border-line-200 transition-all duration-300 px-7 py-3.5 hover:border-teal-400;
   }
-  .dark-card {
-    @apply bg-ch-750 border border-ch-600 rounded-2xl transition-all duration-300;
+
+  /* ---- Cartes ---- */
+  .card {
+    @apply bg-white rounded-card border border-line-200 transition-all duration-300;
+    box-shadow: 0 6px 24px -12px rgba(36, 42, 79, 0.10);
   }
-  .dark-card-hover {
-    @apply dark-card hover:border-rouge-600/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-rouge-600/10;
+  .card-hover {
+    @apply card hover:-translate-y-1.5;
   }
-  .badge-trust {
-    @apply inline-flex items-center gap-1.5 bg-verdant-900/60 text-verdant-400 border border-verdant-800/50 text-xs font-semibold px-3 py-1.5 rounded-full;
+  .card-hover:hover {
+    box-shadow: 0 20px 44px -16px rgba(36, 42, 79, 0.18);
+    border-color: #90E7EA;
   }
-  .badge-red {
-    @apply inline-flex items-center gap-1.5 bg-rouge-900/40 text-rouge-400 border border-rouge-800/40 text-xs font-semibold px-3 py-1.5 rounded-full;
+  .card-tinted {
+    @apply rounded-card border border-transparent;
+    background: linear-gradient(135deg, #F6F3F0, #f0f7f7);
   }
-  .badge-gold {
-    @apply inline-flex items-center gap-1.5 bg-or-700/20 text-or-400 border border-or-700/30 text-xs font-semibold px-3 py-1.5 rounded-full;
+
+  /* ---- Badges ---- */
+  .badge {
+    @apply inline-flex items-center gap-1.5 bg-white text-ink-700 border border-line-200 text-xs font-semibold px-3.5 py-1.5 rounded-full;
   }
-  .red-line {
-    @apply w-12 h-1 bg-rouge-600 rounded-full;
+  .badge-teal {
+    @apply inline-flex items-center gap-1.5 bg-teal-50 text-teal-600 border border-teal-200/70 text-xs font-semibold px-3.5 py-1.5 rounded-full;
   }
-  .section-dark {
-    @apply bg-ch-900;
+  .badge-peach {
+    @apply inline-flex items-center gap-1.5 text-ink-900 text-xs font-semibold px-3.5 py-1.5 rounded-full;
+    background: #F3E0D2;
   }
-  .section-darker {
-    @apply bg-ch-950;
+
+  /* ---- Décor ---- */
+  .divider-shimmer {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e1e8ed, transparent);
   }
-  .section-card-bg {
-    @apply bg-ch-800;
+  .accent-underline {
+    @apply relative inline-block;
   }
-  .input-dark {
-    @apply w-full bg-ch-700 border border-ch-500 hover:border-ch-400 focus:border-rouge-600 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-rouge-600/50 transition-colors;
+  .accent-underline::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 w-full h-[0.4em] -z-10 rounded-full;
+    background: linear-gradient(90deg, #90E7EA, #F3E0D2);
+  }
+  .deco-ring {
+    @apply absolute rounded-full border border-teal-200/50 pointer-events-none;
+  }
+
+  /* ---- Marquee (bandeau défilant continu, pause au survol) ---- */
+  .marquee {
+    @apply overflow-hidden relative;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .marquee-track {
+    @apply flex gap-10 w-max animate-marquee;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* ---- Form ---- */
+  .input {
+    @apply w-full bg-white border border-line-200 hover:border-teal-200 focus:border-teal-400 rounded-2xl px-4 py-3.5 text-ink-900 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-teal-200/60 transition-colors;
+  }
+  .option-tile {
+    @apply flex flex-col items-center gap-2 bg-white border border-line-200 rounded-2xl px-4 py-5 cursor-pointer transition-all duration-200 hover:border-teal-400 hover:-translate-y-0.5 text-ink-700 font-medium text-sm text-center;
+  }
+  .option-tile-active {
+    @apply border-teal-500 ring-2 ring-teal-200 bg-teal-50;
+  }
+
+  /* ---- Sections ---- */
+  .section-cream {
+    background-color: #F6F3F0;
+  }
+  .section-light {
+    background-color: #FBFAF8;
+  }
+  .section-navy {
+    background-color: #242A4F;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .animate-spin-slow,
+  .animate-spin-slower,
+  .animate-cta-glow,
+  .animate-float {
+    animation: none !important;
   }
 }
