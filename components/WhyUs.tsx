@@ -1,79 +1,78 @@
 const WHY = [
   {
     icon: '💰',
-    title: 'Prix affichés en clair',
-    description: 'Fourchettes transparentes avant intervention. La concurrence cache ses tarifs — pas nous.',
+    title: 'Devis gratuit',
+    description: 'Devis gratuit et transparent avant intervention. Pas de surprise, pas de frais caches.',
     highlight: true,
   },
   {
     icon: '⚡',
     title: 'Intervention rapide',
-    description: 'Moins de 2h sur Angers en urgence. Disponible 7j/7 week-ends et jours fériés inclus.',
+    description: 'Moins de 2h sur Angers en urgence. Disponible 7j/7 week-ends et jours feries inclus.',
     highlight: false,
   },
   {
     icon: '🔬',
-    title: 'Technologie avancée',
-    description: '3 techniques complémentaires (thermique, gaz traceur, acoustique) pour toutes configurations.',
+    title: 'Technologie avancee',
+    description: '3 techniques complementaires (thermique, gaz traceur, acoustique) pour toutes configurations.',
     highlight: false,
   },
   {
     icon: '📋',
     title: 'Rapport assurance',
-    description: 'Rapport technique professionnel fourni après chaque intervention. Indemnisation facilitée.',
+    description: 'Rapport technique professionnel fourni apres chaque intervention. Indemnisation facilitee.',
     highlight: true,
   },
   {
     icon: '⭐',
-    title: 'Avis clients vrais',
-    description: 'Aucun faux avis. Uniquement des témoignages authentiques de clients à Angers.',
+    title: 'Avis clients verifiees',
+    description: 'Aucun faux avis. Uniquement des temoignages authentiques de clients a Angers.',
     highlight: false,
   },
   {
     icon: '🏆',
-    title: 'Certifié Qualibat & RGE',
-    description: 'Certifications plomberie et environnement. Assurance décennale. Professionnels qualifiés.',
+    title: 'Materiel professionnel',
+    description: 'Equipements de pointe et techniques certifiees. Intervention garantie qualite.',
     highlight: false,
   },
 ]
 
 export default function WhyUs() {
   return (
-    <section className="py-20 bg-ch-950">
+    <section className="py-20 section-light">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-14">
-          <span className="badge-red mb-4 inline-flex">Pourquoi nous choisir</span>
-          <h2 className="section-title mt-3">Ce qui nous différencie</h2>
-          <div className="red-line mx-auto mt-5" />
+          <span className="section-label mb-4 inline-flex">Pourquoi nous choisir</span>
+          <h2 className="section-title mt-3">Ce qui nous differencie</h2>
           <p className="section-subtitle">
-            Là où tous les concurrents cachent leurs prix et n&apos;ont pas d&apos;avis Google,
+            La ou les concurrents cachent leurs prix et n&apos;ont pas d&apos;avis Google,
             nous faisons le contraire.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {WHY.map((item) => (
-            <div
-              key={item.title}
-              className={`dark-card p-6 space-y-4 group transition-all duration-300 hover:-translate-y-1 ${
-                item.highlight
-                  ? 'border-rouge-600/40 bg-rouge-600/5 hover:border-rouge-600/70'
-                  : 'hover:border-ch-400'
-              }`}
-            >
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl ${
-                item.highlight
-                  ? 'bg-rouge-600/20 border border-rouge-600/30'
-                  : 'bg-ch-700 border border-ch-500'
-              }`}>
-                {item.icon}
+          {WHY.map((item) => {
+            const baseClass = 'card-hover p-6 space-y-4 group transition-all duration-300 hover:-translate-y-1'
+            const highlightClass = item.highlight ? ' border-teal-200/70 bg-teal-50/40 hover:border-teal-400' : ''
+            const cardClass = baseClass + highlightClass
+
+            const iconBase = 'w-14 h-14 rounded-xl flex items-center justify-center text-3xl '
+            const iconClass = item.highlight
+              ? iconBase + 'bg-teal-100 border border-teal-200/50'
+              : iconBase + 'bg-cream-100 border border-line-200'
+
+            const titleClass = item.highlight
+              ? 'font-bold text-lg text-teal-600 group-hover:text-teal-500 transition-colors'
+              : 'font-bold text-lg text-ink-900 group-hover:text-teal-500 transition-colors'
+
+            return (
+              <div key={item.title} className={cardClass}>
+                <div className={iconClass}>{item.icon}</div>
+                <h3 className={titleClass}>{item.title}</h3>
+                <p className="text-ink-500 text-sm leading-relaxed">{item.description}</p>
               </div>
-              <h3 className={`font-bold text-lg ${item.highlight ? 'text-rouge-400' : 'text-white'} group-hover:text-rouge-400 transition-colors`}>
-                {item.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

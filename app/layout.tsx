@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     default: `Recherche de fuite d'eau ${SITE.commune} (${SITE.communeCode}) — ${SITE.name}`,
     template: `%s — ${SITE.name}`,
   },
-  description: `Expert recherche de fuite d'eau et assèchement à ${SITE.commune} (${SITE.communeCode}). Intervention rapide, prix transparents dès ${SITE.prixRechercheMin}€. Caméra thermique, gaz traceur, acoustique. Pris en charge assurance.`,
-  keywords: `recherche fuite eau ${SITE.commune}, détection fuite ${SITE.commune} ${SITE.communeCode}, assèchement ${SITE.commune}, expert fuite eau Angers`,
+  description: `Expert recherche de fuite d'eau et assechement a ${SITE.commune} (${SITE.communeCode}). Intervention rapide, devis gratuit. Camera thermique, gaz traceur, acoustique. Souvent pris en charge par votre assurance habitation.`,
+  keywords: `recherche fuite eau ${SITE.commune}, detection fuite ${SITE.commune} ${SITE.communeCode}, assechement ${SITE.commune}, expert fuite eau Angers`,
   openGraph: {
     title: `Recherche de fuite d'eau ${SITE.commune} — ${SITE.name}`,
-    description: `Expert détection fuite et assèchement à ${SITE.commune}. Prix affichés, intervention rapide.`,
+    description: `Expert detection fuite et assechement a ${SITE.commune}. Devis gratuit, intervention rapide.`,
     type: 'website',
     locale: 'fr_FR',
   },
@@ -25,7 +25,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: SITE.name,
-  description: `Expert recherche de fuite d'eau et assèchement à ${SITE.commune}`,
+  description: `Expert recherche de fuite d'eau et assechement a ${SITE.commune}`,
   address: {
     '@type': 'PostalAddress',
     addressLocality: SITE.commune,
@@ -33,8 +33,8 @@ const jsonLd = {
     addressCountry: 'FR',
   },
   areaServed: [SITE.commune, ...SITE.communesVoisines],
-  serviceType: ["Recherche de fuite d'eau", 'Assèchement', 'Détection thermique', 'Gaz traceur'],
-  priceRange: `€€ — dès ${SITE.prixRechercheMin}€`,
+  serviceType: ["Recherche de fuite d'eau", 'Assechement', 'Detection thermique', 'Gaz traceur'],
+  priceRange: '€€',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

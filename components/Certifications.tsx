@@ -1,12 +1,12 @@
 const CERTS = [
-  { icon: '🏆', label: 'Qualibat', sub: 'Qualifié plomberie' },
-  { icon: '🌿', label: 'RGE', sub: 'Reconnu Garant de l’Environnement' },
-  { icon: '🛡️', label: 'Décennale', sub: 'Garantie 10 ans' },
+  { icon: '🔬', label: 'Equipements calibres', sub: 'Detection certifiee' },
   { icon: '✅', label: 'Compatible MRH', sub: 'Rapport assurance fourni' },
-  { icon: '🔬', label: 'Équipements calibrés', sub: 'Détection certifiée' },
+  { icon: '🛡️', label: 'Decennale', sub: 'Garantie 10 ans' },
   { icon: '⚡', label: 'Urgences 7j/7', sub: 'Week-ends inclus' },
-  { icon: '💶', label: 'Prix affichés', sub: 'Zéro frais caché' },
+  { icon: '📋', label: 'Devis gratuit', sub: 'Zero engagement' },
   { icon: '♻️', label: '100 % non destructif', sub: 'Aucune casse inutile' },
+  { icon: '📄', label: 'Rapport complet', sub: 'Pour votre assurance' },
+  { icon: '🎯', label: 'Precision centimetrique', sub: 'Localisation exacte' },
 ]
 
 export default function Certifications() {

@@ -1,10 +1,10 @@
 import { SITE } from '@/lib/config'
 
 const CHIFFRES = [
-  { num: `${SITE.prixRechercheMin}€`, label: 'Tarif minimum', sub: 'Recherche de fuite' },
-  { num: '24h', label: 'Délai d’intervention', sub: `Sur ${SITE.commune} et environs` },
+  { num: '24h', label: 'Delai d\'intervention', sub: `Sur ${SITE.commune} et environs` },
   { num: '100 %', label: 'Non destructif', sub: 'Technologies de pointe' },
-  { num: '7j/7', label: 'Disponibilité', sub: 'Urgences incluses' },
+  { num: '7j/7', label: 'Disponibilite', sub: 'Urgences incluses' },
+  { num: '30 km', label: 'Rayon d\'intervention', sub: 'Maine-et-Loire' },
 ]
 
 export default function About() {
@@ -16,23 +16,22 @@ export default function About() {
           <div className="space-y-6">
             <span className="section-label">Qui sommes-nous</span>
             <h2 className="section-title">
-              L&apos;expert fuite d&apos;eau de <span className="accent-underline">référence</span> à {SITE.commune}
+              L'expert fuite d'eau de <span className="accent-underline">reference</span> a {SITE.commune}
             </h2>
             <p className="text-ink-700 leading-relaxed text-lg">
-              {SITE.name} est le spécialiste local de la détection de fuite et de l&apos;assèchement
-              dans le Maine-et-Loire. Nous utilisons des équipements de pointe pour localiser vos
+              {SITE.name} est le specialiste local de la detection de fuite et de l'assechement
+              dans le Maine-et-Loire. Nous utilisons des equipements de pointe pour localiser vos
               fuites <strong className="text-ink-900 font-semibold">sans casse inutile</strong>, avec
               un rapport complet pour votre assurance.
             </p>
             <p className="text-ink-500 leading-relaxed">
-              Notre approche : diagnostic précis, prix transparents affichés avant intervention,
-              et accompagnement complet dans vos démarches avec votre assurance habitation.
-              Là où la concurrence cache ses tarifs — nous les affichons.
+              Notre approche : diagnostic precis, devis gratuit avant intervention,
+              et accompagnement complet dans vos demarches avec votre assurance habitation.
             </p>
             <div className="flex flex-wrap gap-2.5">
-              <span className="badge-teal">✓ Prix affichés en clair</span>
+              <span className="badge-teal">✓ Devis gratuit</span>
               <span className="badge-teal">✓ Rapport assurance inclus</span>
-              <span className="badge-teal">✓ Diagnostic précis</span>
+              <span className="badge-teal">✓ Diagnostic precis</span>
             </div>
             <a href={SITE.phoneHref} className="btn-primary mt-2">
               <span>📞</span><span>{SITE.phone}</span>
