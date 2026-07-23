@@ -1,0 +1,36 @@
+{
+  "_comment": "GABARIT mentions légales — données éditeur à fournir par Rémy avant la prod (Gate C). Les champs vides s'affichent comme « À compléter » et NE DOIVENT PAS être remplis avec des valeurs factices. L'hébergeur (Vercel) est un fait, pré-rempli.",
+  "editeur": {
+    "raisonSociale": "",
+    "formeJuridique": "",
+    "siren": "",
+    "rcs": "",
+    "capital": "",
+    "adresse": "",
+    "directeurPublication": "",
+    "emailContact": "contact@sosfuite-angers.fr",
+    "telephone": "07 56 85 31 25",
+    "tvaIntracom": ""
+  },
+  "assurance": {
+    "assureur": "",
+    "police": "",
+    "couverture": "Responsabilité civile professionnelle et décennale — références à compléter"
+  },
+  "hebergeur": {
+    "nom": "Vercel Inc.",
+    "adresse": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
+    "site": "https://vercel.com",
+    "contact": "privacy@vercel.com"
+  },
+  "confidentialite": {
+    "responsableTraitement": "",
+    "finalite": "Traitement des demandes de contact et de devis envoyées via le formulaire du site.",
+    "baseLegale": "Consentement de la personne concernée (art. 6.1.a RGPD).",
+    "donneesCollectees": ["nom", "téléphone", "ville / code postal", "message"],
+    "conservation": "Les données sont conservées le temps du traitement de la demande, puis 3 ans à compter du dernier contact à des fins de suivi commercial.",
+    "destinataires": "Les données ne sont transmises qu'à l'artisan destinataire de la demande. Aucune revente à des tiers.",
+    "droits": "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition. Pour l'exercer : contact@sosfuite-angers.fr.",
+    "cookies": "Le site n'utilise pas de cookies de suivi publicitaire. Seuls des cookies techniques strictement nécessaires peuvent être déposés."
+  }
+}

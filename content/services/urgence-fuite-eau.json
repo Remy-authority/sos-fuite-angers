@@ -1,0 +1,34 @@
+{
+  "slug": "urgence-fuite-eau",
+  "order": 2,
+  "icon": "alert",
+  "navTitle": "Urgence fuite d'eau",
+  "h1": "Urgence fuite d'eau à Angers",
+  "metaTitle": "Urgence fuite d'eau à Angers — Intervention rapide",
+  "metaDescription": "Fuite d'eau urgente à Angers ? Intervention rapide pour localiser et stopper la fuite. Contactez-nous, on vous rappelle vite.",
+  "intro": "[À rédiger — ST-5/Rédacteur]",
+  "bullets": [
+    "Intervention rapide",
+    "Localisation immédiate",
+    "Mise en sécurité"
+  ],
+  "blocks": [
+    {
+      "heading": "Que faire en attendant (couper l'eau)",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Notre intervention en urgence",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Zones couvertes",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    }
+  ],
+  "relatedServices": [
+    "detection-fuite-non-destructive",
+    "assechement-degat-des-eaux"
+  ],
+  "faq": []
+}

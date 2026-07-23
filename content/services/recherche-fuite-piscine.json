@@ -1,0 +1,34 @@
+{
+  "slug": "recherche-fuite-piscine",
+  "order": 5,
+  "icon": "pool",
+  "navTitle": "Fuite de piscine",
+  "h1": "Recherche de fuite de piscine à Angers",
+  "metaTitle": "Recherche de fuite de piscine à Angers",
+  "metaDescription": "Votre piscine perd de l'eau ? Détection de fuite de piscine à Angers : liner, canalisations, pièces à sceller. Localisation précise.",
+  "intro": "[À rédiger — ST-5/Rédacteur]",
+  "bullets": [
+    "Liner",
+    "Canalisations",
+    "Pièces à sceller"
+  ],
+  "blocks": [
+    {
+      "heading": "Signes d'une fuite de piscine",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Où se situent les fuites",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Nos méthodes",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    }
+  ],
+  "relatedServices": [
+    "detection-fuite-non-destructive",
+    "urgence-fuite-eau"
+  ],
+  "faq": []
+}

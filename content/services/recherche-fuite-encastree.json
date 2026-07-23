@@ -1,0 +1,34 @@
+{
+  "slug": "recherche-fuite-encastree",
+  "order": 4,
+  "icon": "wall",
+  "navTitle": "Fuite encastrée (mur/sol)",
+  "h1": "Recherche de fuite encastrée (mur, sol) à Angers",
+  "metaTitle": "Recherche de fuite encastrée (mur, sol) à Angers",
+  "metaDescription": "Fuite encastrée dans un mur, un sol ou un plancher chauffant à Angers : détection précise sans destruction. Diagnostic rapide.",
+  "intro": "[À rédiger — ST-5/Rédacteur]",
+  "bullets": [
+    "Fuite murale",
+    "Plancher chauffant",
+    "Sans destruction"
+  ],
+  "blocks": [
+    {
+      "heading": "Fuite dans un mur",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Fuite au sol / plancher chauffant",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Détection sans casse",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    }
+  ],
+  "relatedServices": [
+    "detection-fuite-non-destructive",
+    "urgence-fuite-eau"
+  ],
+  "faq": []
+}

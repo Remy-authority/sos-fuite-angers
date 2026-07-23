@@ -1,0 +1,98 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { getService, getServices, getRelatedArticles } from '@/lib/content'
+import { buildMetadata, serviceJsonLd, jsonLdScript } from '@/lib/seo'
+import Breadcrumbs from '@/components/ui/Breadcrumbs'
+import Faq from '@/components/ui/Faq'
+import CtaBanner from '@/components/ui/CtaBanner'
+
+// 100% SSG : une page statique par service.
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return getServices().map((s) => ({ slug: s.slug }))
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const s = getService(params.slug)
+  if (!s) return {}
+  return buildMetadata({
+    title: s.metaTitle,
+    description: s.metaDescription,
+    path: `/services/${s.slug}`,
+  })
+}
+
+export default function ServicePage({ params }: { params: { slug: string } }) {
+  const service = getService(params.slug)
+  if (!service) notFound()
+
+  const related = getServices().filter((s) => service.relatedServices.includes(s.slug))
+  const articles = getRelatedArticles(service.slug)
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(serviceJsonLd(service)) }}
+      />
+      <Breadcrumbs
+        items={[
+          { name: 'Accueil', path: '/' },
+          { name: 'Services', path: '/' },
+          { name: service.navTitle, path: `/services/${service.slug}` },
+        ]}
+      />
+
+      <article className="container-site section">
+        <h1 className="text-3xl md:text-4xl">{service.h1}</h1>
+
+        {/* En bref (réponse courte GEO) */}
+        <p className="mt-4 rounded-card bg-light p-4 text-slate-700">{service.intro}</p>
+
+        <div className="prose-content mt-8">
+          {service.blocks.map((b) => (
+            <section key={b.heading}>
+              <h2>{b.heading}</h2>
+              <p>{b.body}</p>
+            </section>
+          ))}
+        </div>
+
+        {/* Maillage interne : services liés */}
+        {related.length > 0 && (
+          <nav aria-label="Services liés" className="mt-10">
+            <h2 className="text-xl">Prestations liées</h2>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {related.map((r) => (
+                <li key={r.slug}>
+                  <Link href={`/services/${r.slug}`} className="rounded-full border border-slate-300 px-3 py-1.5 text-sm hover:border-primary">
+                    {r.navTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        {/* Maillage interne automatique : articles du cluster */}
+        {articles.length > 0 && (
+          <nav aria-label="Conseils liés" className="mt-8">
+            <h2 className="text-xl">À lire aussi</h2>
+            <ul className="mt-3 space-y-1 text-sm">
+              {articles.map((a) => (
+                <li key={a.slug}>
+                  <Link href={`/conseils/${a.slug}`} className="text-primary underline">{a.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </article>
+
+      <Faq items={service.faq} />
+      <CtaBanner />
+    </>
+  )
+}

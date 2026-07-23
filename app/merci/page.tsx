@@ -1,23 +1,31 @@
 import Link from 'next/link'
-import { SITE } from '@/lib/config'
 import type { Metadata } from 'next'
+import { siteConfig } from '@/config/site.config'
+import { buildMetadata } from '@/lib/seo'
+import PhoneButton from '@/components/ui/PhoneButton'
 
-export const metadata: Metadata = { title: 'Demande recue', robots: { index: false } }
+// Page utilitaire post-soumission → noindex (cf. brief SEO §7).
+export const metadata: Metadata = buildMetadata({
+  title: 'Demande reçue',
+  description: 'Votre demande a bien été reçue.',
+  path: '/merci',
+  noindex: true,
+})
 
 export default function MerciPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center section-cream px-4">
-      <div className="max-w-md text-center">
-        <div className="text-6xl mb-6">✅</div>
-        <h1 className="text-3xl font-black text-ink-900 mb-4">Demande recue !</h1>
-        <p className="text-ink-500 mb-8">
-          Merci pour votre message. Nous vous recontactons rapidement. Pour une urgence, appelez directement.
+    <section className="container-site section flex min-h-[50vh] items-center justify-center text-center">
+      <div className="max-w-md">
+        <div className="text-5xl" aria-hidden="true">✅</div>
+        <h1 className="mt-4 text-3xl">Demande reçue</h1>
+        <p className="mt-3 text-slate-600">
+          Merci, nous vous recontactons rapidement. Pour une urgence, appelez-nous directement.
         </p>
-        <div className="flex flex-col gap-3">
-          <a href={SITE.phoneHref} className="btn-cta py-4 text-lg justify-center">📞 {SITE.phone}</a>
-          <Link href="/" className="font-medium text-teal-500 hover:text-teal-400 transition-colors">← Retour a l'accueil</Link>
+        <div className="mt-6 flex flex-col items-center gap-3">
+          <PhoneButton label={`Appeler — ${siteConfig.phoneDisplay}`} />
+          <Link href="/" className="text-primary underline">← Retour à l'accueil</Link>
         </div>
       </div>
-    </main>
+    </section>
   )
 }

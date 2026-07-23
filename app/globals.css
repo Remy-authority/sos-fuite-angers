@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * CSS variables = design tokens du site.
+ * Source de vérité : siteConfig.colors (config/site.config.ts), injecté dans
+ * <html style="..."> par app/layout.tsx. Les valeurs :root ci-dessous ne sont
+ * qu'un FALLBACK (mêmes hex) pour un rendu sûr hors injection.
+ * Format « r g b » (canaux) pour les modificateurs d'opacité Tailwind.
+ */
+:root {
+  --color-primary-rgb: 11 79 138; /* #0B4F8A */
+  --color-primary-dark-rgb: 10 62 110; /* #0A3E6E */
+  --color-accent-rgb: 249 115 22; /* #F97316 */
+  --color-dark-rgb: 15 23 42; /* #0F172A */
+  --color-light-rgb: 246 249 252; /* #F6F9FC */
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -9,126 +24,53 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-    background-color: #F6F3F0;
-    color: #414458;
+    @apply bg-white text-slate-700 font-sans antialiased;
   }
-  ::selection {
-    background: #90E7EA;
-    color: #242A4F;
+  h1, h2, h3 {
+    @apply text-slate-900 font-bold tracking-tight;
+  }
+  a {
+    @apply text-primary;
+  }
+  /* Cible tap ≥ 44px sur mobile (a11y / Lighthouse) */
+  a, button {
+    touch-action: manipulation;
   }
 }
 
 @layer components {
-  /* ---- Typo ---- */
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-ink-900 tracking-tight leading-[1.12];
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
   }
-  .section-label {
-    @apply inline-flex items-center gap-2 text-teal-500 text-sm font-semibold uppercase tracking-widest;
+  .section {
+    @apply py-12 md:py-16;
   }
-  .section-subtitle {
-    @apply text-lg text-ink-500 mt-4 max-w-2xl mx-auto leading-relaxed;
+  /* CTA principal = accent orange (urgence), toujours ≥ 48px de haut */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 min-h-[48px] font-semibold text-white transition-colors hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
   }
-
-  /* ---- Boutons ---- */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 bg-ink-900 hover:bg-teal-500 text-white font-semibold rounded-full transition-all duration-300 px-7 py-3.5 shadow-[0_10px_30px_-10px_rgba(36,42,79,0.45)] hover:shadow-[0_14px_34px_-10px_rgba(14,142,147,0.5)] hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 min-h-[48px] font-semibold text-white transition-colors hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
   }
-  .btn-cta {
-    @apply inline-flex items-center justify-center gap-2.5 bg-teal-500 hover:bg-teal-400 text-white font-bold rounded-full transition-all duration-300 px-8 py-4 animate-cta-glow hover:-translate-y-0.5;
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-white px-6 py-3.5 min-h-[48px] font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/5;
   }
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2.5 bg-white hover:bg-teal-50 text-ink-900 font-semibold rounded-full border border-line-200 transition-all duration-300 px-7 py-3.5 hover:border-teal-400;
-  }
-
-  /* ---- Cartes ---- */
   .card {
-    @apply bg-white rounded-card border border-line-200 transition-all duration-300;
-    box-shadow: 0 6px 24px -12px rgba(36, 42, 79, 0.10);
+    @apply rounded-card border border-slate-200 bg-white p-6 shadow-sm;
   }
-  .card-hover {
-    @apply card hover:-translate-y-1.5;
+  .field {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30;
   }
-  .card-hover:hover {
-    box-shadow: 0 20px 44px -16px rgba(36, 42, 79, 0.18);
-    border-color: #90E7EA;
+  .prose-content {
+    @apply max-w-3xl leading-relaxed;
   }
-  .card-tinted {
-    @apply rounded-card border border-transparent;
-    background: linear-gradient(135deg, #F6F3F0, #f0f7f7);
+  .prose-content h2 {
+    @apply mt-8 text-2xl;
   }
-
-  /* ---- Badges ---- */
-  .badge {
-    @apply inline-flex items-center gap-1.5 bg-white text-ink-700 border border-line-200 text-xs font-semibold px-3.5 py-1.5 rounded-full;
+  .prose-content p {
+    @apply mt-4;
   }
-  .badge-teal {
-    @apply inline-flex items-center gap-1.5 bg-teal-50 text-teal-600 border border-teal-200/70 text-xs font-semibold px-3.5 py-1.5 rounded-full;
-  }
-  .badge-peach {
-    @apply inline-flex items-center gap-1.5 text-ink-900 text-xs font-semibold px-3.5 py-1.5 rounded-full;
-    background: #F3E0D2;
-  }
-
-  /* ---- Décor ---- */
-  .divider-shimmer {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #e1e8ed, transparent);
-  }
-  .accent-underline {
-    @apply relative inline-block;
-  }
-  .accent-underline::after {
-    content: '';
-    @apply absolute left-0 -bottom-1 w-full h-[0.4em] -z-10 rounded-full;
-    background: linear-gradient(90deg, #90E7EA, #F3E0D2);
-  }
-  .deco-ring {
-    @apply absolute rounded-full border border-teal-200/50 pointer-events-none;
-  }
-
-  /* ---- Marquee (bandeau défilant continu, pause au survol) ---- */
-  .marquee {
-    @apply overflow-hidden relative;
-    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  }
-  .marquee-track {
-    @apply flex gap-10 w-max animate-marquee;
-  }
-  .marquee:hover .marquee-track {
-    animation-play-state: paused;
-  }
-
-  /* ---- Form ---- */
-  .input {
-    @apply w-full bg-white border border-line-200 hover:border-teal-200 focus:border-teal-400 rounded-2xl px-4 py-3.5 text-ink-900 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-teal-200/60 transition-colors;
-  }
-  .option-tile {
-    @apply flex flex-col items-center gap-2 bg-white border border-line-200 rounded-2xl px-4 py-5 cursor-pointer transition-all duration-200 hover:border-teal-400 hover:-translate-y-0.5 text-ink-700 font-medium text-sm text-center;
-  }
-  .option-tile-active {
-    @apply border-teal-500 ring-2 ring-teal-200 bg-teal-50;
-  }
-
-  /* ---- Sections ---- */
-  .section-cream {
-    background-color: #F6F3F0;
-  }
-  .section-light {
-    background-color: #FBFAF8;
-  }
-  .section-navy {
-    background-color: #242A4F;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track,
-  .animate-spin-slow,
-  .animate-spin-slower,
-  .animate-cta-glow,
-  .animate-float {
-    animation: none !important;
+  .prose-content a {
+    @apply underline;
   }
 }

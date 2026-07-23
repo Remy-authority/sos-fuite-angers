@@ -1,0 +1,42 @@
+{
+  "slug": "detection-fuite-non-destructive",
+  "order": 1,
+  "icon": "search",
+  "navTitle": "Détection sans casse",
+  "h1": "Détection de fuite non destructive à Angers",
+  "metaTitle": "Détection de fuite non destructive à Angers",
+  "metaDescription": "Détection de fuite d'eau sans casse à Angers : gaz traceur, caméra thermique, acoustique. Localisation précise avant intervention.",
+  "intro": "[À rédiger — ST-5/Rédacteur]",
+  "bullets": [
+    "Gaz traceur",
+    "Caméra thermique",
+    "Détection acoustique"
+  ],
+  "blocks": [
+    {
+      "heading": "Le gaz traceur",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "La caméra thermique / thermographie",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "La détection acoustique",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Quand utiliser quelle méthode",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    },
+    {
+      "heading": "Déroulé d'une recherche",
+      "body": "[À rédiger — ST-5/Rédacteur]"
+    }
+  ],
+  "relatedServices": [
+    "recherche-fuite-canalisation-enterree",
+    "urgence-fuite-eau"
+  ],
+  "faq": []
+}
