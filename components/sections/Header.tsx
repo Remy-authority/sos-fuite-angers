@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import Logo from '@/components/ui/Logo'
 import PhoneButton from '@/components/ui/PhoneButton'
 import { siteConfig } from '@/config/site.config'
 import { getServices } from '@/lib/content'
@@ -17,15 +17,8 @@ export default function Header() {
           className="flex shrink-0 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
           aria-label={`${siteConfig.businessName} — accueil`}
         >
-          {/* Logo premium SVG — DEMO, remplacer par le vrai logo du loueur */}
-          <Image
-            src={siteConfig.logo}
-            alt={siteConfig.businessName}
-            width={160}
-            height={38}
-            priority
-            className="h-9 w-auto"
-          />
+          {/* Logo inline SVG — texte sombre sur fond blanc header */}
+          <Logo textColor="#0F172A" iconColor="#0B4F8A" />
         </Link>
 
         {/* Nav desktop */}
