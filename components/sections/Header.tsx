@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import PhoneButton from '@/components/ui/PhoneButton'
 import { siteConfig } from '@/config/site.config'
@@ -13,16 +14,18 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2 font-bold text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+          className="flex shrink-0 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
           aria-label={`${siteConfig.businessName} — accueil`}
         >
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-[10px] font-extrabold text-white"
-            aria-hidden="true"
-          >
-            SOS
-          </span>
-          <span className="hidden sm:inline">{siteConfig.businessName}</span>
+          {/* Logo premium SVG — DEMO, remplacer par le vrai logo du loueur */}
+          <Image
+            src={siteConfig.logo}
+            alt={siteConfig.businessName}
+            width={160}
+            height={38}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Nav desktop */}

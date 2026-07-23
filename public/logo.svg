@@ -1,0 +1,9 @@
+<svg viewBox="0 0 200 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SOS Fuite d'Eau Angers">
+  <!-- Droplet icon -->
+  <path d="M24 4 C24 4, 10 18, 10 28 C10 37.4 16.3 44 24 44 C31.7 44 38 37.4 38 28 C38 18 24 4 24 4Z" fill="#0B4F8A"/>
+  <!-- Wave inside droplet -->
+  <path d="M14 28 C17 24, 20 31, 24 27 C28 23, 31 30, 34 26" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Business name text -->
+  <text x="48" y="20" font-family="system-ui,-apple-system,sans-serif" font-weight="800" font-size="14" fill="#0B4F8A" letter-spacing="-0.3">SOS FUITE D'EAU</text>
+  <text x="48" y="36" font-family="system-ui,-apple-system,sans-serif" font-weight="600" font-size="11" fill="#64748B" letter-spacing="1.5">ANGERS</text>
+</svg>

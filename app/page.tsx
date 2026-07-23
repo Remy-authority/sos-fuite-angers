@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { siteConfig } from '@/config/site.config'
 import { getServices } from '@/lib/content'
 import { buildMetadata } from '@/lib/seo'
 import CtaBanner from '@/components/ui/CtaBanner'
@@ -20,7 +21,8 @@ export const metadata: Metadata = buildMetadata({ title: TITLE, description: DES
 
 export default function HomePage() {
   const services = getServices()
-  const homeFaq = [] as { q: string; a: string }[] // rempli par ST-2/ST-5
+  // DEMO – contenu imaginé persona Thomas Mercier, à affiner par ST-5
+  const homeFaq = siteConfig.homeFaq as unknown as { q: string; a: string }[]
 
   return (
     <>

@@ -20,6 +20,21 @@ export default function Hero() {
         className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl"
         aria-hidden="true"
       />
+      {/* Halo accent bas-droite */}
+      <div
+        className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
+        aria-hidden="true"
+      />
+      {/* Motion lumière — faisceau diagonal animé (façon sniperpestcontrol3dservices.fr).
+          Désactivé si prefers-reduced-motion est activé (motion-safe). */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-1/3 motion-safe:animate-hero-shine"
+        aria-hidden="true"
+        style={{
+          background:
+            'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%)',
+        }}
+      />
 
       <div className="container-site relative grid gap-10 py-14 md:grid-cols-2 md:items-start md:py-20 lg:gap-16">
         {/* Colonne texte */}

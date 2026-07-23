@@ -36,6 +36,17 @@ const config: Config = {
       borderRadius: {
         card: '20px',
       },
+      keyframes: {
+        'hero-shine': {
+          '0%':   { transform: 'translateX(-120%) skewX(-18deg)', opacity: '0' },
+          '15%':  { opacity: '1' },
+          '85%':  { opacity: '1' },
+          '100%': { transform: 'translateX(300%) skewX(-18deg)', opacity: '0' },
+        },
+      },
+      animation: {
+        'hero-shine': 'hero-shine 5s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
