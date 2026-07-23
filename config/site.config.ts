@@ -83,33 +83,72 @@ export const siteConfig = {
     blog: true, // section /conseils (autoblog)
   },
 
+  /* ── Persona artisan (DEMO — à remplacer par les infos du loueur) ── */
+  // DEMO – à remplacer par les infos du loueur
+  persona: {
+    name: 'Thomas Mercier',
+    // DEMO – à remplacer par les infos du loueur
+    photo: '/thomas-mercier.svg', // Placeholder IA — vraie photo fournie par Rémy → public/thomas-mercier.jpg
+    title: "Artisan certifié détection non destructive",
+  },
+
   /* ── Sections visuelles (ST-3) — textes placeholder en attente ST-5 ── */
   about: {
     title: "Votre spécialiste fuite d'eau à Angers",
-    body: "[À rédiger — ST-5] Artisan local indépendant, formé aux dernières techniques de détection non destructive. Nous intervenons sur Angers et un rayon de 25 km pour localiser précisément vos fuites, sans casser ni abîmer vos revêtements.",
-    highlight: 'Artisan local indépendant',
+    // DEMO – à remplacer par les infos du loueur
+    body: "Artisan indépendant depuis plus de 10 ans, Thomas Mercier intervient sur Angers et un rayon de 25 km pour détecter et localiser précisément vos fuites d'eau sans destruction. Formé aux dernières technologies non invasives — gaz traceur, caméra thermique, acoustique — il vous remet un rapport officiel reconnu par les assurances.",
+    // DEMO – à remplacer par les infos du loueur
+    highlight: 'Artisan certifié non destructif',
   },
 
   process: [
-    { icon: 'phone', title: 'Vous nous appelez', desc: "[ST-5] Prise en charge immédiate, diagnostic téléphonique rapide." },
-    { icon: 'search', title: 'Diagnostic sur site', desc: "[ST-5] Inspection visuelle et tests de pression pour cibler la zone suspecte." },
-    { icon: 'tool', title: 'Détection précise', desc: "[ST-5] Gaz traceur, caméra thermique ou acoustique selon le cas." },
-    { icon: 'check', title: 'Rapport & devis', desc: "[ST-5] Rapport de localisation précis + devis travaux de réparation si nécessaire." },
+    { icon: 'phone', title: 'Vous nous appelez', desc: "Prise en charge immédiate, diagnostic téléphonique rapide. Disponible 24h/24, 7j/7." },
+    { icon: 'search', title: 'Diagnostic sur site', desc: "Inspection visuelle et tests de pression pour cibler la zone suspecte sans casser." },
+    { icon: 'tool', title: 'Détection précise', desc: "Gaz traceur, caméra thermique ou détection acoustique selon la configuration." },
+    { icon: 'check', title: 'Rapport & devis', desc: "Rapport de localisation officiel pour votre assurance + devis réparation si besoin." },
   ],
 
-  // Chiffres véridiques uniquement (pas de compteur fabriqué). Dérivés de la config
-  // déjà validée : disponibilité, rayon d'intervention, méthode non destructive.
+  // DEMO – à remplacer par les infos du loueur (chiffres persona Thomas Mercier)
   stats: [
-    { value: '24/7', label: 'Disponible' },
+    { value: '+500', label: 'Fuites détectées' },       // DEMO – à remplacer par les infos du loueur
+    { value: '10 ans', label: "d'expérience" },          // DEMO – à remplacer par les infos du loueur
     { value: '25 km', label: "Rayon d'intervention" },
-    { value: '100%', label: 'Non destructif' },
   ],
 
   whyUs: [
     { icon: 'shield', title: 'Aucune destruction inutile', desc: 'Nous localisons avant de couper. Votre carrelage, vos murs et vos sols sont préservés.' },
     { icon: 'clock', title: 'Disponible 24h/24', desc: "Fuite urgente ou programmée, nous répondons 7j/7 avec un délai d'intervention rapide." },
-    { icon: 'star', title: 'Artisan local indépendant', desc: "Pas d'intermédiaire, pas de franchise. Un artisan indépendant que vous pouvez rappeler." },
+    // DEMO – à remplacer par les infos du loueur
+    { icon: 'star', title: 'Artisan certifié indépendant', desc: "Pas d'intermédiaire, pas de franchise. Un artisan local que vous pouvez rappeler directement." },
     { icon: 'doc', title: 'Rapport pour assurance', desc: 'Rapport de localisation officiel pour votre assurance et syndic de copropriété.' },
+  ],
+
+  /* ── FAQ accueil (DEMO — contenu imaginé persona, à affiner par ST-5) ── */
+  // DEMO – à remplacer par les infos du loueur
+  homeFaq: [
+    {
+      q: "Combien coûte une recherche de fuite d'eau à Angers ?",
+      // DEMO – à remplacer par les infos du loueur
+      a: "Le déplacement et le diagnostic de base sont gratuits et sans engagement. Le tarif de l'intervention dépend de la complexité de la fuite et de la méthode utilisée (gaz traceur, acoustique, thermique). Contactez-nous pour un devis personnalisé.",
+    },
+    {
+      q: "Intervenez-vous en urgence les week-ends et jours fériés ?",
+      a: "Oui, nous intervenons 24h/24 et 7j/7, week-ends et jours fériés inclus, sur Angers et dans un rayon de 25 km.",
+    },
+    {
+      q: "Faut-il casser des murs ou du carrelage pour trouver la fuite ?",
+      // DEMO – à remplacer par les infos du loueur
+      a: "Non. Notre méthode de détection non destructive — gaz traceur, caméra thermique et acoustique — permet de localiser précisément la fuite sans aucune destruction préalable. Nous indiquons l'emplacement exact avant toute intervention.",
+    },
+    {
+      q: "Le rapport de localisation est-il accepté par les assurances ?",
+      // DEMO – à remplacer par les infos du loueur
+      a: "Oui. Nous rédigeons un rapport technique officiel de localisation de fuite, reconnu par les compagnies d'assurance et les syndics de copropriété pour la prise en charge des travaux.",
+    },
+    {
+      q: "Intervenez-vous dans tout le Maine-et-Loire ?",
+      a: "Nous couvrons Angers et ses environs dans un rayon de 25 km : Avrillé, Saint-Barthélemy, Trélazé, Bouchemaine, les Ponts-de-Cé, Sainte-Gemmes-sur-Loire et les communes alentour.",
+    },
   ],
 
   /* ── Légal (GABARIT — à compléter par Rémy avant prod, cf. content/legal.json) ── */

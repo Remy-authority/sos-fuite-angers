@@ -1,31 +1,37 @@
+import Image from 'next/image'
 import { siteConfig } from '@/config/site.config'
 
 export default function About() {
   return (
     <section className="section" aria-labelledby="about-title">
       <div className="container-site grid gap-10 md:grid-cols-2 md:items-center lg:gap-16">
-        {/* Visuel */}
+        {/* Visuel — photo persona (DEMO – à remplacer par les infos du loueur) */}
         <div className="relative order-2 md:order-1">
           <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100">
-            {/* Placeholder visuel — photo artisan à insérer (ST-5/Rémy) */}
-            <div className="flex h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-primary/5 to-primary/20 p-8 text-center">
-              <svg className="h-16 w-16 text-primary/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                <path d="M12 2a10 10 0 0 1 10 10v1a10 10 0 0 1-10 10 10 10 0 0 1-10-10V12A10 10 0 0 1 12 2Z" />
-                <path d="M12 8v4l3 3" />
-              </svg>
-              <p className="text-sm text-slate-400">[Photo artisan — à fournir ST-5/Rémy]</p>
-            </div>
+            {/* DEMO – photo IA placeholder. Vraie photo fournie par Rémy → public/thomas-mercier.jpg */}
+            <Image
+              src={siteConfig.persona.photo}
+              alt={`${siteConfig.persona.name} — artisan détection fuite d'eau Angers`}
+              width={560}
+              height={420}
+              className="h-full w-full object-cover"
+              unoptimized
+            />
           </div>
-          {/* Badge flottant — chiffre véridique (dispo), pas de compteur fabriqué */}
-          <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-accent px-5 py-3 text-center text-white shadow-lg sm:block">
-            <p className="text-2xl font-extrabold leading-none">24/7</p>
-            <p className="mt-0.5 text-xs font-medium text-white/90">disponible</p>
+          {/* Badge flottant — DEMO – à remplacer par les infos du loueur */}
+          <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-primary px-5 py-3 text-center text-white shadow-lg sm:block">
+            {/* DEMO – à remplacer par les infos du loueur */}
+            <p className="text-2xl font-extrabold leading-none">+500</p>
+            <p className="mt-0.5 text-xs font-medium text-white/90">fuites résolues</p>
           </div>
         </div>
 
         {/* Texte */}
         <div className="order-1 md:order-2">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Qui sommes-nous</p>
+          {/* DEMO – nom persona à remplacer par les infos du loueur */}
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">
+            {siteConfig.persona.name}
+          </p>
           <h2 id="about-title" className="text-2xl font-bold text-slate-900 md:text-3xl">
             {siteConfig.about.title}
           </h2>
