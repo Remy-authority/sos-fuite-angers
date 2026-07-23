@@ -29,7 +29,7 @@ const BADGES = [
   { icon: 'clock', label: siteConfig.availability },
   { icon: 'shield', label: 'Intervention non destructive' },
   { icon: 'check', label: 'Devis gratuit & sans engagement' },
-  { icon: 'star', label: 'Artisan certifié, entreprise locale' },
+  { icon: 'star', label: 'Artisan local indépendant' },
 ]
 
 export default function TrustBadges() {

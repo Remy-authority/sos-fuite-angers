@@ -16,10 +16,10 @@ export default function About() {
               <p className="text-sm text-slate-400">[Photo artisan — à fournir ST-5/Rémy]</p>
             </div>
           </div>
-          {/* Badge flottant */}
+          {/* Badge flottant — chiffre véridique (dispo), pas de compteur fabriqué */}
           <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-accent px-5 py-3 text-center text-white shadow-lg sm:block">
-            <p className="text-2xl font-extrabold leading-none">+500</p>
-            <p className="mt-0.5 text-xs font-medium text-white/90">fuites détectées</p>
+            <p className="text-2xl font-extrabold leading-none">24/7</p>
+            <p className="mt-0.5 text-xs font-medium text-white/90">disponible</p>
           </div>
         </div>
 

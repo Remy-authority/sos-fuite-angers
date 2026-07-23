@@ -87,7 +87,7 @@ export const siteConfig = {
   about: {
     title: "Votre spécialiste fuite d'eau à Angers",
     body: "[À rédiger — ST-5] Artisan local indépendant, formé aux dernières techniques de détection non destructive. Nous intervenons sur Angers et un rayon de 25 km pour localiser précisément vos fuites, sans casser ni abîmer vos revêtements.",
-    highlight: 'Artisan certifié, entreprise locale',
+    highlight: 'Artisan local indépendant',
   },
 
   process: [
@@ -97,8 +97,10 @@ export const siteConfig = {
     { icon: 'check', title: 'Rapport & devis', desc: "[ST-5] Rapport de localisation précis + devis travaux de réparation si nécessaire." },
   ],
 
+  // Chiffres véridiques uniquement (pas de compteur fabriqué). Dérivés de la config
+  // déjà validée : disponibilité, rayon d'intervention, méthode non destructive.
   stats: [
-    { value: '+500', label: 'Fuites détectées' },
+    { value: '24/7', label: 'Disponible' },
     { value: '25 km', label: "Rayon d'intervention" },
     { value: '100%', label: 'Non destructif' },
   ],
@@ -106,7 +108,7 @@ export const siteConfig = {
   whyUs: [
     { icon: 'shield', title: 'Aucune destruction inutile', desc: 'Nous localisons avant de couper. Votre carrelage, vos murs et vos sols sont préservés.' },
     { icon: 'clock', title: 'Disponible 24h/24', desc: "Fuite urgente ou programmée, nous répondons 7j/7 avec un délai d'intervention rapide." },
-    { icon: 'star', title: 'Artisan local certifié', desc: "Pas d'intermédiaire, pas de franchise. Un artisan indépendant que vous pouvez rappeler." },
+    { icon: 'star', title: 'Artisan local indépendant', desc: "Pas d'intermédiaire, pas de franchise. Un artisan indépendant que vous pouvez rappeler." },
     { icon: 'doc', title: 'Rapport pour assurance', desc: 'Rapport de localisation officiel pour votre assurance et syndic de copropriété.' },
   ],
 
