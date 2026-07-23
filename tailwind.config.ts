@@ -43,9 +43,17 @@ const config: Config = {
           '85%':  { opacity: '1' },
           '100%': { transform: 'translateX(300%) skewX(-18deg)', opacity: '0' },
         },
+        /* Halo lumineux qui se déplace lentement derrière le hero (demande Rémy) */
+        'hero-glow': {
+          '0%, 100%': { transform: 'translate(0%, 0%) scale(1)' },
+          '25%':      { transform: 'translate(-10%, 12%) scale(1.08)' },
+          '50%':      { transform: 'translate(12%, 6%) scale(0.95)' },
+          '75%':      { transform: 'translate(4%, -10%) scale(1.04)' },
+        },
       },
       animation: {
         'hero-shine': 'hero-shine 5s ease-in-out infinite',
+        'hero-glow':  'hero-glow 18s ease-in-out infinite',
       },
     },
   },
