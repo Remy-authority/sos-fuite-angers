@@ -2,43 +2,74 @@ import Link from 'next/link'
 import PhoneButton from '@/components/ui/PhoneButton'
 import { siteConfig } from '@/config/site.config'
 import { getServices } from '@/lib/content'
+import HeaderNavMobile from './HeaderNavMobile'
 
-/**
- * Header — sticky, logo/nom + nav + téléphone proéminent (CTA permanent).
- * Nav construite depuis le contenu (services) + config. Restyle/menu mobile = ST-3.
- */
 export default function Header() {
   const services = getServices()
+
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="container-site flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="flex items-center gap-2 font-bold text-slate-900" aria-label={`${siteConfig.businessName} — accueil`}>
-          <span aria-hidden="true">💧</span>
-          <span>{siteConfig.businessName}</span>
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+      <div className="container-site relative flex items-center justify-between gap-4 py-3">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="flex shrink-0 items-center gap-2 font-bold text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+          aria-label={`${siteConfig.businessName} — accueil`}
+        >
+          <span
+            className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-[10px] font-extrabold text-white"
+            aria-hidden="true"
+          >
+            SOS
+          </span>
+          <span className="hidden sm:inline">{siteConfig.businessName}</span>
         </Link>
 
-        <nav aria-label="Navigation principale" className="hidden items-center gap-5 text-sm font-medium text-slate-700 lg:flex">
-          <Link href="/" className="hover:text-primary">Accueil</Link>
+        {/* Nav desktop */}
+        <nav aria-label="Navigation principale" className="hidden items-center gap-0.5 text-sm font-medium text-slate-700 lg:flex">
+          <Link href="/" className="rounded-lg px-3 py-2 transition-colors hover:bg-slate-100 hover:text-primary">Accueil</Link>
+
           <div className="group relative">
-            <span className="cursor-default hover:text-primary">Services</span>
-            <div className="invisible absolute left-0 top-full z-10 w-64 rounded-card border border-slate-200 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+            <button
+              type="button"
+              className="flex items-center gap-1 rounded-lg px-3 py-2 transition-colors hover:bg-slate-100 hover:text-primary"
+            >
+              Services
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div className="invisible absolute left-0 top-full z-10 mt-1 w-64 rounded-xl border border-slate-200 bg-white p-1.5 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:opacity-100">
               {services.map((s) => (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="block rounded px-3 py-2 hover:bg-primary/5">
+                <Link
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-primary/5 hover:text-primary"
+                >
                   {s.navTitle}
                 </Link>
               ))}
             </div>
           </div>
-          <Link href="/zones" className="hover:text-primary">Zones</Link>
-          {siteConfig.features.blog && <Link href="/conseils" className="hover:text-primary">Conseils</Link>}
-          <Link href="/contact" className="hover:text-primary">Contact</Link>
+
+          <Link href="/zones" className="rounded-lg px-3 py-2 transition-colors hover:bg-slate-100 hover:text-primary">Zones</Link>
+          {siteConfig.features.blog && (
+            <Link href="/conseils" className="rounded-lg px-3 py-2 transition-colors hover:bg-slate-100 hover:text-primary">Conseils</Link>
+          )}
+          <Link href="/contact" className="rounded-lg px-3 py-2 transition-colors hover:bg-slate-100 hover:text-primary">Contact</Link>
         </nav>
 
+        {/* CTA droite + menu mobile */}
         <div className="flex items-center gap-2">
-          <span className="hidden text-right text-xs text-slate-500 sm:block">
-            {siteConfig.availability}
-          </span>
-          <PhoneButton className="btn-accent !px-4 !py-2 text-sm" />
+          <div className="hidden text-right lg:block">
+            <p className="text-xs font-semibold text-slate-900">{siteConfig.availability}</p>
+            <p className="text-xs text-slate-500">{siteConfig.responseTime}</p>
+          </div>
+          <PhoneButton className="btn-accent hidden !px-4 !py-2 text-sm sm:inline-flex" />
+          <HeaderNavMobile
+            services={services.map((s) => ({ slug: s.slug, navTitle: s.navTitle }))}
+            blogEnabled={siteConfig.features.blog}
+          />
         </div>
       </div>
     </header>

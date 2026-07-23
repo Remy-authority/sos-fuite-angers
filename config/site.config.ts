@@ -83,6 +83,33 @@ export const siteConfig = {
     blog: true, // section /conseils (autoblog)
   },
 
+  /* ── Sections visuelles (ST-3) — textes placeholder en attente ST-5 ── */
+  about: {
+    title: "Votre spécialiste fuite d'eau à Angers",
+    body: "[À rédiger — ST-5] Artisan local indépendant, formé aux dernières techniques de détection non destructive. Nous intervenons sur Angers et un rayon de 25 km pour localiser précisément vos fuites, sans casser ni abîmer vos revêtements.",
+    highlight: 'Artisan certifié, entreprise locale',
+  },
+
+  process: [
+    { icon: 'phone', title: 'Vous nous appelez', desc: "[ST-5] Prise en charge immédiate, diagnostic téléphonique rapide." },
+    { icon: 'search', title: 'Diagnostic sur site', desc: "[ST-5] Inspection visuelle et tests de pression pour cibler la zone suspecte." },
+    { icon: 'tool', title: 'Détection précise', desc: "[ST-5] Gaz traceur, caméra thermique ou acoustique selon le cas." },
+    { icon: 'check', title: 'Rapport & devis', desc: "[ST-5] Rapport de localisation précis + devis travaux de réparation si nécessaire." },
+  ],
+
+  stats: [
+    { value: '+500', label: 'Fuites détectées' },
+    { value: '25 km', label: "Rayon d'intervention" },
+    { value: '100%', label: 'Non destructif' },
+  ],
+
+  whyUs: [
+    { icon: 'shield', title: 'Aucune destruction inutile', desc: 'Nous localisons avant de couper. Votre carrelage, vos murs et vos sols sont préservés.' },
+    { icon: 'clock', title: 'Disponible 24h/24', desc: "Fuite urgente ou programmée, nous répondons 7j/7 avec un délai d'intervention rapide." },
+    { icon: 'star', title: 'Artisan local certifié', desc: "Pas d'intermédiaire, pas de franchise. Un artisan indépendant que vous pouvez rappeler." },
+    { icon: 'doc', title: 'Rapport pour assurance', desc: 'Rapport de localisation officiel pour votre assurance et syndic de copropriété.' },
+  ],
+
   /* ── Légal (GABARIT — à compléter par Rémy avant prod, cf. content/legal.json) ── */
   legal: {
     // Ces champs restent le gabarit paramétrable. NE PAS inventer de valeurs.

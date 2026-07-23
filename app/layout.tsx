@@ -6,6 +6,7 @@ import { themeCssVars } from '@/lib/theme'
 import { absUrl, buildMetadata, jsonLdScript, plumberJsonLd } from '@/lib/seo'
 import Header from '@/components/sections/Header'
 import Footer from '@/components/sections/Footer'
+import MobileStickyBar from '@/components/ui/MobileStickyBar'
 
 // next/font = polices self-hostées au build (pas de requête Google runtime, pas de FOUT).
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <MobileStickyBar />
       </body>
     </html>
   )
