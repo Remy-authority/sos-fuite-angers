@@ -15,26 +15,26 @@ export default function Hero() {
         }}
       />
 
-      {/* Halo statique principal — ancré en haut à gauche */}
+      {/* Halo statique principal, ancré en haut à gauche */}
       <div
         className="pointer-events-none absolute -left-48 -top-48 h-[640px] w-[640px] rounded-full bg-primary/20 blur-[80px]"
         aria-hidden="true"
       />
 
-      {/* HALO ANIMÉ — lumière qui se déplace lentement (demande répétée Rémy).
+      {/* HALO ANIMÉ, lumière qui se déplace lentement (demande répétée Rémy).
           Désactivé si prefers-reduced-motion activé (motion-safe). */}
       <div
         className="pointer-events-none absolute right-0 top-0 h-[480px] w-[480px] rounded-full bg-primary/30 blur-[100px] motion-safe:animate-hero-glow"
         aria-hidden="true"
       />
 
-      {/* Halo accent bas-droite — chaleur visuelle */}
+      {/* Halo accent bas-droite, chaleur visuelle */}
       <div
         className="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-accent/[0.08] blur-3xl"
         aria-hidden="true"
       />
 
-      {/* Balayage lumineux diagonal — façon sniperpestcontrol3dservices.fr */}
+      {/* Balayage lumineux diagonal, façon sniperpestcontrol3dservices.fr */}
       <div
         className="pointer-events-none absolute inset-y-0 left-0 w-1/3 motion-safe:animate-hero-shine"
         aria-hidden="true"
@@ -53,7 +53,7 @@ export default function Hero() {
             {siteConfig.availability}
           </div>
 
-          {/* H1 — "Angers" avec soulignage dégradé accent */}
+          {/* H1, "Angers" avec soulignage dégradé accent */}
           <h1
             id="hero-title"
             className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
@@ -78,7 +78,7 @@ export default function Hero() {
             {siteConfig.methods.join(', ')}. Devis gratuit, sans engagement.
           </p>
 
-          {/* USPs — icônes SVG checkmark, zéro emoji */}
+          {/* USPs, icônes SVG checkmark, zéro emoji */}
           <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-slate-300" role="list">
             {siteConfig.usps.map((u) => (
               <li key={u} className="flex items-center gap-2">

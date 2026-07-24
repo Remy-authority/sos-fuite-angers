@@ -48,7 +48,7 @@ export default function ServiceAreaMap() {
         {/* Grille 2 colonnes */}
         <div className="grid gap-6 lg:grid-cols-[3fr_2fr] lg:items-start">
 
-          {/* Carte sombre premium — villes et quartiers */}
+          {/* Carte sombre premium, villes et quartiers */}
           <div className="rounded-card bg-dark p-7 md:p-8 border border-white/10">
             {/* Label département */}
             <div className="mb-3 flex items-center gap-2">
@@ -70,13 +70,13 @@ export default function ServiceAreaMap() {
 
             <h3 className="text-xl font-bold text-white">Communes et quartiers desservis</h3>
 
-            {/* Pastilles villes — communes vague 1 (liées) */}
+            {/* Pastilles villes, communes vague 1 (liées) */}
             <ul
               className="mt-5 flex flex-wrap gap-2"
               role="list"
               aria-label="Communes avec page dédiée"
             >
-              {/* Angers en premier — ville principale */}
+              {/* Angers en premier, ville principale */}
               <li>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white">
                   <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
@@ -94,7 +94,7 @@ export default function ServiceAreaMap() {
                   </Link>
                 </li>
               ))}
-              {/* Quartiers d'Angers — chips secondaires non liés (mais bien lisibles) */}
+              {/* Quartiers d'Angers, chips secondaires non liés (mais bien lisibles) */}
               {siteConfig.serviceArea.districts.map((d) => (
                 <li key={d}>
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-200">
@@ -134,7 +134,7 @@ export default function ServiceAreaMap() {
               </div>
             ))}
 
-            {/* CTA orange principal — façon template */}
+            {/* CTA orange principal, façon template */}
             <a
               href={`tel:${siteConfig.phone}`}
               className="btn-accent w-full justify-center rounded-2xl py-4 text-base"

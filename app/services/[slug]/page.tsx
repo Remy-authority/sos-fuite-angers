@@ -72,47 +72,49 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
         <ServiceQuickFacts bullets={service.bullets} />
 
-        <div className="prose-content mt-10 max-w-3xl space-y-8">
-          {service.blocks.map((b, i) => (
-            <ServiceBlock key={b.heading} block={b} eager={i === firstBlockImageIndex} />
-          ))}
+        <div className="mx-auto max-w-3xl">
+          <div className="prose-content mt-10 space-y-8">
+            {service.blocks.map((b, i) => (
+              <ServiceBlock key={b.heading} block={b} eager={i === firstBlockImageIndex} />
+            ))}
+          </div>
+
+          {/* Maillage interne : services liés */}
+          {related.length > 0 && (
+            <nav aria-label="Services liés" className="mt-10">
+              <h2 className="text-xl">Prestations liées</h2>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {related.map((r) => (
+                  <li key={r.slug}>
+                    <Link href={`/services/${r.slug}`} className="rounded-full border border-slate-300 px-3 py-1.5 text-sm hover:border-primary">
+                      {r.navTitle}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
+          {/* Maillage interne automatique : articles du cluster */}
+          {articles.length > 0 && (
+            <nav aria-label="Conseils liés" className="mt-8">
+              <h2 className="text-xl">À lire aussi</h2>
+              <ul className="mt-3 space-y-1 text-sm">
+                {articles.map((a) => (
+                  <li key={a.slug}>
+                    <Link href={`/conseils/${a.slug}`} className="text-primary underline">{a.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
         </div>
-
-        {/* Maillage interne : services liés */}
-        {related.length > 0 && (
-          <nav aria-label="Services liés" className="mt-10 max-w-3xl">
-            <h2 className="text-xl">Prestations liées</h2>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {related.map((r) => (
-                <li key={r.slug}>
-                  <Link href={`/services/${r.slug}`} className="rounded-full border border-slate-300 px-3 py-1.5 text-sm hover:border-primary">
-                    {r.navTitle}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-
-        {/* Maillage interne automatique : articles du cluster */}
-        {articles.length > 0 && (
-          <nav aria-label="Conseils liés" className="mt-8 max-w-3xl">
-            <h2 className="text-xl">À lire aussi</h2>
-            <ul className="mt-3 space-y-1 text-sm">
-              {articles.map((a) => (
-                <li key={a.slug}>
-                  <Link href={`/conseils/${a.slug}`} className="text-primary underline">{a.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
       </article>
 
       <Faq items={service.faq} />
       <CtaBanner
         title={`${service.navTitle} à ${siteConfig.city} : on vous rappelle vite`}
-        subtitle="Devis gratuit, sans engagement — appelez ou laissez vos coordonnées."
+        subtitle="Devis gratuit, sans engagement. Appelez ou laissez vos coordonnées."
       />
     </>
   )

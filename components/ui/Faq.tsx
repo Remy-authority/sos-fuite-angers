@@ -2,7 +2,7 @@ import { faqJsonLd, jsonLdScript } from '@/lib/seo'
 import type { FaqItem } from '@/lib/content'
 
 /**
- * Faq — section accordéon accessible (<details>) + JSON-LD FAQPage.
+ * Faq, section accordéon accessible (<details>) + JSON-LD FAQPage.
  * Rendu uniquement si des Q/R existent (aucune FAQ factice). Les Q/R viennent
  * du SEO (ST-2) / Rédacteur (ST-5) via content/*.json.
  */

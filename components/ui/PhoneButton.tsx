@@ -1,7 +1,7 @@
 import { siteConfig } from '@/config/site.config'
 
 /**
- * PhoneButton — levier de conversion n°1, réutilisé partout (header, hero, CtaBanner,
+ * PhoneButton, levier de conversion n°1, réutilisé partout (header, hero, CtaBanner,
  * footer, articles). `tel:` depuis la config (E.164). Restylable par ST-3 via `className`.
  */
 export default function PhoneButton({

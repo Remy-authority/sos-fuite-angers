@@ -173,7 +173,7 @@ export default function LeadForm() {
 
       <ProgressBar step={step} />
 
-      {/* ── Étape 1 — Sélection vignettes ── */}
+      {/* ── Étape 1, Sélection vignettes ── */}
       {step === 1 && (
         <div>
           <h2 className="mt-5 text-2xl font-bold text-white md:text-3xl">
@@ -225,7 +225,7 @@ export default function LeadForm() {
         </div>
       )}
 
-      {/* ── Étape 2 — Localisation + urgence ── */}
+      {/* ── Étape 2, Localisation + urgence ── */}
       {step === 2 && (
         <div>
           <h2 className="mt-5 text-2xl font-bold text-white md:text-3xl">
@@ -304,7 +304,7 @@ export default function LeadForm() {
         </div>
       )}
 
-      {/* ── Étape 3 — Coordonnées + RGPD ── */}
+      {/* ── Étape 3, Coordonnées + RGPD ── */}
       {step === 3 && (
         <div>
           <h2 className="mt-5 text-2xl font-bold text-white md:text-3xl">

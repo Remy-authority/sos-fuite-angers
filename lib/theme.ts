@@ -1,5 +1,5 @@
 /**
- * lib/theme.ts — Traduit siteConfig.colors (hex) en CSS variables (canaux RGB)
+ * lib/theme.ts, Traduit siteConfig.colors (hex) en CSS variables (canaux RGB)
  * pour injection dans <html>. Un changement de 3 hex re-thème tout le site.
  */
 import type { CSSProperties } from 'react'
@@ -15,7 +15,7 @@ function hexToRgbChannels(hex: string): string {
   return `${r} ${g} ${b}`
 }
 
-/** Style inline à poser sur <html> — pilote les tokens Tailwind via CSS vars. */
+/** Style inline à poser sur <html>, pilote les tokens Tailwind via CSS vars. */
 export function themeCssVars(): CSSProperties {
   const c = siteConfig.colors
   return {

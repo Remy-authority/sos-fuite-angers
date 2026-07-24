@@ -1,5 +1,5 @@
 /**
- * Logo inline SVG — "SOS FUITE / ANGERS".
+ * Logo inline SVG, "SOS FUITE / ANGERS".
  * Variante lumineuse : textColor sombre sur fond blanc (Header).
  * Variante sombre   : textColor blanc sur fond noir (Footer, Hero, socials).
  * L'icône gouttelette s'éclaircit automatiquement en mode sombre via iconColor.
@@ -23,7 +23,7 @@ export default function Logo({
       aria-hidden="true"
       focusable="false"
     >
-      {/* Gouttelette — pictogramme eau */}
+      {/* Gouttelette, pictogramme eau */}
       <path
         d="M24 4C24 4 10 18 10 28c0 9.4 6.3 16 14 16s14-6.6 14-16C38 18 24 4 24 4Z"
         fill={iconColor}
@@ -39,7 +39,7 @@ export default function Logo({
       {/* Reflet premium */}
       <circle cx="19" cy="20" r="3" fill="white" fillOpacity="0.25" />
 
-      {/* SOS FUITE — majuscules, typographie resserrée */}
+      {/* SOS FUITE, majuscules, typographie resserrée */}
       <text
         x="48"
         y="22"
@@ -52,7 +52,7 @@ export default function Logo({
         SOS FUITE
       </text>
 
-      {/* ANGERS — accent orange, agrandi, aligné sous « SOS FUITE » */}
+      {/* ANGERS, accent orange, agrandi, aligné sous « SOS FUITE » */}
       <text
         x="48"
         y="39"

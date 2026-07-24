@@ -16,7 +16,7 @@ import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
 import Realisations from '@/components/sections/Realisations'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 
-const TITLE = "Recherche de fuite d'eau à Angers — Détection non destructive"
+const TITLE = "Recherche de fuite d'eau à Angers, détection non destructive"
 const DESC =
   "Recherche et détection de fuite d'eau à Angers et environs. Méthode non destructive, intervention rapide. Devis et prise de contact en ligne."
 
@@ -75,7 +75,7 @@ export default function HomePage() {
       <Process />
       {siteConfig.features.gallery && <Realisations />}
 
-      {/* Formulaire devis — section dédiée (recommandation CEO, form hors hero) */}
+      {/* Formulaire devis, section dédiée (recommandation CEO, form hors hero) */}
       <section id="devis" className="section bg-slate-100" aria-labelledby="devis-title">
         <div className="container-site">
           <div className="mx-auto max-w-2xl">

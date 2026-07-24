@@ -1,5 +1,5 @@
 /**
- * lib/seo.ts — Metadata API helpers + JSON-LD builders (Lot 6 SEO infra).
+ * lib/seo.ts, Metadata API helpers + JSON-LD builders (Lot 6 SEO infra).
  *
  * Règles NOU-33 :
  *  - Schema LocalBusiness → sous-type **Plumber**, avec `areaServed`.
@@ -82,7 +82,7 @@ export function plumberJsonLd() {
     '@type': 'Plumber',
     '@id': ORG_ID,
     name: siteConfig.businessName,
-    description: `${siteConfig.trade} à ${siteConfig.city} et ses environs — détection non destructive, intervention rapide.`,
+    description: `${siteConfig.trade} à ${siteConfig.city} et ses environs. Détection non destructive, intervention rapide.`,
     url: BASE,
     telephone: siteConfig.phone,
     email: siteConfig.email,

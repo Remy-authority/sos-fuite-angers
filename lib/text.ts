@@ -1,5 +1,5 @@
 /**
- * lib/text.ts — utilitaires de mise en forme de texte pour l'affichage.
+ * lib/text.ts, utilitaires de mise en forme de texte pour l'affichage.
  *
  * Ne modifie jamais le contenu (texte SEO inchangé) : détecte uniquement une
  * structure déjà présente dans la prose (ex. liste numérotée "1. ... 2. ...")

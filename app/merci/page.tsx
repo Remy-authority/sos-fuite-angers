@@ -22,7 +22,7 @@ export default function MerciPage() {
           Merci, nous vous recontactons rapidement. Pour une urgence, appelez-nous directement.
         </p>
         <div className="mt-6 flex flex-col items-center gap-3">
-          <PhoneButton label={`Appeler — ${siteConfig.phoneDisplay}`} />
+          <PhoneButton label={`Appeler ${siteConfig.phoneDisplay}`} />
           <Link href="/" className="text-primary underline">← Retour à l'accueil</Link>
         </div>
       </div>

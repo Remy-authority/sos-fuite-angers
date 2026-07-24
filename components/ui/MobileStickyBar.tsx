@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { siteConfig } from '@/config/site.config'
 
 /**
- * MobileStickyBar — barre fixe en bas d'écran sur mobile uniquement.
+ * MobileStickyBar, barre fixe en bas d'écran sur mobile uniquement.
  * Dual CTA : appel direct (accent orange) + devis en ligne (primary bleu).
  * Masquée sur desktop (md:hidden).
  */

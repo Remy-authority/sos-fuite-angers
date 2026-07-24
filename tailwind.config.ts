@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 /**
- * tailwind.config.ts — Design tokens branchés sur CSS variables.
+ * tailwind.config.ts, Design tokens branchés sur CSS variables.
  *
  * Les couleurs viennent de siteConfig.colors, injectées en CSS vars dans
  * app/layout.tsx (`--color-primary-rgb`, etc.). Changer 3 hex dans site.config.ts

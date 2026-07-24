@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="container-site grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
         {/* Identité */}
         <div>
-          <Link href="/" className="inline-flex items-center" aria-label={`${siteConfig.businessName} — accueil`}>
+          <Link href="/" className="inline-flex items-center" aria-label={`${siteConfig.businessName}, accueil`}>
             <Logo textColor="white" iconColor="white" accentColor="#F97316" className="h-8 w-auto" />
           </Link>
           <p className="mt-3 text-sm">{siteConfig.city} · {siteConfig.region}</p>

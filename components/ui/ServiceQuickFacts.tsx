@@ -1,7 +1,7 @@
 import { BlockIcon } from './ServiceIcon'
 
 /**
- * ServiceQuickFacts — reprend `service.bullets` (déjà utilisées sur les cartes
+ * ServiceQuickFacts, reprend `service.bullets` (déjà utilisées sur les cartes
  * de la home) sous forme de puces iconographiées, juste sous l'intro « en bref ».
  * Aucune donnée nouvelle : casse le mur de texte avec ce qui existe déjà.
  */

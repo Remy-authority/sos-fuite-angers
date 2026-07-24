@@ -4,7 +4,7 @@ import { extractNumberedSteps } from '@/lib/text'
 import type { ContentBlock } from '@/lib/content'
 
 /**
- * ServiceBlock — un bloc H2 de page service (content/services/*.json).
+ * ServiceBlock, un bloc H2 de page service (content/services/*.json).
  *
  * Aère le mur de texte sans jamais changer le texte lui-même (SEO/GEO déjà bon,
  * on ne touche qu'au visuel) :

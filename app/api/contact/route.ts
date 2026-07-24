@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { siteConfig } from '@/config/site.config'
 
 /**
- * POST /api/contact — traitement du formulaire de lead (Lot 5).
+ * POST /api/contact, traitement du formulaire de lead (Lot 5).
  *
  *  1. Parse JSON (fetch) ou formData (fallback sans JS).
  *  2. Honeypot `company` : si rempli → bot → on renvoie « ok » silencieux (pas d'envoi).
@@ -50,13 +50,13 @@ async function parseBody(req: NextRequest): Promise<Lead> {
 
 async function deliver(lead: Lead): Promise<void> {
   const to = siteConfig.email
-  const subject = `Nouveau lead — ${siteConfig.businessName}`
+  const subject = `Nouveau lead, ${siteConfig.businessName}`
   const text = [
     `Nom       : ${lead.nom}`,
     `Téléphone : ${lead.telephone}`,
-    `Ville/CP  : ${lead.ville || '—'}`,
-    `Problème  : ${lead.probleme || '—'}`,
-    `Message   : ${lead.message || '—'}`,
+    `Ville/CP  : ${lead.ville || 'non renseigné'}`,
+    `Problème  : ${lead.probleme || 'non renseigné'}`,
+    `Message   : ${lead.message || 'non renseigné'}`,
   ].join('\n')
 
   const resendKey = process.env.RESEND_API_KEY

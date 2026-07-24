@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="section" aria-labelledby="about-title">
       <div className="container-site grid gap-10 md:grid-cols-2 md:items-center lg:gap-16">
-        {/* Visuel — photo persona (DEMO – à remplacer par les infos du loueur) */}
+        {/* Visuel, photo persona (DEMO – à remplacer par les infos du loueur) */}
         <div className="relative order-2 md:order-1">
           <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100">
             {/* DEMO – photo IA placeholder. Vraie photo fournie par Rémy → public/thomas-mercier.jpg */}
@@ -17,7 +17,7 @@ export default function About() {
               className="h-full w-full object-cover"
             />
           </div>
-          {/* Badge flottant — DEMO – à remplacer par les infos du loueur */}
+          {/* Badge flottant, DEMO – à remplacer par les infos du loueur */}
           <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-primary px-5 py-3 text-center text-white shadow-lg sm:block">
             {/* DEMO – à remplacer par les infos du loueur */}
             <p className="text-2xl font-extrabold leading-none">+500</p>

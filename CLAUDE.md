@@ -30,6 +30,10 @@
   - Sections plates copiées-collées d'une page à l'autre sans intention.
 - Chaque page doit avoir : visuels de qualité, respiration, hiérarchie claire, CTA visibles,
   cohérence de la charte (couleurs eau + accent urgence).
+- **Pas de vide/trou asymétrique** : une colonne de texte doit être centrée ou occuper une
+  largeur cohérente, jamais collée à gauche avec un grand blanc à droite.
+- **Typographie — INTERDIT : le tiret cadratin « — ».** Nulle part dans le texte visible.
+  On utilise une **virgule** ou un **point** à la place. Vaut pour tout agent (Builder, Autoblog).
 
 ---
 

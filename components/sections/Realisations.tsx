@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 /**
- * Section « Nos réalisations » — grille de 4 cartes d'intervention.
+ * Section « Nos réalisations », grille de 4 cartes d'intervention.
  * Photos générées par IA (DEMO – à remplacer par de vraies photos du loueur).
  */
 
@@ -57,11 +57,11 @@ export default function Realisations() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {REALISATIONS.map((real) => (
             <article key={real.id} className="card overflow-hidden p-0">
-              {/* Visuel — photo d'intervention */}
+              {/* Visuel, photo d'intervention */}
               <div className="relative aspect-square w-full bg-slate-800">
                 <Image
                   src={real.image}
-                  alt={`${real.category} — ${real.title}`}
+                  alt={`${real.category}, ${real.title}`}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover"

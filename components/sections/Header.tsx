@@ -15,9 +15,9 @@ export default function Header() {
         <Link
           href="/"
           className="flex shrink-0 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-          aria-label={`${siteConfig.businessName} — accueil`}
+          aria-label={`${siteConfig.businessName}, accueil`}
         >
-          {/* Logo inline SVG — texte sombre sur fond blanc header */}
+          {/* Logo inline SVG, texte sombre sur fond blanc header */}
           <Logo textColor="#0F172A" iconColor="#0B4F8A" />
         </Link>
 

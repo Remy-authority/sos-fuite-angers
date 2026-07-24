@@ -1,5 +1,5 @@
 /**
- * lib/content.ts — Loaders `content/` (fs + typage) pour le SSG.
+ * lib/content.ts, Loaders `content/` (fs + typage) pour le SSG.
  *
  * Tout est lu au BUILD (Server Components / generateStaticParams) → zéro runtime.
  * Sources : content/services/*.json, content/zones/*.json, content/conseils/*.mdx.
@@ -20,7 +20,7 @@ export interface FaqItem {
   a: string
 }
 
-/** Un bloc de contenu structuré (H2 + corps) — rempli par le Rédacteur (ST-5). */
+/** Un bloc de contenu structuré (H2 + corps), rempli par le Rédacteur (ST-5). */
 export interface ContentBlock {
   heading: string
   /** Corps du bloc. Placeholder tant que ST-5 n'a pas rédigé. */
@@ -96,7 +96,7 @@ function readJsonDir<T>(dir: string, required: (keyof T)[]): T[] {
       try {
         data = JSON.parse(raw)
       } catch (e) {
-        throw new Error(`content/${dir}/${f} : JSON invalide — ${(e as Error).message}`)
+        throw new Error(`content/${dir}/${f} : JSON invalide, ${(e as Error).message}`)
       }
       for (const key of required) {
         if (data[key] === undefined || data[key] === null) {

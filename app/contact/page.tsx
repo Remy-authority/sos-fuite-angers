@@ -5,7 +5,7 @@ import LeadForm from '@/components/ui/LeadForm'
 import PhoneButton from '@/components/ui/PhoneButton'
 
 export const metadata: Metadata = buildMetadata({
-  title: `Contact — ${siteConfig.businessName}`,
+  title: `Contact, ${siteConfig.businessName}`,
   description: `Contactez ${siteConfig.businessName} pour une recherche de fuite d'eau à ${siteConfig.city}. Devis gratuit, réponse rapide.`,
   path: '/contact',
 })
@@ -27,7 +27,7 @@ export default function ContactPage() {
             <p><strong>Zone :</strong> {siteConfig.serviceArea.base} + rayon ~{siteConfig.serviceArea.radiusKm} km</p>
           </div>
           <div className="mt-6">
-            <PhoneButton label={`Appeler — ${siteConfig.phoneDisplay}`} />
+            <PhoneButton label={`Appeler ${siteConfig.phoneDisplay}`} />
           </div>
         </div>
         <div id="formulaire">

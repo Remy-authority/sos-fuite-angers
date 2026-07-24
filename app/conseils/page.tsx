@@ -7,7 +7,7 @@ import { buildMetadata } from '@/lib/seo'
 import { siteConfig } from '@/config/site.config'
 
 export const metadata: Metadata = buildMetadata({
-  title: `Conseils — Recherche de fuite d'eau à ${siteConfig.city}`,
+  title: `Conseils, recherche de fuite d'eau à ${siteConfig.city}`,
   description: `Guides et conseils sur la recherche de fuite d'eau, la détection, l'assurance et la prévention à ${siteConfig.city} et environs.`,
   path: '/conseils',
 })

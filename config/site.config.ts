@@ -1,6 +1,6 @@
 /**
  * ─────────────────────────────────────────────────────────────────────────────
- *  site.config.ts — LE fichier unique qui pilote l'identité du site.
+ *  site.config.ts, LE fichier unique qui pilote l'identité du site.
  * ─────────────────────────────────────────────────────────────────────────────
  *  C'est le cœur du template « site local N+1 ». Pour déployer un nouveau site
  *  (autre métier / ville / locataire) en < 1 jour : on édite CE fichier + le logo
@@ -27,7 +27,7 @@ export const siteConfig = {
   region: 'Maine-et-Loire',
   department: '49',
 
-  /* ── Contact (variables — remplaçables sans toucher au SEO) ── */
+  /* ── Contact (variables, remplaçables sans toucher au SEO) ── */
   // Numéro réel de Rémy (commit 90d70fd). E.164 pour tel:, display pour l'affichage.
   phone: '+33756853125',
   phoneDisplay: '07 56 85 31 25',
@@ -39,7 +39,7 @@ export const siteConfig = {
     // Famille « eau » validée en preview (Gate B). Bleu eau + accent orange urgence.
     primary: '#0B4F8A', // bleu eau (CTA secondaires, liens, titres)
     primaryDark: '#0A3E6E',
-    accent: '#F97316', // orange urgence (CTA principal — téléphone/devis)
+    accent: '#F97316', // orange urgence (CTA principal, téléphone/devis)
     dark: '#0F172A', // fond sombre (hero / footer, cf. template de référence)
     light: '#F6F9FC',
   },
@@ -67,7 +67,7 @@ export const siteConfig = {
   // Aucune dépense engagée : défaut = fallback interne sans coût.
   formEndpoint: '',
 
-  /* ── SEO global (défauts, surchargés par page — textes fournis par le SEO ST-2) ── */
+  /* ── SEO global (défauts, surchargés par page, textes fournis par le SEO ST-2) ── */
   seo: {
     // NB: basculer sur le domaine final au Gate C. Preview = URL vercel.
     canonicalBase: 'https://sos-fuite-angers.vercel.app',
@@ -79,20 +79,20 @@ export const siteConfig = {
   /* ── Feature flags ── */
   features: {
     reviews: false, // ⛔ aucun avis affiché tant que la fiche Google n'existe pas
-    gallery: true, // galerie réalisations active (placeholders — photos réelles à fournir par Rémy)
+    gallery: true, // galerie réalisations active (placeholders, photos réelles à fournir par Rémy)
     blog: true, // section /conseils (autoblog)
   },
 
-  /* ── Persona artisan (DEMO — à remplacer par les infos du loueur) ── */
+  /* ── Persona artisan (DEMO, à remplacer par les infos du loueur) ── */
   // DEMO – à remplacer par les infos du loueur
   persona: {
     name: 'Thomas Mercier',
     // DEMO – à remplacer par les infos du loueur
-    photo: '/thomas-mercier.jpg', // Photo IA Canva — remplacement par photo réelle possible → public/thomas-mercier.jpg
+    photo: '/thomas-mercier.jpg', // Photo IA Canva, remplacement par photo réelle possible → public/thomas-mercier.jpg
     title: "Artisan certifié détection non destructive",
   },
 
-  /* ── Sections visuelles (ST-3) — textes placeholder en attente ST-5 ── */
+  /* ── Sections visuelles (ST-3), textes placeholder en attente ST-5 ── */
   about: {
     title: "Votre spécialiste fuite d'eau à Angers",
     // DEMO – à remplacer par les infos du loueur
@@ -123,7 +123,7 @@ export const siteConfig = {
     { icon: 'doc', title: 'Rapport pour assurance', desc: 'Rapport de localisation officiel pour votre assurance et syndic de copropriété.' },
   ],
 
-  /* ── FAQ accueil (DEMO — contenu imaginé persona, à affiner par ST-5) ── */
+  /* ── FAQ accueil (DEMO, contenu imaginé persona, à affiner par ST-5) ── */
   // DEMO – à remplacer par les infos du loueur
   homeFaq: [
     {
@@ -151,7 +151,7 @@ export const siteConfig = {
     },
   ],
 
-  /* ── Légal (GABARIT — à compléter par Rémy avant prod, cf. content/legal.json) ── */
+  /* ── Légal (GABARIT, à compléter par Rémy avant prod, cf. content/legal.json) ── */
   legal: {
     // Ces champs restent le gabarit paramétrable. NE PAS inventer de valeurs.
     showAddress: false, // false => schema Plumber SANS address (défaut NOU-33)

@@ -114,6 +114,9 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
 - **Retour Rémy sur la 1ère version : rendu jugé < 3/10.** Corrections appliquées (voir §5,
   session Builder du soir) : sidebar sticky supprimée, 13 images explicatives ajoutées dans le
   corps des 6 pages, 6 images hero régénérées (zéro marque/logo, zéro visage flou).
+- **Retour CEO (2 points) : corrigés** (voir §5) : trou blanc asymétrique à droite des pages
+  services (contenu non centré) + suppression des ~65 tirets cadratins « — » du texte visible
+  (règle ajoutée dans CLAUDE.md : interdit, virgule ou point à la place).
 - **En attente : nouvelle validation visuelle de Rémy** avant merge sur `main` (= prod).
 - **À faire après validation** : merge main, bascule `seo.canonicalBase` → domaine final, GSC.
 
@@ -188,6 +191,29 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   lieu de dupliquer le sujet ; recoupement jugé faible, donc pas de bascule vers l'item #8 du
   backlog. Slugs vérifiés sans collision. Build revérifié vert, 11 pages `/conseils/[slug]`.
   **Le CEO indique que le blog Autoblog est mis en pause après cette série.** Détail au §6.
+
+- **2026-07-25 (Builder, soir — 2 corrections CEO)** : même branche. Fichiers touchés dans le
+  périmètre Builder uniquement (`app/`, `components/`, `config/`, `content/legal.json`, `lib/`,
+  `tailwind.config.ts`) :
+  1. **Trou blanc asymétrique corrigé.** Cause confirmée : dans
+     `app/services/[slug]/page.tsx`, le bloc de contenu (`max-w-3xl`) était limité en largeur
+     mais pas centré dans le `container-site` (`max-w-6xl`) alors que hero/intro/quick-facts
+     prenaient toute la largeur. Fix : blocs + « Prestations liées » + « À lire aussi » regroupés
+     dans un seul `<div className="mx-auto max-w-3xl">` — colonne de lecture centrée, marges
+     symétriques. Hero/intro/quick-facts inchangés (déjà symétriques en pleine largeur).
+     Vérifié visuellement sur les 6 pages (plus de blanc à droite).
+  2. **Tous les tirets cadratins « — » supprimés** (règle CLAUDE.md ajoutée par le CEO). 65
+     occurrences trouvées dans le repo (`content/`, `config/`, `components/`, `app/`, `lib/` +
+     1 dans `tailwind.config.ts`) — **aucune** dans `content/services/*.json`,
+     `content/zones/*.json` ou `content/conseils/*.mdx` (déjà propres). Répartition : 15 dans du
+     texte visible (title/metadata de page, aria-label, alt, sujet d'email de lead, subtitle
+     CtaBanner) remplacées au cas par cas par une virgule ou un point selon le sens ; les ~50
+     restantes étaient dans des commentaires de code (JSDoc, `{/* */}`, `_comment` JSON) —
+     nettoyées aussi par cohérence bien que non prioritaires. **0 occurrence restante dans tout
+     le repo** (vérifié par grep).
+  - Build (`npm run build`) vert, 0 erreur TS/lint, 39 pages SSG (35 + 4 conseils de la 3e série
+    Autoblog, en parallèle). FAQ, schema JSON-LD, maillage interne, breadcrumbs inchangés.
+  - **À valider par Rémy** : nouveau rendu des 6 pages (colonne centrée).
 
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 

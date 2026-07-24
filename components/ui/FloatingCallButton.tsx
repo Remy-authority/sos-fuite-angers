@@ -1,7 +1,7 @@
 import { siteConfig } from '@/config/site.config'
 
 /**
- * FloatingCallButton — bouton d'appel rond flottant, fixé en bas à droite.
+ * FloatingCallButton, bouton d'appel rond flottant, fixé en bas à droite.
  * Reste visible au scroll (position fixed). Style façon template Pest Control
  * (bouton orange, sans WhatsApp). Desktop uniquement : sur mobile la
  * MobileStickyBar assure déjà l'appel en bas d'écran (évite le doublon).

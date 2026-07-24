@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { breadcrumbJsonLd, jsonLdScript } from '@/lib/seo'
 
 /**
- * Breadcrumbs — fil d'Ariane sur les pages profondes (services, zones, articles)
+ * Breadcrumbs, fil d'Ariane sur les pages profondes (services, zones, articles)
  * + JSON-LD BreadcrumbList. `items` = liste ordonnée (dernier = page courante).
  */
 export default function Breadcrumbs({

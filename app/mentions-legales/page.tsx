@@ -4,9 +4,9 @@ import { siteConfig } from '@/config/site.config'
 import { buildMetadata } from '@/lib/seo'
 
 /*
- * Mentions légales — conformité droit FR (éditeur identifié).
+ * Mentions légales, conformité droit FR (éditeur identifié).
  * GABARIT piloté par content/legal.json. Les champs vides s'affichent « À compléter »
- * (données éditeur / SIREN à fournir par Rémy avant la prod — Gate C).
+ * (données éditeur / SIREN à fournir par Rémy avant la prod, Gate C).
  * INDEXABLE (signal E-E-A-T, cf. brief SEO §7).
  */
 export const metadata: Metadata = buildMetadata({
@@ -33,7 +33,7 @@ export default function MentionsLegales() {
           <ul className="mt-2 space-y-1">
             <li><strong>Dénomination :</strong> <V>{e.raisonSociale}</V></li>
             <li><strong>Forme juridique :</strong> <V>{e.formeJuridique}</V></li>
-            <li><strong>Numéro d'immatriculation :</strong> <V>{e.numeroImmatriculation}</V> — <V>{e.registre}</V></li>
+            <li><strong>Numéro d'immatriculation :</strong> <V>{e.numeroImmatriculation}</V>, <V>{e.registre}</V></li>
             <li><strong>Siège social :</strong> <V>{e.adresse}</V></li>
             <li><strong>Directeur de la publication :</strong> <V>{e.directeurPublication}</V></li>
             <li><strong>Contact :</strong> {e.emailContact} · {e.telephone}</li>
@@ -49,7 +49,7 @@ export default function MentionsLegales() {
         <section>
           <h2 className="text-xl">Hébergeur</h2>
           <p className="mt-2">
-            {legal.hebergeur.nom} — {legal.hebergeur.adresse}.{' '}
+            {legal.hebergeur.nom}, {legal.hebergeur.adresse}.{' '}
             <a href={legal.hebergeur.site} className="underline" rel="noopener noreferrer" target="_blank">
               {legal.hebergeur.site}
             </a>

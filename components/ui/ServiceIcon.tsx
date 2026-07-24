@@ -1,12 +1,12 @@
 /**
- * ServiceIcon — set d'icônes SVG partagé (cartes services accueil + pages services).
+ * ServiceIcon, set d'icônes SVG partagé (cartes services accueil + pages services).
  *
  * `SERVICE_ICON_PATHS` (rempli, `fill="currentColor"`) est indexé sur `service.icon`
  * (content/services/*.json). `ServiceIcon` est utilisé sur les cartes de la home.
  *
  * `BLOCK_ICON_PATHS` (contour, `stroke="currentColor"`) sert aux badges des blocs H2
  * des pages services. `matchBlockIcon` associe un intitulé de bloc à une icône par
- * mots-clés — générique, réutilisable sur les prochains sites du template (N+1).
+ * mots-clés, générique, réutilisable sur les prochains sites du template (N+1).
  */
 
 /* ── Icônes pleines (cartes service) ───────────────────────────────────── */

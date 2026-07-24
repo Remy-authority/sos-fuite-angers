@@ -6,7 +6,7 @@ import { siteConfig } from '@/config/site.config'
 import CtaBanner from '@/components/ui/CtaBanner'
 
 export const metadata: Metadata = buildMetadata({
-  title: `Zones d'intervention — Recherche de fuite près d'${siteConfig.city}`,
+  title: `Zones d'intervention, recherche de fuite près d'${siteConfig.city}`,
   description: `Communes desservies autour d'${siteConfig.city} pour la recherche de fuite d'eau : rayon d'environ ${siteConfig.serviceArea.radiusKm} km.`,
   path: '/zones',
 })

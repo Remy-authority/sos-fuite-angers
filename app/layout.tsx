@@ -12,14 +12,14 @@ import FloatingCallButton from '@/components/ui/FloatingCallButton'
 // next/font = polices self-hostées au build (pas de requête Google runtime, pas de FOUT).
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
 
-const homeTitle = `${siteConfig.trade} à ${siteConfig.city} — ${siteConfig.businessName}`
+const homeTitle = `${siteConfig.trade} à ${siteConfig.city}, ${siteConfig.businessName}`
 const homeDesc = `${siteConfig.trade} à ${siteConfig.city} et environs. Méthode non destructive, intervention rapide.`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.canonicalBase),
   title: {
     default: homeTitle,
-    template: `%s — ${siteConfig.businessName}`,
+    template: `%s, ${siteConfig.businessName}`,
   },
   ...buildMetadata({ title: homeTitle, description: homeDesc, path: '/' }),
 }
