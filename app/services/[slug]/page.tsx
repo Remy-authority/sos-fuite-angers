@@ -56,7 +56,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               src={service.image}
               alt={service.h1}
               fill
-              sizes="(min-width: 768px) 800px, 100vw"
+              sizes="(min-width: 1200px) 1152px, 100vw"
               className="object-cover"
               priority
             />

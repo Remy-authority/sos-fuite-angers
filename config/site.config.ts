@@ -21,7 +21,7 @@ export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   /* ── Identité commerciale (louable / remplaçable par l'artisan locataire) ── */
-  businessName: "SOS Fuite d'Eau Angers",
+  businessName: "SOS Fuite Angers",
   trade: 'Recherche de fuite d’eau',
   city: 'Angers',
   region: 'Maine-et-Loire',
