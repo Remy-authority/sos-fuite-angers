@@ -117,6 +117,9 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
 - **Retour CEO (2 points) : corrigés** (voir §5) : trou blanc asymétrique à droite des pages
   services (contenu non centré) + suppression des ~65 tirets cadratins « — » du texte visible
   (règle ajoutée dans CLAUDE.md : interdit, virgule ou point à la place).
+- **Retour CEO (2 points, 2e passe) : corrigés** (voir §5) : carte d'étape orpheline sur grille
+  impaire (dernière carte en pleine largeur) + 2 images hero refaites (encastrée = technicien
+  entier crédible, canalisation enterrée = pavillon français).
 - **En attente : nouvelle validation visuelle de Rémy** avant merge sur `main` (= prod).
 - **À faire après validation** : merge main, bascule `seo.canonicalBase` → domaine final, GSC.
 
@@ -214,6 +217,27 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) vert, 0 erreur TS/lint, 39 pages SSG (35 + 4 conseils de la 3e série
     Autoblog, en parallèle). FAQ, schema JSON-LD, maillage interne, breadcrumbs inchangés.
   - **À valider par Rémy** : nouveau rendu des 6 pages (colonne centrée).
+
+- **2026-07-25 (Builder, soir — 2 corrections CEO, 2e passe)** : même branche. Fichiers touchés :
+  `components/ui/ServiceBlock.tsx`, `public/services/recherche-fuite-encastree.jpg`,
+  `public/services/recherche-fuite-canalisation-enterree.jpg` (périmètre Builder strict).
+  1. **Carte d'étape orpheline corrigée.** La grille des checklists numérotées
+     (`ServiceBlock.tsx`, `sm:grid-cols-2`) laissait la dernière carte seule à gauche quand le
+     nombre d'étapes est impair (cas `recherche-fuite-encastree` : 5 étapes → carte 5 orpheline
+     avec un grand vide à droite). Fix : sur un nombre d'étapes impair, la dernière carte reçoit
+     `sm:col-span-2` (pleine largeur sur la dernière ligne). Les grilles paires (urgence,
+     détection : 4 étapes) sont inchangées. Vérifié visuellement.
+  2. **2 images hero refaites** (mêmes règles : aucun logo/marque, aucun visage flou, matériel
+     crédible, DA premium cohérente avec les 4 autres non touchées) :
+     - `recherche-fuite-encastree` : l'ancienne montrait un bras/torse sans tête en position
+       contorsionnée (effet stock). Nouvelle : technicien **entier**, à genou, tête dans le
+       cadre, caméra thermique pointée le long de la plinthe, posture naturelle.
+     - `recherche-fuite-canalisation-enterree` : l'ancienne avait une bâtisse anglaise en pierre
+       en fond (incohérent avec Angers). Nouvelle : **pavillon français** (crépi beige, tuiles
+       terre cuite, volets blancs, haie, allée gravillonnée), technicien à genou avec corrélateur
+       acoustique + géophone.
+  - Build (`npm run build`) vert, 0 erreur, 39 pages SSG.
+  - **À valider par Rémy** : 6 pages sans carte orpheline + les 2 nouveaux hero.
 
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
