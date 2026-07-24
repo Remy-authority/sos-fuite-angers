@@ -68,7 +68,7 @@ export default function ServiceAreaMap() {
               </span>
             </div>
 
-            <h3 className="text-xl font-bold text-white">Communes desservies</h3>
+            <h3 className="text-xl font-bold text-white">Communes et quartiers desservis</h3>
 
             {/* Pastilles villes — communes vague 1 (liées) */}
             <ul
@@ -94,11 +94,11 @@ export default function ServiceAreaMap() {
                   </Link>
                 </li>
               ))}
-              {/* Quartiers d'Angers — chips secondaires non liés */}
+              {/* Quartiers d'Angers — chips secondaires non liés (mais bien lisibles) */}
               {siteConfig.serviceArea.districts.map((d) => (
                 <li key={d}>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.07] bg-white/[0.03] px-3 py-1.5 text-sm text-slate-500">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500/60" aria-hidden="true" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-200">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70" aria-hidden="true" />
                     {d}
                   </span>
                 </li>

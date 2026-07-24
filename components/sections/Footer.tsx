@@ -9,7 +9,7 @@ export default function Footer() {
   const year = 2026
 
   return (
-    <footer className="mb-14 bg-dark text-slate-400 md:mb-0" role="contentinfo">
+    <footer className="mb-14 bg-dark text-slate-300 md:mb-0" role="contentinfo">
       {/* Bande téléphone */}
       <div className="border-b border-white/10 bg-primary/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 sm:flex-row">
@@ -51,7 +51,7 @@ export default function Footer() {
 
         {/* Services */}
         <nav aria-label="Services">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Nos services</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-300">Nos services</p>
           <ul className="space-y-2 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
@@ -63,7 +63,7 @@ export default function Footer() {
 
         {/* Zones */}
         <nav aria-label="Zones d'intervention">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Zones</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-300">Zones</p>
           <ul className="space-y-2 text-sm">
             {zones.map((z) => (
               <li key={z.slug}>
@@ -78,7 +78,7 @@ export default function Footer() {
 
         {/* Info */}
         <nav aria-label="Informations légales">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Informations</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-300">Informations</p>
           <ul className="space-y-2 text-sm">
             <li><Link href="/contact" className="transition-colors hover:text-white">Contact & devis</Link></li>
             {siteConfig.features.blog && (
@@ -92,7 +92,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-site py-4 text-xs text-slate-500">
+        <div className="container-site py-4 text-xs text-slate-400">
           © {year} {siteConfig.businessName}. Tous droits réservés.
         </div>
       </div>
