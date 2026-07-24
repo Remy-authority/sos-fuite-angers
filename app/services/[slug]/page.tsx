@@ -7,6 +7,9 @@ import { buildMetadata, serviceJsonLd, jsonLdScript } from '@/lib/seo'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import Faq from '@/components/ui/Faq'
 import CtaBanner from '@/components/ui/CtaBanner'
+import ServiceQuickFacts from '@/components/ui/ServiceQuickFacts'
+import ServiceBlock from '@/components/ui/ServiceBlock'
+import StickyCallCard from '@/components/ui/StickyCallCard'
 
 // 100% SSG : une page statique par service.
 export const dynamicParams = false
@@ -66,44 +69,49 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         {/* En bref (réponse courte GEO) */}
         <p className="mt-6 rounded-card bg-light p-4 text-slate-700">{service.intro}</p>
 
-        <div className="prose-content mt-8">
-          {service.blocks.map((b) => (
-            <section key={b.heading}>
-              <h2>{b.heading}</h2>
-              <p>{b.body}</p>
-            </section>
-          ))}
+        <ServiceQuickFacts bullets={service.bullets} />
+
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_320px]">
+          <div className="min-w-0">
+            <div className="prose-content max-w-none space-y-8">
+              {service.blocks.map((b) => (
+                <ServiceBlock key={b.heading} block={b} />
+              ))}
+            </div>
+
+            {/* Maillage interne : services liés */}
+            {related.length > 0 && (
+              <nav aria-label="Services liés" className="mt-10">
+                <h2 className="text-xl">Prestations liées</h2>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {related.map((r) => (
+                    <li key={r.slug}>
+                      <Link href={`/services/${r.slug}`} className="rounded-full border border-slate-300 px-3 py-1.5 text-sm hover:border-primary">
+                        {r.navTitle}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+
+            {/* Maillage interne automatique : articles du cluster */}
+            {articles.length > 0 && (
+              <nav aria-label="Conseils liés" className="mt-8">
+                <h2 className="text-xl">À lire aussi</h2>
+                <ul className="mt-3 space-y-1 text-sm">
+                  {articles.map((a) => (
+                    <li key={a.slug}>
+                      <Link href={`/conseils/${a.slug}`} className="text-primary underline">{a.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </div>
+
+          <StickyCallCard />
         </div>
-
-        {/* Maillage interne : services liés */}
-        {related.length > 0 && (
-          <nav aria-label="Services liés" className="mt-10">
-            <h2 className="text-xl">Prestations liées</h2>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {related.map((r) => (
-                <li key={r.slug}>
-                  <Link href={`/services/${r.slug}`} className="rounded-full border border-slate-300 px-3 py-1.5 text-sm hover:border-primary">
-                    {r.navTitle}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-
-        {/* Maillage interne automatique : articles du cluster */}
-        {articles.length > 0 && (
-          <nav aria-label="Conseils liés" className="mt-8">
-            <h2 className="text-xl">À lire aussi</h2>
-            <ul className="mt-3 space-y-1 text-sm">
-              {articles.map((a) => (
-                <li key={a.slug}>
-                  <Link href={`/conseils/${a.slug}`} className="text-primary underline">{a.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
       </article>
 
       <Faq items={service.faq} />

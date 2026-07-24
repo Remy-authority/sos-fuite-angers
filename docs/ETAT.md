@@ -1,0 +1,148 @@
+# ETAT.md — Journal de bord SOS Fuite d'Eau Angers
+
+> Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
+> Dernière mise à jour : 2026-07-25 (session CEO — reprise du projet, audit initial).
+
+---
+
+## 1. CE QU'ON SAIT (acquis)
+
+- **Modèle** : rank & rent (on classe le site, on le loue à un artisan). Site pilote =
+  recherche de fuite d'eau à Angers. Repo = template pour les prochains sites.
+- **Domaine** : `sos-fuite-angers.fr` — **acheté** (registrar : Hermès, code de gestion
+  `WR7dydp13600`).
+- **Hébergement** : Vercel, projet `sos-fuite-angers`. Le site répond en ligne :
+  `https://sos-fuite-angers.vercel.app`. Redéploiement auto à chaque push sur `main`.
+- **Code source** : GitHub `Remy-authority/sos-fuite-angers` (branche `main`).
+- **Historique** : projet démarré avec un ancien CEO + agents sur Paperclip. Rémy reprend en
+  direct via Claude Code (Paperclip = trop long / trop coûteux, tâches bloquées « in review »).
+- **Décision produit** : **le design actuel est à refaire entièrement.** L'architecture, elle,
+  est jugée saine et conservée.
+
+---
+
+## 2. AUDIT DU REPO (session 2026-07-25)
+
+### Stack & structure
+- **Next.js 14** (App Router), **100 % SSG**, **Tailwind CSS**, TypeScript. Dépendances légères
+  et à jour (next 14.2, mdx-remote, gray-matter). Pas de dette technique visible.
+- **Piloté par config** : `config/site.config.ts` centralise identité, téléphone, couleurs
+  (3 hex re-thèment tout le site via CSS variables), USPs, zone, FAQ, persona, légal.
+  → Le concept « template N+1 » demandé est déjà en place et bien fait.
+
+### Contenu présent
+- **6 services** (`content/services/*.json`) : urgence, détection non destructive, canalisation
+  enterrée, encastrée, piscine, assèchement dégât des eaux.
+- **6 communes** (`content/zones/*.json`) : Avrillé, Beaucouzé, Bouchemaine, Les Ponts-de-Cé,
+  Saint-Barthélemy-d'Anjou, Trélazé.
+- **1 article de blog** (`content/conseils/fuite-invisible-signes.mdx`) — début de blog.
+- **Légal** : `content/legal.json` + pages mentions-légales, CGU, confidentialité, cookies.
+  Éditeur réel renseigné : DYONISOS LTD (droit UK).
+
+### Design & SEO en place
+- **Visuels réels** (générés IA) : 6 images services, 4 réalisations, 1 blog, portrait persona.
+  → On n'est PAS sur des pages 100 % texte : bonne base visuelle.
+- **SEO technique** : `sitemap.ts`, `robots.ts`, `manifest.ts`, `buildMetadata`, schema Plumber,
+  FAQ par page, breadcrumbs. Solide.
+- **Design actuel** : hero sombre avec halos/animations « façon référence », carte garantie,
+  sections (Stats, About, Process, Réalisations, WhyUs, CTA, Map, FAQ). Correct mais encore
+  **trop proche d'un template générique** → c'est ce que Rémy veut refaire pour atteindre le
+  niveau premium de sniperpestcontrol3dservices.fr.
+
+### Points de vigilance (à valider avec Rémy)
+- **Persona `Thomas Mercier` = DEMO** (nom + photo IA + chiffres inventés : « +500 fuites »,
+  « 10 ans »). ⚠️ Doctrine SEO : chiffres non validés à retirer ou confirmer.
+- **Stat « 30 min » / « Réponse garantie »** dans le hero : à confirmer, sinon non conforme.
+- `features.reviews = false` (bon — aucun faux avis). ✅
+- Téléphone présent : `07 56 85 31 25`. Email : `contact@sosfuite-angers.fr` (à vérifier :
+  domaine `sosfuite-angers` vs `sos-fuite-angers`).
+- `canonicalBase` encore sur l'URL Vercel → à basculer sur le domaine final avant prod.
+- Plusieurs branches de travail ouvertes sur GitHub (NOU-38 hero-redesign, etc.).
+
+---
+
+## 3. VERDICT
+
+- **Ce qui est bon (à garder)** : toute l'architecture technique, le système de config/template,
+  la structure SEO, les visuels, les pages légales. Le **design est jugé publiable** (décision
+  Rémy 2026-07-25) — pas de refonte complète, seulement un affinage.
+- **Stratégie confirmée** : site complet (pas landing page) = bon pour le SEO. Formulaire home
+  + page /contact = conservé. La « vraie » template premium sera faite sur les prochains sites.
+
+## 3bis. DÉCISIONS RÉMY (2026-07-25)
+
+- **Persona « Thomas Mercier » + chiffres DEMO : on GARDE tel quel.** Pas encore de loueur, site
+  pas publié. On changera avec le vrai artisan le jour de la location (horizon ~3 mois).
+- **Objectif prioritaire : PUBLIER VITE.** Pas de refonte design lourde.
+- **Déploiement Vercel OK** : Rémy confirme voir les images services en ligne (prod à jour).
+- **Images services à REFAIRE** : qualité insuffisante (ex. « urgence » = homme de dos sans
+  rapport clair ; « piscine » floue). Objectif : premium, compréhensibles, nettes.
+- **Aération pages services** : ajouter 1 à 3 visuels/schémas explicatifs dans le corps de
+  chaque page selon le nombre de mots (aujourd'hui = mur de texte, interdit par CLAUDE.md).
+- **SEO/GEO pages services : jugé BON** (metaTitle, metaDescription, intro-réponse courte,
+  blocs h2, FAQ, maillage interne, schema JSON-LD). Le manque = visuel, pas SEO.
+- **À corriger avant prod** : `seo.canonicalBase` pointe encore sur l'URL Vercel → domaine final.
+
+---
+
+## 4. PROCHAINES ÉTAPES
+
+1. **Vérifier le déploiement Vercel** : confirmer que la prod affiche bien la dernière version
+   de `main` (avec images services). Si non, redéployer.
+2. Confier au **Builder** un **affinage léger des pages de services** (pas de refonte).
+3. Vérifier build vert + rendu, puis publier après validation Rémy.
+4. Brancher le domaine `sos-fuite-angers.fr` sur Vercel + bascule `canonicalBase`.
+
+---
+
+## 4bis. RÉPARTITION DES AGENTS (règle anti-collision — chaque agent = propriétaire de SES fichiers)
+
+- **Builder** → `app/services/*`, `content/services/*.json`, `public/services/*`
+  (refonte visuelle + images des pages services). EN COURS.
+- **Autoblog** → `content/conseils/*.mdx`, `public/conseils/*` UNIQUEMENT (nouveaux articles).
+  Aucun fichier partagé à éditer (liens via frontmatter `relatedServices`). Parallèle-safe.
+- **SEO/GEO auditeur** → LECTURE SEULE + écrit `docs/SEO-GEO-PLAN.md`. N'édite aucun code.
+- **Zones** (`app/zones/*`, `content/zones/*`) → non assigné (vague suivante). Interdit aux agents actuels.
+
+Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant toute réaffectation.
+
+## 5. HISTORIQUE DES SESSIONS
+
+- **2026-07-25 (CEO)** : reprise du projet depuis Paperclip. Clone du repo GitHub, audit complet,
+  création de `CLAUDE.md` et `docs/ETAT.md`. Diagnostic : archi saine, design à refaire.
+
+- **2026-07-25 (Builder)** : branche `feat/NOU-29-services-images-aeration` (jamais mergée sur
+  `main`, en attente de validation visuelle de Rémy). Deux axes traités sur les 6 pages services :
+  - **Axe A — images** : les 6 images hero (`public/services/*.jpg`) régénérées (Nano Banana 2,
+    2K, 21:9, direction artistique commune : reportage photo réaliste, éclairage froid/chaud
+    cohérent), converties en JPG optimisé (136–268 Ko). Chaque image montre clairement le geste +
+    le matériel du service (robinet d'arrêt, caméra thermique, corrélateur acoustique, détecteur
+    gaz traceur, piscine nette, déshumidificateur).
+  - **Axe B — aération du corps de page** : nouveaux composants `components/ui/ServiceQuickFacts`
+    (puces iconographiées depuis `service.bullets`, déjà existantes), `ServiceBlock` (icône par
+    bloc H2 déduite du titre + détection automatique des listes numérotées déjà rédigées dans le
+    texte pour un rendu en checklist visuelle, sans réécrire le texte SEO), `StickyCallCard`
+    (bloc CTA téléphone sticky en colonne latérale desktop, `app/services/[slug]/page.tsx` passé
+    en grille 2 colonnes `lg:`). Nouveau set d'icônes partagé `components/ui/ServiceIcon.tsx` —
+    corrige au passage un bug pré-existant sur la home (`app/page.tsx`) : les services
+    "Canalisation enterrée" / "Fuite encastrée" / "Assèchement" affichaient tous l'icône loupe
+    par défaut faute de clés `pipe`/`wall`/`dry` dans la table d'icônes.
+  - Build (`npm run build`) vert, 0 erreur TS/lint, 32 pages SSG. FAQ, schema JSON-LD, maillage
+    interne, breadcrumbs inchangés.
+  - **À valider par Rémy avant merge** : rendu visuel des 6 pages (voir capture ou preview
+    locale), et le fait qu'aucun style de bloc n'ait été ajouté pour ~3 blocs narratifs par page
+    (icône seule, pas de checklist) — jugé suffisant car le texte SEO ne contient pas de liste
+    numérotée à ces endroits.
+- **2026-07-25 (Autoblog)** : 3 nouveaux articles de conseils créés dans `content/conseils/*.mdx`
+  (format frontmatter identique à l'article existant) + 3 images de couverture générées
+  (photoréalistes, sans texte/chiffres inventés dans l'image) dans `public/conseils/*.jpg`.
+  Aucun fichier hors périmètre touché. Détail des articles au §6 ci-dessous.
+
+## 6. ARTICLES DE CONSEILS PUBLIÉS
+
+| Slug | Titre | Services liés |
+|---|---|---|
+| `fuite-invisible-signes` | Fuite d'eau invisible : 7 signes qui doivent vous alerter | detection-fuite-non-destructive, urgence-fuite-eau |
+| `cout-recherche-fuite-eau-assurance` | Combien coûte une recherche de fuite d'eau et qui paie la facture ? | detection-fuite-non-destructive, urgence-fuite-eau |
+| `degat-des-eaux-demarches-assurance` | Dégât des eaux : les démarches assurance étape par étape | assechement-degat-des-eaux, detection-fuite-non-destructive |
+| `fuite-canalisation-enterree-detection` | Fuite sur canalisation enterrée : comment on la détecte sans tout casser | recherche-fuite-canalisation-enterree, detection-fuite-non-destructive |
