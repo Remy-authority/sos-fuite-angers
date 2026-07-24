@@ -18,13 +18,27 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 
 ### RESTE À FAIRE (post-prod)
 1. **Domaine** : ✅ EN LIGNE. `https://www.sos-fuite-angers.fr` répond 200, apex → 308 vers www.
-2. **Canonical** : ✅ FAIT (branche `fix/canonical-domaine`, en attente merge). `seo.canonicalBase`
-   basculé sur `https://www.sos-fuite-angers.fr`. Tout (sitemap/robots/llms.txt/canonical/OG/JSON-LD)
-   passe par l'unique `BASE` de `lib/seo.ts` → propagé automatiquement. Sitemap généré vérifié.
-3. **Google Search Console** : ajouter la propriété + soumettre le sitemap (action Rémy, guidée par CEO).
-4. **Micro-fix** : ✅ FAIT (même branche). Clé dupliquée `Breadcrumbs` corrigée (`key={i}`), 0 warning console.
+2. **Canonical** : ✅ MERGÉ EN PROD (c4b7e0a) et vérifié par le CEO : sitemap public sur
+   `https://www.sos-fuite-angers.fr`, 0 occurrence vercel.app.
+3. **Google Search Console** : ✅ propriété « Domaine » validée + sitemap soumis (25/07). GSC affiche
+   « Impossible de récupérer » = normal juste après soumission (et soumis avant la bascule canonical) ;
+   attendre 24-48 h, resoumettre si besoin.
+4. **Micro-fix** : ✅ MERGÉ. Clé dupliquée `Breadcrumbs` corrigée (`key={i}`), 0 warning console.
 5. **Rank & rent continu** : cadence récurrente de l'autoblog ; monitoring indexation (~3 mois) ;
    remplacer persona DEMO (Thomas Mercier + chiffres) le jour où un artisan loueur est trouvé.
+
+## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
+
+- **Ajouter des drafts** : déposer les articles dans `content/drafts/` nommés `NNN-slug.mdx`
+  (`001-…`, `002-…`) ; images du draft dans `public/conseils/` (ou dossier `NNN-slug.assets/`
+  déplacé auto). Ces fichiers sont **invisibles du site** (aucun loader ne lit `content/drafts/`).
+- **Ce que fait l'action** (`.github/workflows/publish-article.yml`, lun/mer/ven 05:00 UTC) :
+  prend le draft au plus petit numéro, le déplace vers `content/conseils/` sans le préfixe, met
+  `date:` à la date du jour (Europe/Paris), commit + push sur `main` → Vercel déploie. Drafts vide = fin sans erreur.
+- **Vérifier qu'elle a tourné** : GitHub → onglet **Actions** → workflow « Publier un article (autoblog) »
+  (voir le run + ses logs) ; ou le nouveau commit `content(autoblog): publication de <slug>` sur `main`,
+  puis l'article en ligne sur `https://www.sos-fuite-angers.fr/conseils/<slug>`.
+- **Tester sans attendre lundi** : Actions → ce workflow → bouton **« Run workflow »** (`workflow_dispatch`).
 
 ## 1. CE QU'ON SAIT (acquis)
 
