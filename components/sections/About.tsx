@@ -11,11 +11,10 @@ export default function About() {
             {/* DEMO – photo IA placeholder. Vraie photo fournie par Rémy → public/thomas-mercier.jpg */}
             <Image
               src={siteConfig.persona.photo}
-              alt={`${siteConfig.persona.name} — artisan détection fuite d'eau Angers`}
+              alt={`${siteConfig.persona.name}, artisan détection fuite d'eau Angers`}
               width={560}
               height={420}
               className="h-full w-full object-cover"
-              unoptimized
             />
           </div>
           {/* Badge flottant — DEMO – à remplacer par les infos du loueur */}

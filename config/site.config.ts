@@ -79,7 +79,7 @@ export const siteConfig = {
   /* ── Feature flags ── */
   features: {
     reviews: false, // ⛔ aucun avis affiché tant que la fiche Google n'existe pas
-    gallery: false, // galerie réalisations masquée tant qu'il n'y a pas de photos réelles
+    gallery: true, // galerie réalisations active (placeholders — photos réelles à fournir par Rémy)
     blog: true, // section /conseils (autoblog)
   },
 
