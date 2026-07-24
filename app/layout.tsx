@@ -7,6 +7,7 @@ import { absUrl, buildMetadata, jsonLdScript, plumberJsonLd } from '@/lib/seo'
 import Header from '@/components/sections/Header'
 import Footer from '@/components/sections/Footer'
 import MobileStickyBar from '@/components/ui/MobileStickyBar'
+import FloatingCallButton from '@/components/ui/FloatingCallButton'
 
 // next/font = polices self-hostées au build (pas de requête Google runtime, pas de FOUT).
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <MobileStickyBar />
+        <FloatingCallButton />
       </body>
     </html>
   )
