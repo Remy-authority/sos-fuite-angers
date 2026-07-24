@@ -260,6 +260,30 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) revérifié vert, 39 pages SSG, aucun fichier hors périmètre touché.
   - Détail des 11 articles + nombre d'images par article au §6.
 
+- **2026-07-25 (Builder, soir — refonte premium page article)** : demande CEO. S'inspire de la
+  STRUCTURE d'un article de blog de la réf `sniperpestcontrol3dservices.fr` (mise en page/qualité),
+  en gardant NOTRE identité (bleu eau + orange, pas le vert de la réf). Fichiers touchés (périmètre
+  Builder strict, **aucun `content/conseils/*` touché**) : `app/conseils/[slug]/page.tsx`,
+  `lib/content.ts` (type + loader), `app/globals.css` (styles `article-prose` scoped).
+  1. **`lib/content.ts`** : `Article` gagne le champ `faq: FaqItem[]` (parsé depuis le frontmatter
+     `faq:` posé par l'Autoblog). Nouveaux helpers : `readingTimeMinutes(text)` (~200 mots/min,
+     min 1) et `getRelatedConseils(current, limit)` (score = services liés communs ×2 + même
+     catégorie ; complété par les plus récents ; exclut l'article courant).
+  2. **En-tête premium** : eyebrow catégorie (accent orange), H1, ligne méta lisible = **date en
+     clair** (« 24 juillet 2026 » via un format déterministe sans fuseau) + **temps de lecture**
+     calculé + catégorie. Cover en grande image `max-w-4xl` coins arrondis + ombre.
+  3. **Corps aéré** (`article-prose`, scoped, n'affecte pas les pages services) : images markdown
+     du MDX affichées à la largeur de la colonne, coins arrondis + cadre léger ; légendes
+     (`*italique*` sous l'image) rendues centrées/gris/petit ; H2 « bien détachés » (filet haut +
+     respiration) ; interlignage et liens soignés.
+  4. **Bloc FAQ** : `<Faq items={article.faq}>` (composant partagé, même style que les pages
+     services) → **émet le FAQPage JSON-LD** via `faqJsonLd()` (gain GEO, auparavant absent des
+     articles). Vérifié : `fuite-invisible-signes` émet bien 1 `FAQPage` + 4 `Question`/`Answer`.
+  5. **« À lire aussi »** en fin d'article : 3 cartes (vignette + catégorie + titre) via
+     `getRelatedConseils`. Le bloc « Nos services liés » existant est conservé.
+  - Build (`npm run build`) vert, 0 erreur/warn, 39 pages SSG. Rendu vérifié desktop + mobile.
+  - **À valider par Rémy** : URL de contrôle `/conseils/fuite-invisible-signes`.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |

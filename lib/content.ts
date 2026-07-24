@@ -78,6 +78,8 @@ export interface Article {
   cover?: string
   /** Maillage interne automatique → slugs de services. */
   relatedServices: string[]
+  /** FAQ de l'article (frontmatter `faq:`), affichée + FAQPage JSON-LD (GEO). */
+  faq: FaqItem[]
   /** Corps MDX brut (compilé côté page). */
   content: string
 }
@@ -151,6 +153,7 @@ export function getArticles(): Article[] {
         category: (data.category as string) || 'Conseils',
         cover: data.cover as string | undefined,
         relatedServices: (data.relatedServices as string[]) || [],
+        faq: (data.faq as FaqItem[]) || [],
         content,
       } satisfies Article
     })
@@ -167,4 +170,35 @@ export function getRelatedArticles(serviceSlug: string, limit = 2): Article[] {
   return getArticles()
     .filter((a) => a.relatedServices.includes(serviceSlug))
     .slice(0, limit)
+}
+
+/**
+ * « À lire aussi » : autres articles proches du courant. Score = services liés
+ * en commun (poids 2) + même catégorie (poids 1) ; complété par les plus récents
+ * si le quota n'est pas atteint. Exclut l'article courant.
+ */
+export function getRelatedConseils(current: Article, limit = 3): Article[] {
+  const others = getArticles().filter((a) => a.slug !== current.slug)
+  const scored = others
+    .map((a) => {
+      const shared = a.relatedServices.filter((s) => current.relatedServices.includes(s)).length
+      const sameCat = a.category === current.category ? 1 : 0
+      return { a, score: shared * 2 + sameCat }
+    })
+    .sort((x, y) => y.score - x.score) // tri stable : conserve l'ordre antéchronologique à score égal
+
+  const picked = scored.filter((s) => s.score > 0).map((s) => s.a)
+  if (picked.length < limit) {
+    for (const s of scored) {
+      if (!picked.includes(s.a)) picked.push(s.a)
+      if (picked.length >= limit) break
+    }
+  }
+  return picked.slice(0, limit)
+}
+
+/** Temps de lecture estimé (minutes), ~200 mots/min. Minimum 1 min. */
+export function readingTimeMinutes(text: string): number {
+  const words = text.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round(words / 200))
 }

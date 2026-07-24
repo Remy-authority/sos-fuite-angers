@@ -73,4 +73,36 @@
   .prose-content a {
     @apply underline;
   }
+
+  /* Corps d'article de blog (scoped : n'affecte pas les pages services). */
+  .article-prose {
+    @apply text-[1.0625rem] text-slate-700;
+  }
+  /* H2 bien détachés : filet fin + respiration au-dessus. */
+  .article-prose h2 {
+    @apply mt-12 border-t border-slate-100 pt-8 text-2xl font-bold text-slate-900 md:text-[1.75rem];
+  }
+  .article-prose h3 {
+    @apply mt-8 text-xl font-bold text-slate-900;
+  }
+  .article-prose p {
+    @apply mt-5;
+  }
+  .article-prose ul,
+  .article-prose ol {
+    @apply mt-5 list-outside space-y-2 pl-5;
+  }
+  .article-prose ul { @apply list-disc; }
+  .article-prose ol { @apply list-decimal; }
+  .article-prose a {
+    @apply font-medium text-primary underline underline-offset-2 hover:text-primary-dark;
+  }
+  /* Images markdown : largeur de colonne, coins arrondis, cadre léger. */
+  .article-prose img {
+    @apply mt-7 w-full rounded-card border border-slate-200 shadow-sm;
+  }
+  /* Légende = paragraphe en italique seul juste après l'image (`*légende*`). */
+  .article-prose p:has(> em:only-child) {
+    @apply mt-2 text-center text-sm not-italic text-slate-500;
+  }
 }
