@@ -47,6 +47,8 @@ export interface Service {
   relatedServices: string[]
   /** Ordre d'affichage dans la grille d'accueil. */
   order: number
+  /** Image hero de la page service (chemin public). */
+  image?: string
 }
 
 export interface Zone {

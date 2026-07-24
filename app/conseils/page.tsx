@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getArticles } from '@/lib/content'
 import { buildMetadata } from '@/lib/seo'
@@ -28,11 +29,18 @@ export default function ConseilsListing() {
         <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((a) => (
             <li key={a.slug}>
-              <Link href={`/conseils/${a.slug}`} className="card block h-full transition hover:-translate-y-0.5">
-                <span className="text-xs font-semibold uppercase tracking-wide text-primary">{a.category}</span>
-                <h2 className="mt-1 text-lg">{a.title}</h2>
-                <p className="mt-2 text-sm text-slate-600">{a.description}</p>
-                <time className="mt-3 block text-xs text-slate-400" dateTime={a.date}>{a.date}</time>
+              <Link href={`/conseils/${a.slug}`} className="card block h-full overflow-hidden p-0 transition hover:-translate-y-0.5">
+                {a.cover && (
+                  <div className="relative aspect-[16/9] w-full">
+                    <Image src={a.cover} alt={a.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                  </div>
+                )}
+                <div className="p-5">
+                  <span className="text-xs font-semibold uppercase tracking-wide text-primary">{a.category}</span>
+                  <h2 className="mt-1 text-lg">{a.title}</h2>
+                  <p className="mt-2 text-sm text-slate-600">{a.description}</p>
+                  <time className="mt-3 block text-xs text-slate-400" dateTime={a.date}>{a.date}</time>
+                </div>
               </Link>
             </li>
           ))}

@@ -59,5 +59,6 @@
       "q": "Intervenez-vous aussi pour un diagnostic préventif ?",
       "a": "Oui. Si vous suspectez une fuite sans en être certain (compteur qui tourne légèrement, facture en hausse inexpliquée), nous pouvons réaliser un test de pression et un premier diagnostic pour confirmer ou écarter la présence d'une fuite avant d'engager des travaux."
     }
-  ]
+  ],
+  "image": "/services/detection-fuite-non-destructive.jpg"
 }

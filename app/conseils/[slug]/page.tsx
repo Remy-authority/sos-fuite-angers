@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getArticle, getArticles, getServices } from '@/lib/content'
@@ -51,6 +52,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <p className="text-xs font-semibold uppercase tracking-wide text-primary">{article.category}</p>
         <h1 className="mt-1 text-3xl md:text-4xl">{article.title}</h1>
         <time className="mt-2 block text-sm text-slate-400" dateTime={article.date}>{article.date}</time>
+
+        {article.cover && (
+          <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-card">
+            <Image src={article.cover} alt={article.title} fill sizes="(min-width: 768px) 760px, 100vw" className="object-cover" priority />
+          </div>
+        )}
 
         <div className="prose-content mt-8">
           <MDXRemote source={article.content} />

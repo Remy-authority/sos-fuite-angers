@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getService, getServices, getRelatedArticles } from '@/lib/content'
 import { buildMetadata, serviceJsonLd, jsonLdScript } from '@/lib/seo'
@@ -48,8 +49,22 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
       <article className="container-site section">
         <h1 className="text-3xl md:text-4xl">{service.h1}</h1>
 
+        {/* Image hero du service */}
+        {service.image && (
+          <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-card md:aspect-[21/9]">
+            <Image
+              src={service.image}
+              alt={service.h1}
+              fill
+              sizes="(min-width: 768px) 800px, 100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
+
         {/* En bref (réponse courte GEO) */}
-        <p className="mt-4 rounded-card bg-light p-4 text-slate-700">{service.intro}</p>
+        <p className="mt-6 rounded-card bg-light p-4 text-slate-700">{service.intro}</p>
 
         <div className="prose-content mt-8">
           {service.blocks.map((b) => (
