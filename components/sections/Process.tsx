@@ -38,9 +38,9 @@ export default function Process() {
           </h2>
         </div>
 
-        <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" role="list">
+        <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" role="list" style={{ alignItems: 'stretch' }}>
           {steps.map((step, i) => (
-            <li key={step.title} className="relative">
+            <li key={step.title} className="relative flex">
               {/* Ligne de connexion (desktop) */}
               {i < steps.length - 1 && (
                 <div
@@ -48,7 +48,7 @@ export default function Process() {
                   aria-hidden="true"
                 />
               )}
-              <div className="card flex flex-col gap-4">
+              <div className="card flex h-full w-full flex-col gap-4">
                 <div className="flex items-start gap-4">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-white">
                     {STEP_ICONS[step.icon] ?? (

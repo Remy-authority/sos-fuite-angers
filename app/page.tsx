@@ -12,6 +12,7 @@ import Process from '@/components/sections/Process'
 import Stats from '@/components/sections/Stats'
 import WhyUs from '@/components/sections/WhyUs'
 import ServiceAreaMap from '@/components/sections/ServiceAreaMap'
+import Realisations from '@/components/sections/Realisations'
 
 const TITLE = "Recherche de fuite d'eau à Angers — Détection non destructive"
 const DESC =
@@ -70,6 +71,7 @@ export default function HomePage() {
       <Stats />
       <About />
       <Process />
+      {siteConfig.features.gallery && <Realisations />}
       <WhyUs />
 
       <CtaBanner />

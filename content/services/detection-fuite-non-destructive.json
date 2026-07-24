@@ -15,7 +15,7 @@
   "blocks": [
     {
       "heading": "Le gaz traceur",
-      "body": "Le gaz traceur — un mélange inoffensif d'azote et d'hydrogène — est injecté dans la canalisation mise hors pression d'eau. Le gaz remonte vers la surface au point de fuite. Un détecteur électronique de précision capte ce signal et indique l'emplacement exact. Cette méthode donne une localisation au centimètre près, même sur des tuyaux enterrés à plus d'un mètre de profondeur, dans une cave ou sous une dalle béton. C'est la technique la plus précise pour les canalisations enterrées et les circuits de chauffage encastrés."
+      "body": "Le gaz traceur, un mélange inoffensif d'azote et d'hydrogène, est injecté dans la canalisation mise hors pression d'eau. Le gaz remonte vers la surface au point de fuite. Un détecteur électronique de précision capte ce signal et indique l'emplacement exact. Cette méthode donne une localisation au centimètre près, même sur des tuyaux enterrés à plus d'un mètre de profondeur, dans une cave ou sous une dalle béton. C'est la technique la plus précise pour les canalisations enterrées et les circuits de chauffage encastrés."
     },
     {
       "heading": "La caméra thermique / thermographie",
@@ -27,7 +27,7 @@
     },
     {
       "heading": "Quelle méthode pour quelle situation",
-      "body": "Chaque configuration oriente vers la méthode la plus adaptée. Pour une canalisation enterrée dans le jardin ou sous une dalle, le gaz traceur ou la corrélation acoustique est privilégié. Pour une fuite dans un plancher chauffant ou un mur sans point de passage visible, la caméra thermique donne les premières indications, complétée si nécessaire par le gaz traceur. Dans les cas complexes — réseaux enchevêtrés, dalles épaisses — nous combinons les trois techniques pour une localisation sans ambiguïté. Nous vous expliquons le choix avant de commencer."
+      "body": "Chaque configuration oriente vers la méthode la plus adaptée. Pour une canalisation enterrée dans le jardin ou sous une dalle, le gaz traceur ou la corrélation acoustique est privilégié. Pour une fuite dans un plancher chauffant ou un mur sans point de passage visible, la caméra thermique donne les premières indications, complétée si nécessaire par le gaz traceur. Dans les cas complexes (réseaux enchevêtrés, dalles épaisses), nous combinons les trois techniques pour une localisation sans ambiguïté. Nous vous expliquons le choix avant de commencer."
     },
     {
       "heading": "Déroulé d'une intervention",
@@ -57,7 +57,7 @@
     },
     {
       "q": "Intervenez-vous aussi pour un diagnostic préventif ?",
-      "a": "Oui. Si vous suspectez une fuite sans en être certain — compteur qui tourne légèrement, facture en hausse inexpliquée — nous pouvons réaliser un test de pression et un premier diagnostic pour confirmer ou écarter la présence d'une fuite avant d'engager des travaux."
+      "a": "Oui. Si vous suspectez une fuite sans en être certain (compteur qui tourne légèrement, facture en hausse inexpliquée), nous pouvons réaliser un test de pression et un premier diagnostic pour confirmer ou écarter la présence d'une fuite avant d'engager des travaux."
     }
   ]
 }
