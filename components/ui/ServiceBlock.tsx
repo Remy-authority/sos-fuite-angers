@@ -52,12 +52,13 @@ export default function ServiceBlock({ block, eager = false }: { block: ContentB
 
       {block.image && (
         <figure className="mt-5">
-          <div className="relative aspect-[3/2] w-full max-w-xl overflow-hidden rounded-card">
+          {/* Largeur pleine colonne, alignée sur `.article-prose img` (w-full + cadre léger). */}
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-card border border-slate-200 shadow-sm">
             <Image
               src={block.image}
               alt={block.imageAlt || block.heading}
               fill
-              sizes="(min-width: 768px) 576px, 100vw"
+              sizes="(min-width: 768px) 768px, 100vw"
               className="object-cover"
               loading={eager ? 'eager' : 'lazy'}
             />

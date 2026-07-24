@@ -318,6 +318,22 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - **À valider par Rémy** : `/zones`, `/zones/sainte-gemmes-sur-loire`, `/zones/verrieres-en-anjou`,
     `/zones/avrille` ; `/llms.txt` accessible ; `/robots.txt` (crawlers IA).
 
+- **2026-07-25 (Builder, soir — uniformisation largeur images de corps)** : demande CEO. Les
+  images dans le texte des pages services et commune étaient bridées à `max-w-xl` (576px) alors
+  que la colonne de lecture fait 768px et que les images d'articles (`.article-prose img`)
+  prennent toute la largeur, elles paraissaient petites. Fichiers touchés (périmètre Builder) :
+  `components/ui/ServiceBlock.tsx` et `app/zones/[slug]/page.tsx`.
+  - Conteneur image passé de `w-full max-w-xl overflow-hidden rounded-card` à
+    `w-full overflow-hidden rounded-card border border-slate-200 shadow-sm` (exactement le style
+    de `.article-prose img` : pleine largeur + cadre léger). `sizes` ajusté de 576px à 768px.
+  - Vérif visuelle Playwright (viewport 1280) : largeur rendue des images de corps désormais
+    identique sur les 3 types de pages, services **766px**, communes **766px**, articles
+    **768px** (écart de 2px dû au cadre mesuré à l'intérieur du conteneur vs sur l'`img`,
+    imperceptible). Contrôlé sur `detection-fuite-non-destructive`, `urgence-fuite-eau`,
+    `/zones/avrille`, `/zones/verrieres-en-anjou`, `/conseils/fuite-invisible-signes`.
+  - Build (`npm run build`) vert, 42 pages SSG, aucun fichier hors périmètre touché.
+  - **À valider par Rémy** : images de corps services + communes à la même taille que les articles.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
