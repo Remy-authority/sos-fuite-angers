@@ -102,7 +102,7 @@ export default function Hero() {
           {/* CTAs mobile */}
           <div className="mt-7 flex flex-col gap-3 sm:flex-row md:hidden">
             <PhoneButton
-              label={`Appeler — ${siteConfig.phoneDisplay}`}
+              label={`Appeler le ${siteConfig.phoneDisplay}`}
               className="btn-accent justify-center text-base"
             />
             <Link

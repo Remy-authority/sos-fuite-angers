@@ -88,7 +88,7 @@ export const siteConfig = {
   persona: {
     name: 'Thomas Mercier',
     // DEMO – à remplacer par les infos du loueur
-    photo: '/thomas-mercier.svg', // Placeholder IA — vraie photo fournie par Rémy → public/thomas-mercier.jpg
+    photo: '/thomas-mercier.jpg', // Photo IA Canva — remplacement par photo réelle possible → public/thomas-mercier.jpg
     title: "Artisan certifié détection non destructive",
   },
 
@@ -96,7 +96,7 @@ export const siteConfig = {
   about: {
     title: "Votre spécialiste fuite d'eau à Angers",
     // DEMO – à remplacer par les infos du loueur
-    body: "Artisan indépendant depuis plus de 10 ans, Thomas Mercier intervient sur Angers et un rayon de 25 km pour détecter et localiser précisément vos fuites d'eau sans destruction. Formé aux dernières technologies non invasives — gaz traceur, caméra thermique, acoustique — il vous remet un rapport officiel reconnu par les assurances.",
+    body: "Thomas Mercier dirige notre équipe spécialisée. Nous intervenons sur Angers et dans un rayon de 25 km pour détecter et localiser précisément vos fuites d'eau sans destruction. Nous maîtrisons les dernières technologies non invasives : gaz traceur, caméra thermique et acoustique, et vous remettons un rapport officiel reconnu par les assurances.",
     // DEMO – à remplacer par les infos du loueur
     highlight: 'Artisan certifié non destructif',
   },
@@ -138,7 +138,7 @@ export const siteConfig = {
     {
       q: "Faut-il casser des murs ou du carrelage pour trouver la fuite ?",
       // DEMO – à remplacer par les infos du loueur
-      a: "Non. Notre méthode de détection non destructive — gaz traceur, caméra thermique et acoustique — permet de localiser précisément la fuite sans aucune destruction préalable. Nous indiquons l'emplacement exact avant toute intervention.",
+      a: "Non. Nos méthodes non destructives (gaz traceur, caméra thermique et acoustique) permettent de localiser précisément la fuite sans aucune destruction préalable. Nous indiquons l'emplacement exact avant toute intervention.",
     },
     {
       q: "Le rapport de localisation est-il accepté par les assurances ?",

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { siteConfig } from '@/config/site.config'
 import { getServices, getZones } from '@/lib/content'
+import Logo from '@/components/ui/Logo'
 
 export default function Footer() {
   const services = getServices()
@@ -13,7 +14,7 @@ export default function Footer() {
       <div className="border-b border-white/10 bg-primary/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-5 sm:flex-row">
           <p className="text-sm font-medium text-slate-300">
-            {siteConfig.trade} à {siteConfig.city} — {siteConfig.availability}
+            {siteConfig.trade} à {siteConfig.city} · {siteConfig.availability}
           </p>
           <a
             href={`tel:${siteConfig.phone}`}
@@ -32,9 +33,8 @@ export default function Footer() {
       <div className="container-site grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
         {/* Identité */}
         <div>
-          <Link href="/" className="flex items-center gap-2 font-bold text-white" aria-label={`${siteConfig.businessName} — accueil`}>
-            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-[9px] font-extrabold text-white" aria-hidden="true">SOS</span>
-            <span className="text-sm">{siteConfig.businessName}</span>
+          <Link href="/" className="inline-flex items-center" aria-label={`${siteConfig.businessName} — accueil`}>
+            <Logo textColor="white" iconColor="white" accentColor="#F97316" className="h-8 w-auto" />
           </Link>
           <p className="mt-3 text-sm">{siteConfig.city} · {siteConfig.region}</p>
           <p className="mt-1 text-sm">
@@ -51,7 +51,7 @@ export default function Footer() {
 
         {/* Services */}
         <nav aria-label="Services">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Nos services</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Nos services</p>
           <ul className="space-y-2 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
@@ -63,7 +63,7 @@ export default function Footer() {
 
         {/* Zones */}
         <nav aria-label="Zones d'intervention">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Zones</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Zones</p>
           <ul className="space-y-2 text-sm">
             {zones.map((z) => (
               <li key={z.slug}>
@@ -71,14 +71,14 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/zones" className="font-medium text-primary-DEFAULT hover:text-white transition-colors">Toutes les zones →</Link>
+              <Link href="/zones" className="font-medium text-accent hover:text-white transition-colors">Toutes les zones →</Link>
             </li>
           </ul>
         </nav>
 
         {/* Info */}
         <nav aria-label="Informations légales">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Informations</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Informations</p>
           <ul className="space-y-2 text-sm">
             <li><Link href="/contact" className="transition-colors hover:text-white">Contact & devis</Link></li>
             {siteConfig.features.blog && (

@@ -29,7 +29,7 @@ export default function CtaBanner({
             <h2 className="text-2xl font-bold text-white md:text-3xl">{title}</h2>
             <p className="mt-2 text-slate-300">{subtitle}</p>
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <PhoneButton label={`Appeler — ${siteConfig.phoneDisplay}`} className="btn-accent shadow-lg shadow-accent/30" />
+              <PhoneButton label={`Appeler le ${siteConfig.phoneDisplay}`} className="btn-accent shadow-lg shadow-accent/30" />
               <Link
                 href="/contact"
                 className="btn-outline !border-white/30 !bg-transparent !text-white hover:!bg-white/10"
