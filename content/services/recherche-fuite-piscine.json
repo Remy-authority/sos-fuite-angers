@@ -19,11 +19,17 @@
     },
     {
       "heading": "Où se situent les fuites de piscine",
-      "body": "Les fuites de piscine se concentrent sur plusieurs zones. Le liner : piqûres, déchirures ou décollement aux ancrages (margelles, skimmers). Les pièces à sceller : bonde de fond, skimmers, buses de refoulement, projecteurs. Les joints vieillissent et se fissurent, en particulier après un hiver. Les canalisations enterrées : tuyaux d'aspiration et de refoulement. Causes fréquentes : rupture de joint, corrosion, mouvement de terrain. Le local technique : fuites sur les raccords de pompe, filtre ou échangeur de chaleur. Chaque zone nécessite une méthode de diagnostic différente."
+      "body": "Les fuites de piscine se concentrent sur plusieurs zones. Le liner : piqûres, déchirures ou décollement aux ancrages (margelles, skimmers). Les pièces à sceller : bonde de fond, skimmers, buses de refoulement, projecteurs. Les joints vieillissent et se fissurent, en particulier après un hiver. Les canalisations enterrées : tuyaux d'aspiration et de refoulement. Causes fréquentes : rupture de joint, corrosion, mouvement de terrain. Le local technique : fuites sur les raccords de pompe, filtre ou échangeur de chaleur. Chaque zone nécessite une méthode de diagnostic différente.",
+      "image": "/services/recherche-fuite-piscine-pieces-sceller.jpg",
+      "imageAlt": "Injection de colorant traceur près d'une buse de refoulement immergée",
+      "imageCaption": "Le colorant traceur migre vers la fuite et devient visible sur une pièce à sceller."
     },
     {
       "heading": "Nos méthodes de détection",
-      "body": "Pour les pièces à sceller et le circuit hydraulique, nous réalisons des tests de mise sous pression des lignes d'eau et utilisons l'injection de colorant (traceur inoffensif qui migre vers la fuite et devient visible). Pour les canalisations enterrées, nous injectons du gaz traceur après isolation de la ligne suspecte. Un test de pression préalable sur les différents circuits (aspiration, refoulement, contre-courant) permet de savoir si la fuite est dans le bassin ou dans les tuyauteries. Nous vous remettons un rapport avec la localisation exacte et les photos pour que votre pisciniste ou plombier puisse intervenir efficacement."
+      "body": "Pour les pièces à sceller et le circuit hydraulique, nous réalisons des tests de mise sous pression des lignes d'eau et utilisons l'injection de colorant (traceur inoffensif qui migre vers la fuite et devient visible). Pour les canalisations enterrées, nous injectons du gaz traceur après isolation de la ligne suspecte. Un test de pression préalable sur les différents circuits (aspiration, refoulement, contre-courant) permet de savoir si la fuite est dans le bassin ou dans les tuyauteries. Nous vous remettons un rapport avec la localisation exacte et les photos pour que votre pisciniste ou plombier puisse intervenir efficacement.",
+      "image": "/services/recherche-fuite-piscine-pression.jpg",
+      "imageAlt": "Manomètres de test de pression connectés au circuit hydraulique d'une piscine",
+      "imageCaption": "Le test de pression sur chaque circuit indique si la fuite vient du bassin ou des tuyauteries."
     }
   ],
   "relatedServices": [

@@ -64,8 +64,18 @@
 
 ## 5. FONCTIONNEMENT DES RÔLES
 
-- **CEO (coordinateur)** : ne code pas. Pilote, audite, et prépare des messages prêts à coller
-  entre balises `=== MESSAGE POUR [AGENT] ===` pour le Builder / SEO. Traduit tout en langage
-  simple pour Rémy (pas de jargon).
+- **CEO (coordinateur)** : **NE CODE JAMAIS le site (code produit = Builder, TOUJOURS).**
+  Le CEO pilote, audite, coordonne les agents, et prépare des messages prêts à coller entre
+  balises `=== MESSAGE POUR [AGENT] ===`. Il traduit tout en langage simple (zéro jargon).
+- **ZÉRO fainéantise du CEO.** Le CEO utilise SES PROPRES accès et outils (git, gh, build,
+  APIs) pour récupérer lui-même ce dont Rémy a besoin — ex. aller chercher une URL de preview
+  Vercel et la donner directement, plutôt que d'envoyer Rémy cliquer dans 4 menus. On ne
+  délègue JAMAIS à Rémy une tâche que le CEO peut faire seul. On ne lui fait pas répéter.
+  Le CEO ne demande à Rémy QUE ce que lui seul peut faire (validation, décisions, accès
+  externes type OVH/paiement).
+- **Ce que le CEO PEUT faire (coordination/ops, pas du code produit)** : git (consolidation,
+  commits sur branches, push de preview), lancer les builds pour vérifier, récupérer des infos
+  via gh/API. Interdiction absolue : écrire/modifier le code du site (`app/`, `components/`,
+  `lib/`, `content/`, `config/`) → ça part au Builder.
 - **Builder** : code (design + intégration). Reçoit des consignes précises du CEO.
 - **SEO** (plus tard) : contenu et optimisation, dans le respect de la doctrine SEO ci-dessus.

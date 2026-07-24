@@ -25,6 +25,10 @@ export interface ContentBlock {
   heading: string
   /** Corps du bloc. Placeholder tant que ST-5 n'a pas rédigé. */
   body: string
+  /** Visuel explicatif optionnel intégré au bloc (chemin public/). */
+  image?: string
+  imageAlt?: string
+  imageCaption?: string
 }
 
 export interface Service {

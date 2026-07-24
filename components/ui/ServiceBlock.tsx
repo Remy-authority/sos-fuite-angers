@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { BlockIcon } from './ServiceIcon'
 import { extractNumberedSteps } from '@/lib/text'
 import type { ContentBlock } from '@/lib/content'
@@ -10,8 +11,11 @@ import type { ContentBlock } from '@/lib/content'
  *  - icône badge à côté du H2, déduite du titre (voir `matchBlockIcon`)
  *  - si le corps contient une liste "1. … 2. … 3. …" déjà rédigée, elle est
  *    détectée et rendue en checklist numérotée au lieu d'un paragraphe brut.
+ *  - si le bloc a un visuel explicatif (`block.image`), il est intégré en pied
+ *    de bloc. `eager` : ne concerne que la 1ère image de la page (les suivantes
+ *    restent en lazy loading par défaut de next/image).
  */
-export default function ServiceBlock({ block }: { block: ContentBlock }) {
+export default function ServiceBlock({ block, eager = false }: { block: ContentBlock; eager?: boolean }) {
   const parsed = extractNumberedSteps(block.body)
 
   return (
@@ -39,6 +43,24 @@ export default function ServiceBlock({ block }: { block: ContentBlock }) {
         </>
       ) : (
         <p>{block.body}</p>
+      )}
+
+      {block.image && (
+        <figure className="mt-5">
+          <div className="relative aspect-[3/2] w-full max-w-xl overflow-hidden rounded-card">
+            <Image
+              src={block.image}
+              alt={block.imageAlt || block.heading}
+              fill
+              sizes="(min-width: 768px) 576px, 100vw"
+              className="object-cover"
+              loading={eager ? 'eager' : 'lazy'}
+            />
+          </div>
+          {block.imageCaption && (
+            <figcaption className="mt-2 text-sm text-slate-500">{block.imageCaption}</figcaption>
+          )}
+        </figure>
       )}
     </section>
   )

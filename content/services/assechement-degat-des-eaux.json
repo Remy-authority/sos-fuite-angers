@@ -15,7 +15,10 @@
   "blocks": [
     {
       "heading": "Recherche de fuite après dégât des eaux",
-      "body": "Face à un dégât des eaux, la tentation est de traiter d'abord les dommages visibles (plafond dégradé, parquet gonflé) sans s'assurer que la fuite est arrêtée. C'est une erreur : si la source n'est pas localisée et stoppée, les dommages continuent et la remise en état ne tient pas. Notre intervention commence toujours par la recherche de la source : test de pression, thermographie infrarouge, gaz traceur selon la configuration. Une fois la fuite localisée avec précision, vous pouvez faire réparer la canalisation, puis engager les travaux de séchage et de remise en état en toute confiance."
+      "body": "Face à un dégât des eaux, la tentation est de traiter d'abord les dommages visibles (plafond dégradé, parquet gonflé) sans s'assurer que la fuite est arrêtée. C'est une erreur : si la source n'est pas localisée et stoppée, les dommages continuent et la remise en état ne tient pas. Notre intervention commence toujours par la recherche de la source : test de pression, thermographie infrarouge, gaz traceur selon la configuration. Une fois la fuite localisée avec précision, vous pouvez faire réparer la canalisation, puis engager les travaux de séchage et de remise en état en toute confiance.",
+      "image": "/services/assechement-degat-des-eaux-recherche.jpg",
+      "imageAlt": "Caméra thermique pointée vers un angle de plafond taché par un dégât des eaux",
+      "imageCaption": "La thermographie infrarouge localise la source avant tout début de séchage."
     },
     {
       "heading": "Rapport pour votre assurance (IRSI)",
@@ -23,7 +26,10 @@
     },
     {
       "heading": "Assèchement des structures",
-      "body": "Après la localisation et la réparation de la fuite, les matériaux gorgés d'eau (plâtre, béton, bois) doivent être assèchés avant toute remise en état (enduit, parquet, peinture). L'assèchement se fait par déshumidification et ventilation forcée avec du matériel professionnel. Selon l'ampleur des dommages, nous pouvons vous orienter vers des entreprises spécialisées en assèchement actif. Commencer les finitions avant que les murs soient complètement secs est une cause fréquente de récidive : la moisissure se développe sous les nouveaux revêtements et les dommages réapparaissent."
+      "body": "Après la localisation et la réparation de la fuite, les matériaux gorgés d'eau (plâtre, béton, bois) doivent être assèchés avant toute remise en état (enduit, parquet, peinture). L'assèchement se fait par déshumidification et ventilation forcée avec du matériel professionnel. Selon l'ampleur des dommages, nous pouvons vous orienter vers des entreprises spécialisées en assèchement actif. Commencer les finitions avant que les murs soient complètement secs est une cause fréquente de récidive : la moisissure se développe sous les nouveaux revêtements et les dommages réapparaissent.",
+      "image": "/services/assechement-degat-des-eaux-sechage.jpg",
+      "imageAlt": "Panneau de contrôle d'un déshumidificateur professionnel avec tuyau raccordé",
+      "imageCaption": "Déshumidification et ventilation forcée avant toute remise en état."
     }
   ],
   "relatedServices": [

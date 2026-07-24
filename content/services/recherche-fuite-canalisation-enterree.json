@@ -15,11 +15,17 @@
   "blocks": [
     {
       "heading": "Signes d'une fuite sur canalisation enterrée",
-      "body": "Une fuite souterraine est souvent insidieuse. Les indices à surveiller : une hausse anormale de votre facture d'eau sans explication ; un compteur qui tourne alors que tous les robinets sont fermés (testez en coupant l'eau à tous les points d'usage pendant 30 minutes) ; une zone du jardin anormalement verte, détrempée ou en léger affaissement ; de l'humidité qui remonte sous une dalle béton ou dans une cave ; un bruit sourd d'eau en mouvement sans consommation en cours. Si vous constatez l'un de ces signes, un test de pression permet de confirmer la présence d'une fuite active avant toute intervention sur le terrain."
+      "body": "Une fuite souterraine est souvent insidieuse. Les indices à surveiller : une hausse anormale de votre facture d'eau sans explication ; un compteur qui tourne alors que tous les robinets sont fermés (testez en coupant l'eau à tous les points d'usage pendant 30 minutes) ; une zone du jardin anormalement verte, détrempée ou en léger affaissement ; de l'humidité qui remonte sous une dalle béton ou dans une cave ; un bruit sourd d'eau en mouvement sans consommation en cours. Si vous constatez l'un de ces signes, un test de pression permet de confirmer la présence d'une fuite active avant toute intervention sur le terrain.",
+      "image": "/services/recherche-fuite-canalisation-enterree-signe.jpg",
+      "imageAlt": "Zone de pelouse anormalement verte et détrempée près d'une allée de jardin",
+      "imageCaption": "Une zone du jardin anormalement verte ou détrempée est un signe fréquent."
     },
     {
       "heading": "Nos méthodes de localisation",
-      "body": "Pour les canalisations enterrées, nous utilisons principalement deux techniques. La corrélation acoustique : des capteurs sont posés de part et d'autre de la canalisation suspecte. Ils enregistrent le bruit de la fuite et le corrélateur calcule sa position par triangulation, avec une précision habituelle de 50 cm à 1 m. Le gaz traceur : la canalisation est mise hors eau et le mélange azote/hydrogène est injecté. Le détecteur de surface suit la remontée du gaz et indique le point de fuite. Ces deux méthodes sont combinables sur les cas difficiles : canalisation profonde, réseau complexe, sol pavé ou bétonné. Elles permettent d'éviter d'ouvrir des tranchées à l'aveugle."
+      "body": "Pour les canalisations enterrées, nous utilisons principalement deux techniques. La corrélation acoustique : des capteurs sont posés de part et d'autre de la canalisation suspecte. Ils enregistrent le bruit de la fuite et le corrélateur calcule sa position par triangulation, avec une précision habituelle de 50 cm à 1 m. Le gaz traceur : la canalisation est mise hors eau et le mélange azote/hydrogène est injecté. Le détecteur de surface suit la remontée du gaz et indique le point de fuite. Ces deux méthodes sont combinables sur les cas difficiles : canalisation profonde, réseau complexe, sol pavé ou bétonné. Elles permettent d'éviter d'ouvrir des tranchées à l'aveugle.",
+      "image": "/services/recherche-fuite-canalisation-enterree-correlation.jpg",
+      "imageAlt": "Corrélateur acoustique posé au sol dans un jardin, relié à un géophone planté dans l'herbe",
+      "imageCaption": "Corrélation acoustique en extérieur : le capteur enregistre le bruit de la fuite."
     },
     {
       "heading": "Après la localisation",

@@ -15,11 +15,17 @@
   "blocks": [
     {
       "heading": "Fuite dans un mur",
-      "body": "Une fuite dans une canalisation encastrée dans un mur se manifeste par une tache sombre ou une auréole d'humidité, souvent à proximité d'une colonne d'eau ou d'un angle. L'humidité peut migrer loin du point de fuite réel avant de s'afficher en surface, ce qui rend la localisation difficile sans matériel adapté. La caméra thermique détecte les zones froides ou humides cachées sous l'enduit. Le gaz traceur, injecté dans le circuit concerné, remonte au point de fuite pour une localisation précise. Votre plombier n'ouvre qu'à l'endroit exact, pas sur toute la longueur du mur."
+      "body": "Une fuite dans une canalisation encastrée dans un mur se manifeste par une tache sombre ou une auréole d'humidité, souvent à proximité d'une colonne d'eau ou d'un angle. L'humidité peut migrer loin du point de fuite réel avant de s'afficher en surface, ce qui rend la localisation difficile sans matériel adapté. La caméra thermique détecte les zones froides ou humides cachées sous l'enduit. Le gaz traceur, injecté dans le circuit concerné, remonte au point de fuite pour une localisation précise. Votre plombier n'ouvre qu'à l'endroit exact, pas sur toute la longueur du mur.",
+      "image": "/services/recherche-fuite-encastree-mur.jpg",
+      "imageAlt": "Écran de caméra thermique montrant une trace verticale froide le long d'un mur",
+      "imageCaption": "La caméra thermique révèle le tracé de la fuite caché sous l'enduit."
     },
     {
       "heading": "Fuite au sol / plancher chauffant",
-      "body": "Les planchers chauffants à eau (circuits noyés dans une chape) sont particulièrement sensibles aux fuites : une microfissure sur un raccord peut passer inaperçue des mois, jusqu'à saturation de la dalle. Les symptômes : perte de pression dans le circuit de chauffage, parquet qui gonfle ou carrelage qui se décolle, zones froides anormales au sol, augmentation de la consommation d'eau froide. La caméra thermique montre clairement le tracé des circuits actifs et identifie la zone de refroidissement anormal. Le gaz traceur confirme l'emplacement exact avant toute ouverture de la chape."
+      "body": "Les planchers chauffants à eau (circuits noyés dans une chape) sont particulièrement sensibles aux fuites : une microfissure sur un raccord peut passer inaperçue des mois, jusqu'à saturation de la dalle. Les symptômes : perte de pression dans le circuit de chauffage, parquet qui gonfle ou carrelage qui se décolle, zones froides anormales au sol, augmentation de la consommation d'eau froide. La caméra thermique montre clairement le tracé des circuits actifs et identifie la zone de refroidissement anormal. Le gaz traceur confirme l'emplacement exact avant toute ouverture de la chape.",
+      "image": "/services/recherche-fuite-encastree-sol.jpg",
+      "imageAlt": "Détecteur de gaz traceur avec sonde posée près d'une plinthe sur un plancher bois",
+      "imageCaption": "Le gaz traceur confirme l'emplacement exact avant toute ouverture de la chape."
     },
     {
       "heading": "Notre protocole de détection sans casse",

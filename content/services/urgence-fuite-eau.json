@@ -15,11 +15,17 @@
   "blocks": [
     {
       "heading": "Que faire en attendant (couper l'eau)",
-      "body": "En attendant notre arrivée, voici les gestes essentiels. 1. Coupez l'alimentation en eau au robinet d'arrêt général : il se trouve souvent sous l'évier de cuisine, dans le garage ou à l'entrée de la cave. Dans un appartement, la vanne de pied de colonne est généralement dans le couloir ou un local technique. 2. Coupez l'électricité dans les pièces concernées si l'eau menace les équipements. 3. Placez des serviettes ou des récipients pour recueillir l'eau et limiter les dégâts. 4. Photographiez les dommages avant de nettoyer : ces images sont utiles pour votre déclaration d'assurance. Ne percez pas les murs et ne tentez pas de localiser la fuite vous-même : vous risquez d'aggraver les dommages."
+      "body": "En attendant notre arrivée, voici les gestes essentiels. 1. Coupez l'alimentation en eau au robinet d'arrêt général : il se trouve souvent sous l'évier de cuisine, dans le garage ou à l'entrée de la cave. Dans un appartement, la vanne de pied de colonne est généralement dans le couloir ou un local technique. 2. Coupez l'électricité dans les pièces concernées si l'eau menace les équipements. 3. Placez des serviettes ou des récipients pour recueillir l'eau et limiter les dégâts. 4. Photographiez les dommages avant de nettoyer : ces images sont utiles pour votre déclaration d'assurance. Ne percez pas les murs et ne tentez pas de localiser la fuite vous-même : vous risquez d'aggraver les dommages.",
+      "image": "/services/urgence-fuite-eau-robinet.jpg",
+      "imageAlt": "Fermeture du robinet d'arrêt général sous un évier avec une clé",
+      "imageCaption": "Le robinet d'arrêt général se trouve souvent sous l'évier, en cave ou au garage."
     },
     {
       "heading": "Notre intervention en urgence",
-      "body": "À votre appel, nous évaluons la situation avec vous par téléphone. Nous nous déplaçons avec le matériel complet : détecteur de gaz traceur, caméra thermique, géophones et corrélateur acoustique. Sur place, nous commençons par un test de pression pour confirmer qu'il y a bien une fuite active et identifier le circuit concerné. Nous utilisons ensuite la méthode la plus rapide pour localiser la source précisément. Une fois la fuite localisée, nous vous remettons un rapport technique et vous orientons vers un plombier pour la réparation."
+      "body": "À votre appel, nous évaluons la situation avec vous par téléphone. Nous nous déplaçons avec le matériel complet : détecteur de gaz traceur, caméra thermique, géophones et corrélateur acoustique. Sur place, nous commençons par un test de pression pour confirmer qu'il y a bien une fuite active et identifier le circuit concerné. Nous utilisons ensuite la méthode la plus rapide pour localiser la source précisément. Une fois la fuite localisée, nous vous remettons un rapport technique et vous orientons vers un plombier pour la réparation.",
+      "image": "/services/urgence-fuite-eau-materiel.jpg",
+      "imageAlt": "Mallette de matériel de détection de fuite : gaz traceur, caméra thermique, géophones",
+      "imageCaption": "Le matériel que nous déplaçons à chaque intervention d'urgence."
     },
     {
       "heading": "Zones couvertes",

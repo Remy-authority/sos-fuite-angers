@@ -15,15 +15,24 @@
   "blocks": [
     {
       "heading": "Le gaz traceur",
-      "body": "Le gaz traceur, un mélange inoffensif d'azote et d'hydrogène, est injecté dans la canalisation mise hors pression d'eau. Le gaz remonte vers la surface au point de fuite. Un détecteur électronique de précision capte ce signal et indique l'emplacement exact. Cette méthode donne une localisation au centimètre près, même sur des tuyaux enterrés à plus d'un mètre de profondeur, dans une cave ou sous une dalle béton. C'est la technique la plus précise pour les canalisations enterrées et les circuits de chauffage encastrés."
+      "body": "Le gaz traceur, un mélange inoffensif d'azote et d'hydrogène, est injecté dans la canalisation mise hors pression d'eau. Le gaz remonte vers la surface au point de fuite. Un détecteur électronique de précision capte ce signal et indique l'emplacement exact. Cette méthode donne une localisation au centimètre près, même sur des tuyaux enterrés à plus d'un mètre de profondeur, dans une cave ou sous une dalle béton. C'est la technique la plus précise pour les canalisations enterrées et les circuits de chauffage encastrés.",
+      "image": "/services/detection-fuite-non-destructive-gaz-traceur.jpg",
+      "imageAlt": "Détecteur de gaz traceur avec sonde flexible près d'un raccord de canalisation",
+      "imageCaption": "Le détecteur capte le gaz traceur qui remonte jusqu'au point de fuite."
     },
     {
       "heading": "La caméra thermique / thermographie",
-      "body": "La caméra thermique détecte les différences de température à la surface des murs, du sol ou du plafond. Un suintement ou une fuite active crée une zone plus froide ou plus chaude selon la saison et la nature du circuit. L'image infrarouge révèle la trajectoire de la fuite sans aucun contact avec les matériaux. Particulièrement efficace sur les planchers chauffants, les dalles et les murs humides où la fuite n'est pas visible à l'œil nu."
+      "body": "La caméra thermique détecte les différences de température à la surface des murs, du sol ou du plafond. Un suintement ou une fuite active crée une zone plus froide ou plus chaude selon la saison et la nature du circuit. L'image infrarouge révèle la trajectoire de la fuite sans aucun contact avec les matériaux. Particulièrement efficace sur les planchers chauffants, les dalles et les murs humides où la fuite n'est pas visible à l'œil nu.",
+      "image": "/services/detection-fuite-non-destructive-camera-thermique.jpg",
+      "imageAlt": "Écran de caméra thermique affichant une zone froide révélant une fuite dans un mur",
+      "imageCaption": "L'image infrarouge révèle la trajectoire de la fuite sans aucun contact avec le mur."
     },
     {
       "heading": "La détection acoustique",
-      "body": "La détection acoustique utilise des géophones et des corrélateurs de fuite. Posés en contact avec la tuyauterie ou au sol, ces capteurs enregistrent le bruit de l'eau qui s'échappe sous pression. Le corrélateur compare les signaux captés de part et d'autre de la canalisation et calcule la position exacte de la fuite par triangulation. Idéale sur les réseaux d'eau froide sous pression, cette méthode fonctionne même sans accès direct au tuyau."
+      "body": "La détection acoustique utilise des géophones et des corrélateurs de fuite. Posés en contact avec la tuyauterie ou au sol, ces capteurs enregistrent le bruit de l'eau qui s'échappe sous pression. Le corrélateur compare les signaux captés de part et d'autre de la canalisation et calcule la position exacte de la fuite par triangulation. Idéale sur les réseaux d'eau froide sous pression, cette méthode fonctionne même sans accès direct au tuyau.",
+      "image": "/services/detection-fuite-non-destructive-acoustique.jpg",
+      "imageAlt": "Corrélateur acoustique affichant un graphique de corrélation, relié à un géophone",
+      "imageCaption": "Le corrélateur calcule la position de la fuite par triangulation du bruit de l'eau."
     },
     {
       "heading": "Quelle méthode pour quelle situation",
