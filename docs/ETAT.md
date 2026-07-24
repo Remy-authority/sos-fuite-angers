@@ -27,6 +27,14 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 5. **Rank & rent continu** : cadence récurrente de l'autoblog ; monitoring indexation (~3 mois) ;
    remplacer persona DEMO (Thomas Mercier + chiffres) le jour où un artisan loueur est trouvé.
 
+## ✅ AUTOBLOG : CIRCUIT VALIDÉ DE BOUT EN BOUT (25/07/2026)
+
+Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 001 publié automatiquement
+(commit `f7ef801`) → article en ligne sur `https://www.sos-fuite-angers.fr/conseils/fuite-eau-cuisine-endroits-verifier`
+(HTTP 200 vérifié). **11 drafts en réserve** (002-012), prochaine publication auto : lundi 05:00 UTC,
+puis lun/mer/ven. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
+Reste à produire : T1 sessions 2-3 (titres 13-37), puis lots trimestriels après chaque bilan data.
+
 ## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
 
 - **Ajouter des drafts** : déposer les articles dans `content/drafts/` nommés `NNN-slug.mdx`
