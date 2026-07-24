@@ -239,21 +239,44 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) vert, 0 erreur, 39 pages SSG.
   - **À valider par Rémy** : 6 pages sans carte orpheline + les 2 nouveaux hero.
 
+- **2026-07-25 (Autoblog, passe de finition sur les 11 articles)** : demande CEO pilotée par
+  `docs/SEO-GEO-PLAN.md` §4 (FAQ des articles non exploitée en données structurées). Deux
+  chantiers sur les 11 `.mdx` existants, périmètre inchangé (`content/conseils/*.mdx` +
+  `public/conseils/*`) :
+  1. **FAQ déplacée en frontmatter** (`faq: [{q, a}]`, même schéma que les services/zones) sur
+     les 11 articles, section `## FAQ` retirée du corps pour éviter le doublon. Le seul article
+     qui n'avait pas encore de FAQ (`fuite-invisible-signes`, écrit avant la convention) en a
+     reçu une nouvelle, cohérente avec son contenu. **Le rendu visuel du bloc FAQ n'est pas
+     câblé** : c'est au Builder de brancher `<Faq items={article.faq}>` dans
+     `app/conseils/[slug]/page.tsx` (actuellement seul `articleJsonLd()` est rendu, pas de
+     `faqJsonLd()` ni d'affichage du tableau `faq`).
+  2. **25 images de corps ajoutées** (2 à 3 par article, 1600×893 JPEG, ~200-460 Ko), insérées en
+     markdown (`![alt](/conseils/slug-xx.jpg)` + légende en italique) aux endroits pertinents du
+     texte. Génération Nano Banana 2 (2K, 16:9) puis contrôle visuel systématique : **6 images
+     régénérées après premier contrôle** pour cause de texte/marque lisible (un pack de piscine
+     affichait la marque « STA-RITE », un dossier affichait « RENTAL LEASE AGREEMENT » en
+     anglais, 4 autres avaient des marquages de fonderie lisibles sur des raccords/compteurs).
+     Aucun chiffre inventé, aucun visage flou.
+  - Build (`npm run build`) revérifié vert, 39 pages SSG, aucun fichier hors périmètre touché.
+  - Détail des 11 articles + nombre d'images par article au §6.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
-| Slug | Titre | Services liés |
-|---|---|---|
-| `fuite-invisible-signes` | Fuite d'eau invisible : 7 signes qui doivent vous alerter | detection-fuite-non-destructive, urgence-fuite-eau |
-| `cout-recherche-fuite-eau-assurance` | Combien coûte une recherche de fuite d'eau et qui paie la facture ? | detection-fuite-non-destructive, urgence-fuite-eau |
-| `degat-des-eaux-demarches-assurance` | Dégât des eaux : les démarches assurance étape par étape | assechement-degat-des-eaux, detection-fuite-non-destructive |
-| `fuite-canalisation-enterree-detection` | Fuite sur canalisation enterrée : comment on la détecte sans tout casser | recherche-fuite-canalisation-enterree, detection-fuite-non-destructive |
-| `fuite-eau-copropriete-responsabilite` | Fuite d'eau en copropriété : qui est responsable et qui paie ? | detection-fuite-non-destructive, assechement-degat-des-eaux |
-| `detection-gaz-traceur-fonctionnement` | Comment fonctionne la détection par gaz traceur (et quand on l'utilise) | detection-fuite-non-destructive, recherche-fuite-canalisation-enterree |
-| `fuite-avant-apres-compteur` | Fuite après compteur / avant compteur : comment savoir et qui contacter | detection-fuite-non-destructive, recherche-fuite-canalisation-enterree |
-| `piscine-perd-eau-evaporation-ou-fuite` | Piscine qui perd de l'eau : évaporation normale ou vraie fuite ? | recherche-fuite-piscine |
-| `fuite-dans-un-mur-signes-detection` | Fuite dans un mur : les signes qui ne trompent pas (et comment la localiser sans tout casser) | recherche-fuite-encastree |
-| `facture-eau-anormalement-elevee-causes` | Facture d'eau anormalement élevée : causes et comment réagir | detection-fuite-non-destructive, urgence-fuite-eau |
-| `locataire-proprietaire-qui-paie-fuite` | Locataire ou propriétaire : qui paie la recherche de fuite d'eau ? | urgence-fuite-eau, detection-fuite-non-destructive |
+| Slug | Titre | Services liés | Images corps |
+|---|---|---|---|
+| `fuite-invisible-signes` | Fuite d'eau invisible : 7 signes qui doivent vous alerter | detection-fuite-non-destructive, urgence-fuite-eau | 2 |
+| `cout-recherche-fuite-eau-assurance` | Combien coûte une recherche de fuite d'eau et qui paie la facture ? | detection-fuite-non-destructive, urgence-fuite-eau | 2 |
+| `degat-des-eaux-demarches-assurance` | Dégât des eaux : les démarches assurance étape par étape | assechement-degat-des-eaux, detection-fuite-non-destructive | 3 |
+| `fuite-canalisation-enterree-detection` | Fuite sur canalisation enterrée : comment on la détecte sans tout casser | recherche-fuite-canalisation-enterree, detection-fuite-non-destructive | 2 |
+| `fuite-eau-copropriete-responsabilite` | Fuite d'eau en copropriété : qui est responsable et qui paie ? | detection-fuite-non-destructive, assechement-degat-des-eaux | 2 |
+| `detection-gaz-traceur-fonctionnement` | Comment fonctionne la détection par gaz traceur (et quand on l'utilise) | detection-fuite-non-destructive, recherche-fuite-canalisation-enterree | 2 |
+| `fuite-avant-apres-compteur` | Fuite après compteur / avant compteur : comment savoir et qui contacter | detection-fuite-non-destructive, recherche-fuite-canalisation-enterree | 2 |
+| `piscine-perd-eau-evaporation-ou-fuite` | Piscine qui perd de l'eau : évaporation normale ou vraie fuite ? | recherche-fuite-piscine | 3 |
+| `fuite-dans-un-mur-signes-detection` | Fuite dans un mur : les signes qui ne trompent pas (et comment la localiser sans tout casser) | recherche-fuite-encastree | 2 |
+| `facture-eau-anormalement-elevee-causes` | Facture d'eau anormalement élevée : causes et comment réagir | detection-fuite-non-destructive, urgence-fuite-eau | 3 |
+| `locataire-proprietaire-qui-paie-fuite` | Locataire ou propriétaire : qui paie la recherche de fuite d'eau ? | urgence-fuite-eau, detection-fuite-non-destructive | 2 |
+
+Toutes les FAQ sont désormais en frontmatter (`faq: [...]`), plus en Markdown dans le corps.
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
