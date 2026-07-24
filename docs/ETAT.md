@@ -1,7 +1,7 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 (CEO — refonte complète MERGÉE EN PROD).
+> Dernière mise à jour : 2026-07-25 (Autoblog — session 2 du lot T1, drafts 013-024).
 
 ---
 
@@ -31,9 +31,9 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 
 Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 001 publié automatiquement
 (commit `f7ef801`) → article en ligne sur `https://www.sos-fuite-angers.fr/conseils/fuite-eau-cuisine-endroits-verifier`
-(HTTP 200 vérifié). **11 drafts en réserve** (002-012), prochaine publication auto : lundi 05:00 UTC,
+(HTTP 200 vérifié). **23 drafts en réserve** (002-024), prochaine publication auto : lundi 05:00 UTC,
 puis lun/mer/ven. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
-Reste à produire : T1 sessions 2-3 (titres 13-37), puis lots trimestriels après chaque bilan data.
+Reste à produire : fin du T1, session 3 (titres 25-37), puis lots trimestriels après chaque bilan data.
 
 ## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
 
@@ -429,6 +429,25 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) vert, aucun fichier hors périmètre touché.
   - Détail des 12 drafts au §6bis.
 
+- **2026-07-25 (Autoblog, session 2 du lot T1 — drafts 013 à 024)** : suite directe de la session
+  précédente, mêmes règles. Items #13 à #24 du calendrier (`docs/CALENDRIER-EDITORIAL.md` §2, T1)
+  rédigés comme drafts : `content/drafts/013-*.mdx` à `024-*.mdx` (la numérotation continue,
+  001 publié, 002-012 en attente). 700-1000 mots chacun, réponse citable en intro, FAQ 4 questions
+  en frontmatter, 2 images de corps + 1 cover par article (36 images générées, préfixées par slug).
+  **3 images régénérées après contrôle visuel** : un logo de marque « FLIR » lisible sur l'écran
+  d'une caméra thermique, et un texte gravé/embossé façon marque sur deux outils de plomberie dans
+  deux covers. Aucun chiffre inventé, zéro tiret cadratin. Anti-cannibalisation du calendrier §3
+  respectée : #17 traité en angle « absence courte estivale » générique (sans référencer #49/#59,
+  pas encore écrits) ; #18 centré sur le réflexe rentrée sans reprendre le protocole détaillé de
+  l'article #6 (draft 006, déjà écrit) ; #13/#14/#15 différenciés (comparatif méthodes / caméra
+  thermique en profondeur / argument coût) sans recouper `detection-gaz-traceur-fonctionnement`
+  (P6, déjà publié) ; #19/#22 différenciés (mécanisme sécheresse-argile générique vs angle
+  géographique confluent Maine-Loire, #22 renvoie vers #19 pour le mécanisme).
+  Les drafts restent **invisibles du site** (build vérifié : toujours 12 pages `/conseils/[slug]`,
+  inchangé par rapport à avant cette session).
+  - Build (`npm run build`) vert, 43 pages générées, aucun fichier hors périmètre touché.
+  - Détail des 12 drafts au §6bis.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
@@ -465,8 +484,20 @@ Ces 12 fichiers ne sont pas encore en ligne. Numéro = ordre du calendrier `docs
 | 010 | `obligations-syndic-fuite-parties-communes` | Obligations du syndic de copropriété face à une fuite dans les parties communes | assechement-degat-des-eaux | 3 |
 | 011 | `franchise-plafond-exclusions-assurance-fuite` | Franchise, plafond, exclusions : ce que votre assurance habitation couvre vraiment en cas de fuite | detection-fuite-non-destructive, assechement-degat-des-eaux | 3 |
 | 012 | `devis-recherche-fuite-questions-avant-signer` | Devis de recherche de fuite : les questions à poser avant de signer | detection-fuite-non-destructive | 3 |
+| 013 | `quelle-methode-detection-fuite-choisir` | Gaz traceur, caméra thermique ou corrélation acoustique : quelle méthode pour quelle situation | detection-fuite-non-destructive | 2 |
+| 014 | `camera-thermique-detection-fuite-fonctionnement` | Comment fonctionne la caméra thermique pour détecter une fuite (et ses limites) | detection-fuite-non-destructive | 2 |
+| 015 | `recherche-fuite-non-destructive-moins-chere` | Pourquoi une recherche de fuite non destructive coûte moins cher que casser à l'aveugle | detection-fuite-non-destructive | 2 |
+| 016 | `hivernage-piscine-eviter-fuites-printemps` | Hivernage de piscine : les gestes qui évitent les fuites au printemps | recherche-fuite-piscine | 2 |
+| 017 | `securiser-logement-fuite-avant-vacances` | Partir en vacances l'esprit tranquille : sécuriser son logement contre le risque de fuite | urgence-fuite-eau | 2 |
+| 018 | `controler-compteur-eau-apres-vacances` | Rentrée : pourquoi contrôler son compteur d'eau après une absence prolongée | detection-fuite-non-destructive | 2 |
+| 019 | `secheresse-argile-fuite-canalisation-enterree` | Sécheresse et argile : le lien entre mouvement de terrain et fuite de canalisation enterrée | recherche-fuite-canalisation-enterree | 2 |
+| 020 | `piscine-fin-ete-verifier-avant-hivernage-angers` | Dernières piscines encore ouvertes fin d'été à Angers : bien vérifier avant l'hivernage | recherche-fuite-piscine | 2 |
+| 021 | `trelaze-sol-ardoisier-canalisation-enterree` | Trélazé et son ancien bassin ardoisier : un sol particulier pour les canalisations enterrées | recherche-fuite-canalisation-enterree | 2 |
+| 022 | `bouchemaine-sol-argileux-canalisation-fuite` | Bouchemaine et les sols argileux du confluent Maine-Loire : un facteur de risque pour vos canalisations | recherche-fuite-canalisation-enterree | 2 |
+| 023 | `avrille-plancher-chauffant-fuite-vigilance` | Avrillé et ses pavillons avec plancher chauffant : un point de vigilance fuite spécifique | recherche-fuite-encastree | 2 |
+| 024 | `duree-sechage-degat-des-eaux` | Combien de temps faut-il pour assécher un logement après un dégât des eaux ? | assechement-degat-des-eaux | 2 |
 
-Restant à écrire : items #13 à #149 du calendrier (T1 jusqu'à #37, puis T2/T3/T4).
+Restant à écrire : items #25 à #149 du calendrier (fin du T1 dès #25, puis T2/T3/T4).
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
