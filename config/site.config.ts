@@ -70,7 +70,7 @@ export const siteConfig = {
   /* ── SEO global (défauts, surchargés par page, textes fournis par le SEO ST-2) ── */
   seo: {
     // NB: basculer sur le domaine final au Gate C. Preview = URL vercel.
-    canonicalBase: 'https://sos-fuite-angers.vercel.app',
+    canonicalBase: 'https://www.sos-fuite-angers.fr',
     defaultOgImage: '/og.png',
     locale: 'fr_FR',
     lang: 'fr',

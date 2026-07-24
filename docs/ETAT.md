@@ -1,9 +1,30 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 (session CEO — reprise du projet, audit initial).
+> Dernière mise à jour : 2026-07-25 (CEO — refonte complète MERGÉE EN PROD).
 
 ---
+
+## ⭐ MILESTONE 2026-07-25 : REFONTE MERGÉE EN PROD
+
+Branche `feat/NOU-29-services-images-aeration` mergée sur `main` (commit `c515365`, fast-forward)
+→ déploiement Vercel prod **réussi et vérifié** (`sos-fuite-angers.vercel.app` : `/llms.txt` 200,
+`/zones/verrieres-en-anjou` 200). Chaque étape a été **contrôlée visuellement par le CEO** (captures).
+
+Livré et en ligne : 6 pages services (images hero + corps pleine largeur, aérées, centrées),
+11 articles blog (page premium : FAQ→FAQPage JSON-LD, date lisible, temps de lecture, « à lire aussi »),
+hub /zones + 8 communes (2 nouvelles : Verrières, Sainte-Gemmes), GEO (llms.txt + crawlers IA autorisés).
+Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffisant sur le goût visuel).
+
+### RESTE À FAIRE (post-prod)
+1. **Domaine** : ✅ EN LIGNE. `https://www.sos-fuite-angers.fr` répond 200, apex → 308 vers www.
+2. **Canonical** : ✅ FAIT (branche `fix/canonical-domaine`, en attente merge). `seo.canonicalBase`
+   basculé sur `https://www.sos-fuite-angers.fr`. Tout (sitemap/robots/llms.txt/canonical/OG/JSON-LD)
+   passe par l'unique `BASE` de `lib/seo.ts` → propagé automatiquement. Sitemap généré vérifié.
+3. **Google Search Console** : ajouter la propriété + soumettre le sitemap (action Rémy, guidée par CEO).
+4. **Micro-fix** : ✅ FAIT (même branche). Clé dupliquée `Breadcrumbs` corrigée (`key={i}`), 0 warning console.
+5. **Rank & rent continu** : cadence récurrente de l'autoblog ; monitoring indexation (~3 mois) ;
+   remplacer persona DEMO (Thomas Mercier + chiffres) le jour où un artisan loueur est trouvé.
 
 ## 1. CE QU'ON SAIT (acquis)
 
@@ -130,6 +151,29 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   tant que le CNAME OVH n'est pas enregistré + propagé.
 
 ## 5. HISTORIQUE DES SESSIONS
+
+- **2026-07-25 (Builder — bascule canonical domaine + micro-fix Breadcrumbs)** : branche
+  `fix/canonical-domaine` (partie de `main`, jamais mergée sans validation). Domaine live
+  (`https://www.sos-fuite-angers.fr` 200, apex → 308 www).
+  1. **`seo.canonicalBase`** dans `config/site.config.ts` : `https://sos-fuite-angers.vercel.app`
+     → `https://www.sos-fuite-angers.fr` (version www, celle servie en direct par Vercel).
+     Toute la SEO passe par l'unique constante `BASE` (`lib/seo.ts`) via `absUrl`/`buildMetadata` :
+     sitemap, robots, llms.txt, `<link rel=canonical>`, Open Graph et tous les JSON-LD (dont
+     `ORG_ID`) reprennent donc la nouvelle base automatiquement. **Vérifié** : sitemap généré
+     (`/.next/server/app/sitemap.xml.body`) = toutes les `<loc>` en `https://www.sos-fuite-angers.fr/`,
+     0 occurrence `vercel.app`. Aucune base résiduelle dans `config/`, `lib/`, `app/`.
+  2. **Indexabilité prod confirmée** : `IS_NOINDEX` (`lib/seo.ts`) = vrai uniquement si
+     `SEO_NOINDEX=1` OU `VERCEL_ENV !== 'production'`. Sur le domaine final (env prod Vercel),
+     `VERCEL_ENV = production` → `IS_NOINDEX = false` → site **indexable** (canonical/robots en
+     `index,follow`). Le changement de base n'affecte pas cette logique. (Seule condition externe :
+     ne pas poser `SEO_NOINDEX=1` dans les env vars du projet prod Vercel.)
+  3. **Micro-fix `Breadcrumbs.tsx`** : le warning React « two children with the same key » venait
+     de `key={item.path}` alors que les items `Accueil` et `Services` pointent tous deux vers `/`
+     sur les pages services. Corrigé en `key={i}` (index de liste). Rendu et JSON-LD `BreadcrumbList`
+     inchangés (paths non touchés). **Vérifié** : 0 warning/erreur console (Playwright dev) sur
+     `urgence-fuite-eau`, `detection-fuite-non-destructive`, `avrille`, `fuite-invisible-signes`.
+  - Build (`npm run build`) vert, 42 pages SSG.
+  - **À valider par Rémy avant merge sur `main`** (déploiement prod).
 
 - **2026-07-25 (CEO)** : reprise du projet depuis Paperclip. Clone du repo GitHub, audit complet,
   création de `CLAUDE.md` et `docs/ETAT.md`. Diagnostic : archi saine, design à refaire.
