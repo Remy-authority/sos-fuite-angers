@@ -178,6 +178,16 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
 - **2026-07-25 (Autoblog, 2e série)** : 3 articles supplémentaires (7 au total désormais),
   slugs vérifiés sans collision avec l'existant. Build (`npm run build`) revérifié vert avec
   les 7 pages `/conseils/[slug]` générées. Détail au §6.
+- **2026-07-25 (Autoblog, 3e série — pilotée par `docs/SEO-GEO-PLAN.md` §2, items #1 à #4 du
+  backlog)** : 4 derniers articles (11 au total). Priorité donnée aux deux services qui
+  n'avaient encore aucun article lié (`recherche-fuite-piscine`, `recherche-fuite-encastree`),
+  comme demandé par le CEO/SEO. L'article locataire/propriétaire a été rédigé avec un angle
+  volontairement distinct de `fuite-eau-copropriete-responsabilite` (bail location individuelle
+  — vétusté/faute, réparations locatives, assurance PNO vs locataire — plutôt que
+  parties privatives/communes + IRSI) et renvoie vers cet article pour le cas copropriété au
+  lieu de dupliquer le sujet ; recoupement jugé faible, donc pas de bascule vers l'item #8 du
+  backlog. Slugs vérifiés sans collision. Build revérifié vert, 11 pages `/conseils/[slug]`.
+  **Le CEO indique que le blog Autoblog est mis en pause après cette série.** Détail au §6.
 
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
@@ -190,6 +200,10 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
 | `fuite-eau-copropriete-responsabilite` | Fuite d'eau en copropriété : qui est responsable et qui paie ? | detection-fuite-non-destructive, assechement-degat-des-eaux |
 | `detection-gaz-traceur-fonctionnement` | Comment fonctionne la détection par gaz traceur (et quand on l'utilise) | detection-fuite-non-destructive, recherche-fuite-canalisation-enterree |
 | `fuite-avant-apres-compteur` | Fuite après compteur / avant compteur : comment savoir et qui contacter | detection-fuite-non-destructive, recherche-fuite-canalisation-enterree |
+| `piscine-perd-eau-evaporation-ou-fuite` | Piscine qui perd de l'eau : évaporation normale ou vraie fuite ? | recherche-fuite-piscine |
+| `fuite-dans-un-mur-signes-detection` | Fuite dans un mur : les signes qui ne trompent pas (et comment la localiser sans tout casser) | recherche-fuite-encastree |
+| `facture-eau-anormalement-elevee-causes` | Facture d'eau anormalement élevée : causes et comment réagir | detection-fuite-non-destructive, urgence-fuite-eau |
+| `locataire-proprietaire-qui-paie-fuite` | Locataire ou propriétaire : qui paie la recherche de fuite d'eau ? | urgence-fuite-eau, detection-fuite-non-destructive |
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
