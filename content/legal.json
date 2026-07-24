@@ -1,16 +1,14 @@
 {
-  "_comment": "GABARIT mentions légales — données éditeur à fournir par Rémy avant la prod (Gate C). Les champs vides s'affichent comme « À compléter » et NE DOIVENT PAS être remplis avec des valeurs factices. L'hébergeur (Vercel) est un fait, pré-rempli.",
+  "_comment": "Mentions légales — éditeur = société propriétaire du site (DYONISOS LTD, droit UK). Données réelles fournies par Rémy (NOU-29). L'éditeur du site n'est PAS le prestataire des interventions : les infos d'un artisan (assurance RC pro/décennale) seront ajoutées à la location. Ne jamais inventer de valeurs. Hébergeur (Vercel) = fait, pré-rempli.",
   "editeur": {
-    "raisonSociale": "",
-    "formeJuridique": "",
-    "siren": "",
-    "rcs": "",
-    "capital": "",
-    "adresse": "",
-    "directeurPublication": "",
+    "raisonSociale": "DYONISOS LTD",
+    "formeJuridique": "Private Limited Company (société à responsabilité limitée de droit anglais)",
+    "numeroImmatriculation": "14807222",
+    "registre": "Companies House (Royaume-Uni)",
+    "adresse": "67 Eastover Road, High Littleton, Bristol, BS39 6HZ, Royaume-Uni",
+    "directeurPublication": "Remy Zaoui",
     "emailContact": "contact@sosfuite-angers.fr",
-    "telephone": "07 56 85 31 25",
-    "tvaIntracom": ""
+    "telephone": "07 56 85 31 25"
   },
   "assurance": {
     "assureur": "",
@@ -24,7 +22,7 @@
     "contact": "privacy@vercel.com"
   },
   "confidentialite": {
-    "responsableTraitement": "",
+    "responsableTraitement": "DYONISOS LTD",
     "finalite": "Traitement des demandes de contact et de devis envoyées via le formulaire du site.",
     "baseLegale": "Consentement de la personne concernée (art. 6.1.a RGPD).",
     "donneesCollectees": ["nom", "téléphone", "ville / code postal", "message"],

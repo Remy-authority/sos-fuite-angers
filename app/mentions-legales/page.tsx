@@ -33,11 +33,8 @@ export default function MentionsLegales() {
           <ul className="mt-2 space-y-1">
             <li><strong>Dénomination :</strong> <V>{e.raisonSociale}</V></li>
             <li><strong>Forme juridique :</strong> <V>{e.formeJuridique}</V></li>
-            <li><strong>Capital social :</strong> <V>{e.capital}</V></li>
-            <li><strong>SIREN :</strong> <V>{e.siren}</V></li>
-            <li><strong>RCS :</strong> <V>{e.rcs}</V></li>
-            <li><strong>TVA intracommunautaire :</strong> <V>{e.tvaIntracom}</V></li>
-            <li><strong>Adresse :</strong> <V>{e.adresse}</V></li>
+            <li><strong>Numéro d'immatriculation :</strong> <V>{e.numeroImmatriculation}</V> — <V>{e.registre}</V></li>
+            <li><strong>Siège social :</strong> <V>{e.adresse}</V></li>
             <li><strong>Directeur de la publication :</strong> <V>{e.directeurPublication}</V></li>
             <li><strong>Contact :</strong> {e.emailContact} · {e.telephone}</li>
           </ul>
