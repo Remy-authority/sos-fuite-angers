@@ -5,6 +5,7 @@ import { getServices } from '@/lib/content'
 import { buildMetadata } from '@/lib/seo'
 import CtaBanner from '@/components/ui/CtaBanner'
 import Faq from '@/components/ui/Faq'
+import LeadForm from '@/components/ui/LeadForm'
 import Hero from '@/components/sections/Hero'
 import TrustBadges from '@/components/sections/TrustBadges'
 import About from '@/components/sections/About'
@@ -72,6 +73,25 @@ export default function HomePage() {
       <About />
       <Process />
       {siteConfig.features.gallery && <Realisations />}
+
+      {/* Formulaire devis — section dédiée (recommandation CEO, form hors hero) */}
+      <section id="devis" className="section bg-slate-100" aria-labelledby="devis-title">
+        <div className="container-site">
+          <div className="mx-auto max-w-2xl">
+            <div className="mb-6 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">Devis gratuit</p>
+              <h2 id="devis-title" className="text-2xl font-bold text-slate-900 md:text-3xl">
+                Décrivez votre problème en 3 étapes
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Nous vous rappelons sous 30 minutes — sans engagement.
+              </p>
+            </div>
+            <LeadForm />
+          </div>
+        </div>
+      </section>
+
       <WhyUs />
 
       <CtaBanner />
