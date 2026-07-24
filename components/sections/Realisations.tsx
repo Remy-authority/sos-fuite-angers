@@ -47,7 +47,7 @@ const REALISATIONS = [
     id: 'acoustique',
     category: 'Détection acoustique',
     categoryColor: 'bg-violet-600',
-    title: 'Fuite sous dalle — acoustique',
+    title: 'Fuite sous dalle par acoustique',
     desc: "Localisation à 3 cm près sous chape béton, maison individuelle Saint-Barthélemy.",
     icon: (
       <svg viewBox="0 0 80 80" className="h-full w-full" aria-hidden="true">
@@ -78,8 +78,8 @@ const REALISATIONS = [
     id: 'gaz-traceur',
     category: 'Gaz traceur',
     categoryColor: 'bg-emerald-600',
-    title: 'Injection gaz traceur — réseau',
-    desc: "Détection fuite chauffage en cave, résidence Avrillé — intervention non destructive.",
+    title: 'Injection gaz traceur sur réseau',
+    desc: "Détection fuite chauffage en cave, résidence Avrillé, sans destruction.",
     icon: (
       <svg viewBox="0 0 80 80" className="h-full w-full" aria-hidden="true">
         <rect width="80" height="80" fill="#0F172A" />
