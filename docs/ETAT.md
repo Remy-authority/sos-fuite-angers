@@ -102,7 +102,8 @@
 - **Autoblog** → `content/conseils/*.mdx`, `public/conseils/*` UNIQUEMENT (nouveaux articles).
   Aucun fichier partagé à éditer (liens via frontmatter `relatedServices`). Parallèle-safe.
 - **SEO/GEO auditeur** → LECTURE SEULE + écrit `docs/SEO-GEO-PLAN.md`. N'édite aucun code.
-- **Zones** (`app/zones/*`, `content/zones/*`) → non assigné (vague suivante). Interdit aux agents actuels.
+- **Zones** (`app/zones/*`, `content/zones/*`, `public/zones/*`) → **réassigné au Builder** par le
+  CEO (message du 2026-07-25). Refonte hub + pages commune + 2 nouvelles communes + GEO. FAIT.
 
 Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant toute réaffectation.
 
@@ -283,6 +284,39 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
      `getRelatedConseils`. Le bloc « Nos services liés » existant est conservé.
   - Build (`npm run build`) vert, 0 erreur/warn, 39 pages SSG. Rendu vérifié desktop + mobile.
   - **À valider par Rémy** : URL de contrôle `/conseils/fuite-invisible-signes`.
+
+- **2026-07-25 (Builder, soir — refonte /zones + 2 communes + GEO)** : demande CEO. Périmètre
+  zones **réassigné au Builder** (cf. §4bis). Fichiers : `app/zones/page.tsx`,
+  `app/zones/[slug]/page.tsx`, `app/robots.ts`, `app/llms.txt/route.ts` (nouveau), `lib/content.ts`
+  (type `Zone` + champ `context?`), `content/zones/*.json` (2 créés + 6 enrichis), `public/zones/*`
+  (6 images). **Aucun fichier hors périmètre touché.**
+  1. **Hub `/zones` refondu** : eyebrow + H1, **réponse courte citable** (« SOS Fuite Angers couvre
+     Angers et 8 communes … dans un rayon de 25 km : … »), **cartes enrichies** (nom + code postal +
+     une phrase de contexte par commune via le nouveau champ `context`), intégration du composant
+     **`ServiceAreaMap`** (carte de couverture), **FAQ** de zone (4 Q/R) + **FAQPage JSON-LD**.
+  2. **Pages commune aérées** : **image d'en-tête** + **1 image de corps** (après le 1er bloc, avec
+     légende), servies depuis un **pool partagé** `public/zones/` (3 hero + 3 corps, cadre résidentiel
+     français crédible, zéro texte/marque/visage flou) **assigné de façon déterministe par le
+     template** (index dans la liste triée) → une nouvelle commune récupère automatiquement des
+     visuels sans génération (logique template N+1). Contenu, FAQ et schema existants conservés.
+     Petit nettoyage : titre du bloc de liens services rendu distinct (« Nos services de recherche
+     de fuite ») et suppression d'une ligne « communes limitrophes » en doublon avec le bloc 3.
+  3. **2 nouvelles communes** (plan SEO) : `content/zones/verrieres-en-anjou.json` (49480, commune
+     nouvelle à l'est d'Angers = Saint-Sylvain-d'Anjou + Pellouailles-les-Vignes) et
+     `content/zones/sainte-gemmes-sur-loire.json` (49130, sud d'Angers, bords de Loire, maraîchage).
+     Structure identique à `avrille.json`. Contenu vrai et local, **aucun chiffre/statistique
+     inventé** (pas de population). Ajoutées automatiquement au hub, à `ServiceAreaMap`, au footer,
+     au sitemap et à `llms.txt` via `getZones()`.
+  4. **GEO** : `/llms.txt` (route statique générée depuis la config + le contenu : activité, ville +
+     8 communes, 6 services, méthodes, téléphone, URLs) servie en `text/plain` (HTTP 200 vérifié).
+     `robots.ts` : en plus du `*` (qui autorisait déjà tout), **allow explicite** des crawlers IA
+     (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, PerplexityBot, Google-Extended,
+     Applebot-Extended) — la preview reste entièrement bloquée (IS_NOINDEX). Réponse courte
+     « citable » en tête de chaque page zone = l'intro (vérifiée, factuelle).
+  - Build vert, 42 pages SSG (39 + 2 communes + `/llms.txt`). JSON-LD vérifié : hub et pages zone
+    émettent `FAQPage` (4 Q/R) ; pages zone émettent aussi `Service` + `BreadcrumbList`.
+  - **À valider par Rémy** : `/zones`, `/zones/sainte-gemmes-sur-loire`, `/zones/verrieres-en-anjou`,
+    `/zones/avrille` ; `/llms.txt` accessible ; `/robots.txt` (crawlers IA).
 
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 

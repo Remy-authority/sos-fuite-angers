@@ -59,6 +59,8 @@ export interface Zone {
   slug: string
   name: string
   postalCode: string
+  /** Phrase de contexte courte (carte du hub /zones). Optionnel. */
+  context?: string
   metaTitle: string
   metaDescription: string
   h1: string
