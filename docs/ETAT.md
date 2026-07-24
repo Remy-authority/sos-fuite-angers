@@ -9,8 +9,8 @@
 
 - **Modèle** : rank & rent (on classe le site, on le loue à un artisan). Site pilote =
   recherche de fuite d'eau à Angers. Repo = template pour les prochains sites.
-- **Domaine** : `sos-fuite-angers.fr` — **acheté** (registrar : Hermès, code de gestion
-  `WR7dydp13600`).
+- **Domaine** : `sos-fuite-angers.fr` — **acheté**, DNS géré chez **OVHcloud** (zone DNS OVH).
+  (« Hermès » / code `WR7dydp13600` = un autre service, sans rapport avec le DNS du domaine.)
 - **Hébergement** : Vercel, projet `sos-fuite-angers`. Le site répond en ligne :
   `https://sos-fuite-angers.vercel.app`. Redéploiement auto à chaque push sur `main`.
 - **Code source** : GitHub `Remy-authority/sos-fuite-angers` (branche `main`).
