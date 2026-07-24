@@ -84,7 +84,7 @@ export default function HomePage() {
                 Décrivez votre problème en 3 étapes
               </h2>
               <p className="mt-2 text-sm text-slate-600">
-                Nous vous rappelons sous 30 minutes — sans engagement.
+                Nous vous rappelons sous 30 minutes, sans engagement.
               </p>
             </div>
             <LeadForm />
