@@ -403,6 +403,24 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) vert, 42 pages SSG, aucun fichier hors périmètre touché.
   - **À valider par Rémy** : pages commune centrées, marges gauche = droite.
 
+- **2026-07-25 (Autoblog, drafts T1 pour le scheduler)** : demande CEO. 12 premiers articles du
+  calendrier `docs/CALENDRIER-EDITORIAL.md` (T1, items #1 à #12) rédigés comme **drafts**, pas
+  publiés directement : `content/drafts/001-*.mdx` à `012-*.mdx`, format frontmatter identique
+  aux articles publiés (`faq: [...]` inclus), 700-1000 mots chacun, 2 images de corps + 1 cover
+  par article (36 images générées, préfixées par slug pour zéro collision avec les 11 articles
+  déjà publiés). **8 images régénérées après contrôle visuel** : bouteilles à l'aspect de marque
+  (cuisine, évier, buanderie), étiquettes anglaises "HOT/COLD" lisibles sur un flexible, chiffres
+  de compteur d'eau lisibles + reflet sur écran de téléphone, texte embossé façon marque sur un
+  compteur, et une image en triptyque au lieu d'un cadre photo unique. Aucun chiffre inventé,
+  zéro tiret cadratin. Anti-cannibalisation du calendrier §3 respectée à la rédaction (notamment
+  #6 = protocole dédié sans reprendre la liste de signes de P1/P10 ; #9/#10/#11 = trois angles
+  distincts sur l'assurance, voir tableau §3 du calendrier).
+  Les drafts sont **invisibles du site** (aucun loader ne lit `content/drafts/`, confirmé par le
+  build : toujours 11 pages `/conseils/[slug]`, inchangé). Le scheduler `feat/autoblog-scheduler`
+  publiera ces 12 drafts un par un (lun/mer/ven) une fois cette branche mergée.
+  - Build (`npm run build`) vert, aucun fichier hors périmètre touché.
+  - Détail des 12 drafts au §6bis.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
@@ -420,6 +438,27 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
 | `locataire-proprietaire-qui-paie-fuite` | Locataire ou propriétaire : qui paie la recherche de fuite d'eau ? | urgence-fuite-eau, detection-fuite-non-destructive | 2 |
 
 Toutes les FAQ sont désormais en frontmatter (`faq: [...]`), plus en Markdown dans le corps.
+
+## 6bis. DRAFTS T1 EN ATTENTE DE PUBLICATION (`content/drafts/`, scheduler autoblog)
+
+Ces 12 fichiers ne sont pas encore en ligne. Numéro = ordre du calendrier `docs/CALENDRIER-EDITORIAL.md` §2 (items #1 à #12). Le scheduler les publiera un par un dans cet ordre.
+
+| N° | Slug (fichier `content/drafts/`) | Titre | Services liés | Images |
+|---|---|---|---|---|
+| 001 | `fuite-eau-cuisine-endroits-verifier` | Fuite d'eau dans la cuisine : les endroits à vérifier avant d'appeler un pro | detection-fuite-non-destructive | 3 |
+| 002 | `fuite-eau-salle-de-bain-causes` | Fuite d'eau dans la salle de bain : douche, baignoire, WC, les causes possibles | detection-fuite-non-destructive | 3 |
+| 003 | `tache-plafond-degat-eaux-voisin-dessus` | Tache au plafond : dégât des eaux du voisin du dessus, les bons réflexes immédiats | assechement-degat-des-eaux | 3 |
+| 004 | `bruit-eau-continu-que-verifier` | Bruit d'eau qui coule en continu alors que rien n'est ouvert : que vérifier | detection-fuite-non-destructive | 3 |
+| 005 | `fuite-sous-evier-joint-siphon-canalisation` | Fuite sous l'évier : joint, siphon ou canalisation, comment distinguer | detection-fuite-non-destructive | 3 |
+| 006 | `compteur-eau-tourne-nuit-protocole` | Compteur d'eau qui tourne la nuit : le protocole pour en être sûr | detection-fuite-non-destructive | 3 |
+| 007 | `wc-fuit-permanence-joint-ou-canalisation` | WC qui fuit en permanence : joint de chasse d'eau ou canalisation sous la cuvette | detection-fuite-non-destructive | 3 |
+| 008 | `buanderie-inondee-sans-cause-visible` | Buanderie inondée sans cause visible : les points de contrôle avant d'appeler | detection-fuite-non-destructive | 3 |
+| 009 | `garantie-degat-eaux-ou-recherche-fuite-difference` | Garantie dégât des eaux ou garantie recherche de fuite : quelle différence dans votre contrat | detection-fuite-non-destructive, assechement-degat-des-eaux | 3 |
+| 010 | `obligations-syndic-fuite-parties-communes` | Obligations du syndic de copropriété face à une fuite dans les parties communes | assechement-degat-des-eaux | 3 |
+| 011 | `franchise-plafond-exclusions-assurance-fuite` | Franchise, plafond, exclusions : ce que votre assurance habitation couvre vraiment en cas de fuite | detection-fuite-non-destructive, assechement-degat-des-eaux | 3 |
+| 012 | `devis-recherche-fuite-questions-avant-signer` | Devis de recherche de fuite : les questions à poser avant de signer | detection-fuite-non-destructive | 3 |
+
+Restant à écrire : items #13 à #149 du calendrier (T1 jusqu'à #37, puis T2/T3/T4).
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
