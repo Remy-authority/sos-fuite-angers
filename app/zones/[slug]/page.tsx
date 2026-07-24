@@ -82,7 +82,7 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
         {/* Réponse courte factuelle « citable » (GEO) */}
         <p className="mt-6 rounded-card bg-light p-4 text-slate-700">{zone.intro}</p>
 
-        <div className="prose-content mt-8 max-w-3xl">
+        <div className="prose-content mt-8 mx-auto max-w-3xl">
           {zone.blocks.map((b, i) => (
             <section key={b.heading}>
               <h2>{b.heading}</h2>
@@ -109,7 +109,7 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
           ))}
         </div>
 
-        <nav aria-label="Nos services" className="mt-10 max-w-3xl">
+        <nav aria-label="Nos services" className="mt-10 mx-auto max-w-3xl">
           <h2 className="text-xl">Nos services de recherche de fuite</h2>
           <ul className="mt-3 flex flex-wrap gap-2">
             {mainServices.map((s) => (

@@ -334,6 +334,17 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) vert, 42 pages SSG, aucun fichier hors périmètre touché.
   - **À valider par Rémy** : images de corps services + communes à la même taille que les articles.
 
+- **2026-07-25 (Builder, soir — centrage colonne pages commune)** : demande CEO. Le corps des
+  pages commune (`.prose-content max-w-3xl` + la nav services) était en `max-w-3xl` sans
+  `mx-auto`, donc collé à gauche du `container-site` avec un vide à droite (le trou signalé au
+  message précédent). Fix : ajout de `mx-auto` aux deux blocs de `app/zones/[slug]/page.tsx`,
+  même traitement que les pages services. Hero/intro restent en pleine largeur (déjà symétriques).
+  - Vérif Playwright (viewport 1280) : marges de la colonne de lecture désormais **symétriques**,
+    gauche = droite = 192px sur `/zones/avrille` et `/zones/verrieres-en-anjou` (avant : collée à
+    gauche). Contrôle visuel confirmé, plus de trou à droite.
+  - Build (`npm run build`) vert, 42 pages SSG, aucun fichier hors périmètre touché.
+  - **À valider par Rémy** : pages commune centrées, marges gauche = droite.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
