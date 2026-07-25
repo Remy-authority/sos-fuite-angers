@@ -200,6 +200,29 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
 
 ## 5. HISTORIQUE DES SESSIONS
 
+- **2026-07-25 (Builder — centrage mobile des cartes et têtes de section)** : branche
+  `fix/mobile-centrage` (jamais mergée sans validation). Problème (mobile ~390px uniquement) :
+  conteneurs bien centrés (16/16) mais contenu interne des cartes et titres de section alignés
+  à gauche → gros vide à droite. Corrigé **uniquement en mobile** via `text-center sm:text-left`
+  (et équivalents `mx-auto sm:mx-0`, `flex-col items-center … sm:flex-row`, `w-fit mx-auto`),
+  **tout gated par `sm:` → desktop (≥640px) inchangé par construction, revérifié à 1440px**.
+  Fichiers touchés :
+  - `app/page.tsx` : head « Nos prestations » centré ; cartes services = icône + titre + lien
+    centrés, puces **centrées en bloc mais texte aligné à gauche** (`w-fit mx-auto`).
+  - `components/sections/WhyUs.tsx` : head + cartes (icône empilée au-dessus, texte centré).
+  - `components/sections/Realisations.tsx` : bloc texte des cartes centré.
+  - `components/sections/ServiceAreaMap.tsx` : cartes réassurance centrées (head déjà centré).
+  - `components/ui/Faq.tsx` : head « FAQ / Questions fréquentes » centré (partagé, toutes pages).
+  - `app/conseils/page.tsx` : head + bloc texte des cartes article centrés.
+  - `app/zones/page.tsx` : head centré ; cartes commune centrées (`items-center sm:items-stretch`
+    pour recentrer le lien sans casser le `justify-between` nom/CP en desktop).
+  - Déjà conformes, non touchés : `Stats`, `TrustBadges` (déjà `items-center text-center`),
+    `Process`, `CtaBanner`, section Devis (déjà `text-center`). Corps de lecture des pages
+    services/zones/articles laissé aligné à gauche (prose qui remplit la largeur = équilibré).
+  - Vérif visuelle Playwright : 390px (home, service, zone hub, conseils hub, article) = équilibré ;
+    1440px (mêmes sections) = aligné à gauche, aucune régression. Build vert, 43 pages SSG.
+  - **À valider par Rémy avant merge sur `main`**.
+
 - **2026-07-25 (Builder — bascule canonical domaine + micro-fix Breadcrumbs)** : branche
   `fix/canonical-domaine` (partie de `main`, jamais mergée sans validation). Domaine live
   (`https://www.sos-fuite-angers.fr` 200, apex → 308 www).

@@ -35,7 +35,7 @@ export default function HomePage() {
       {/* Services */}
       <section className="section" aria-labelledby="services-title">
         <div className="container-site">
-          <div className="mb-8">
+          <div className="mb-8 text-center sm:text-left">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">Ce que nous faisons</p>
             <h2 id="services-title" className="text-2xl font-bold text-slate-900 md:text-3xl">Nos prestations</h2>
           </div>
@@ -44,13 +44,13 @@ export default function HomePage() {
               <Link
                 key={s.slug}
                 href={`/services/${s.slug}`}
-                className="group card block transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-md"
+                className="group card block text-center transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-md sm:text-left"
               >
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div className="mb-3 mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary sm:mx-0">
                   <ServiceIcon icon={s.icon} className="h-5 w-5" />
                 </div>
                 <h3 className="font-bold text-slate-900 group-hover:text-primary">{s.navTitle}</h3>
-                <ul className="mt-3 space-y-1 text-sm text-slate-600">
+                <ul className="mt-3 mx-auto w-fit space-y-1 text-sm text-slate-600 sm:mx-0">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2">
                       <span className="h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />

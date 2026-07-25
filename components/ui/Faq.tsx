@@ -11,8 +11,10 @@ export default function Faq({ items, title = 'Questions fréquentes' }: { items:
   return (
     <section className="section bg-light" aria-labelledby="faq-title">
       <div className="container-site max-w-3xl">
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">FAQ</p>
-        <h2 id="faq-title" className="text-2xl font-bold text-slate-900 md:text-3xl">{title}</h2>
+        <div className="text-center sm:text-left">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">FAQ</p>
+          <h2 id="faq-title" className="text-2xl font-bold text-slate-900 md:text-3xl">{title}</h2>
+        </div>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLdScript(faqJsonLd(items)) }}

@@ -68,7 +68,7 @@ export default function Realisations() {
                 />
               </div>
 
-              <div className="p-4">
+              <div className="p-4 text-center sm:text-left">
                 {/* Badge catégorie */}
                 <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold text-white ${real.categoryColor} mb-2`}>
                   {real.category}

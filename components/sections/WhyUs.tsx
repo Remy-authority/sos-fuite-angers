@@ -32,7 +32,7 @@ export default function WhyUs() {
   return (
     <section className="section" aria-labelledby="why-title">
       <div className="container-site">
-        <div className="mb-10 md:mb-12">
+        <div className="mb-10 text-center md:mb-12 sm:text-left">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">Pourquoi nous choisir</p>
           <h2 id="why-title" className="text-2xl font-bold text-slate-900 md:text-3xl">
             La détection qui ne laisse pas de traces
@@ -41,7 +41,7 @@ export default function WhyUs() {
 
         <dl className="grid gap-6 sm:grid-cols-2">
           {reasons.map((r) => (
-            <div key={r.title} className="flex gap-5 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+            <div key={r.title} className="flex flex-col items-center gap-4 rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-sm sm:flex-row sm:items-start sm:gap-5 sm:text-left">
               <dt className="shrink-0">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   {ICONS[r.icon] ?? (

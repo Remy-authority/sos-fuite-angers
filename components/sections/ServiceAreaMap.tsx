@@ -123,7 +123,7 @@ export default function ServiceAreaMap() {
           {/* Colonne droite : cartes réassurance + CTA orange */}
           <div className="flex flex-col gap-4">
             {REASSURANCE_CARDS.map((card) => (
-              <div key={card.title} className="card flex gap-4">
+              <div key={card.title} className="card flex flex-col items-center gap-3 text-center sm:flex-row sm:items-start sm:gap-4 sm:text-left">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   {card.icon}
                 </span>

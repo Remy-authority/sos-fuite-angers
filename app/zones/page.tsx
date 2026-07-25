@@ -41,8 +41,10 @@ export default function ZonesHub() {
   return (
     <>
       <section className="container-site section">
-        <p className="text-sm font-semibold uppercase tracking-wider text-accent">Zone d'intervention</p>
-        <h1 className="mt-2 text-3xl md:text-4xl">Nos zones d'intervention autour d'{siteConfig.city}</h1>
+        <div className="text-center sm:text-left">
+          <p className="text-sm font-semibold uppercase tracking-wider text-accent">Zone d'intervention</p>
+          <h1 className="mt-2 text-3xl md:text-4xl">Nos zones d'intervention autour d'{siteConfig.city}</h1>
+        </div>
 
         {/* Réponse courte factuelle « citable » (GEO) */}
         <p className="mt-5 max-w-3xl rounded-card bg-light p-5 text-slate-700">{citable}</p>
@@ -53,7 +55,7 @@ export default function ZonesHub() {
             <li key={z.slug}>
               <Link
                 href={`/zones/${z.slug}`}
-                className="card group flex h-full flex-col transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+                className="card group flex h-full flex-col items-center text-center transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md sm:items-stretch sm:text-left"
               >
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="text-lg font-bold text-slate-900 group-hover:text-primary">{z.name}</span>
