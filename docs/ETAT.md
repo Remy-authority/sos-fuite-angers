@@ -1,7 +1,7 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 (Autoblog — session 3 du lot T1, drafts 025-037, T1 COMPLET).
+> Dernière mise à jour : 2026-07-25 (Autoblog — session 4, début du lot T2, drafts 038-050).
 
 ---
 
@@ -31,10 +31,11 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 
 Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 001 publié automatiquement
 (commit `f7ef801`) → article en ligne sur `https://www.sos-fuite-angers.fr/conseils/fuite-eau-cuisine-endroits-verifier`
-(HTTP 200 vérifié). **36 drafts en réserve** (002-037), prochaine publication auto : lundi 05:00 UTC,
+(HTTP 200 vérifié). **49 drafts en réserve** (002-050), prochaine publication auto : lundi 05:00 UTC,
 puis lun/mer/ven. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
-**T1 (37 titres) intégralement rédigé.** Reste à produire : T2 (40 titres, #38-77), T3 (37 titres,
-#78-114), T4 (35 titres, #115-149), par lots lors de prochaines sessions Autoblog.
+**T1 (37 titres) intégralement rédigé. T2 en cours : 13/40 titres rédigés (#38-50).** Reste à
+produire : fin du T2 (#51-77), T3 (37 titres, #78-114), T4 (35 titres, #115-149), par lots lors
+de prochaines sessions Autoblog.
 
 ## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
 
@@ -473,6 +474,30 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Prochaine étape éditoriale : T2 (novembre 2026 à janvier 2027, 40 titres #38 à #77 du
     calendrier), à traiter en lots lors de prochaines sessions Autoblog.
 
+- **2026-07-25 (Autoblog, session 4 — début du lot T2, drafts 038 à 050)** : premiers 13 titres
+  du T2 (`docs/CALENDRIER-EDITORIAL.md` §2, items #38 à #50, bloc symptômes/diagnostic électroménager
+  et chauffage + début assurance/juridique). Fichiers `content/drafts/038-*.mdx` à `050-*.mdx`.
+  700-1000 mots chacun, réponse citable en intro, FAQ 4 questions en frontmatter, 2 images de
+  corps + 1 cover par article (39 images générées). **0 image régénérée** après contrôle visuel
+  (premier lot sans défaut détecté depuis le début de l'autoblog, prompts renforcés dès la
+  génération suite aux leçons des sessions précédentes : interdiction explicite de logos/texte
+  sur les écrans d'appareils, interdiction explicite des compositions en collage/diptyque).
+  Aucun chiffre inventé (la convention IRSI, article #50, est expliquée sans aucun seuil ou
+  montant chiffré, volontairement qualitatif faute de valeur vérifiée), zéro tiret cadratin.
+  Anti-cannibalisation du calendrier §3 respectée : #47 (eau qui stagne, point de départ
+  générique) renvoie vers #44 et #45 (fiches dédiées lave-linge / lave-vaisselle, écrites juste
+  avant dans le même lot) sans redévelopper leur contenu ; #49 (résidence secondaire, absence
+  longue durée, toute saison) différencié de #17 déjà publié (absence courte estivale), qui est
+  cité en renvoi plutôt que répété ; #50 conçu comme l'article pilier IRSI (mentionné en FAQ par
+  P3 et P5 déjà publiés, mais non détaillé ailleurs, conformément à la note du calendrier).
+  Les drafts restent **invisibles du site** (build vérifié : toujours 12 pages `/conseils/[slug]`,
+  inchangé par rapport à avant cette session).
+  - Build (`npm run build`) vert, 43 pages générées, aucun fichier hors périmètre touché.
+  - **49 drafts en réserve** (002 à 050). Détail complet au §6bis.
+  - Prochaine étape éditoriale : suite du T2 (items #51 à #77 du calendrier, 27 titres restants),
+    dont les sujets saisonniers gel/hiver (#56 à #61) à traiter en respectant l'angle prévu au
+    calendrier.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
@@ -535,7 +560,26 @@ Ces 12 fichiers ne sont pas encore en ligne. Numéro = ordre du calendrier `docs
 | 036 | `faut-il-casser-pour-trouver-une-fuite` | « Il faut casser pour trouver une fuite » : pourquoi ce n'est plus vrai | detection-fuite-non-destructive | 2 |
 | 037 | `lexique-recherche-fuite-eau` | Lexique de la recherche de fuite d'eau : tous les termes expliqués simplement | detection-fuite-non-destructive | 2 |
 
-**T1 complet (37/37 titres rédigés).** Restant à écrire : items #38 à #149 du calendrier (T2, T3, T4).
+**T1 complet (37/37 titres rédigés).**
+
+| N° | Slug (fichier `content/drafts/`) | Titre | Services liés | Images |
+|---|---|---|---|---|
+| 038 | `chasse-eau-fuit-continu-pourquoi-inquieter` | Chasse d'eau qui fuit en continu : pourquoi et quand s'inquiéter | detection-fuite-non-destructive | 2 |
+| 039 | `odeur-moisi-persistante-fuite-cachee` | Odeur de moisi persistante sans humidité visible : et si c'était une fuite cachée ? | detection-fuite-non-destructive | 2 |
+| 040 | `chauffe-eau-qui-fuit-ballon-ou-reseau` | Chauffe-eau qui fuit : fuite du ballon ou fuite sur le réseau ? | detection-fuite-non-destructive | 2 |
+| 041 | `radiateur-qui-fuit-canalisation-chauffage` | Radiateur qui fuit : fuite du radiateur ou fuite sur la canalisation de chauffage ? | recherche-fuite-encastree | 2 |
+| 042 | `odeur-chlore-piscine-hors-saison-fuite` | Odeur de chlore forte près d'une piscine hors saison : signe d'une fuite ? | recherche-fuite-piscine | 2 |
+| 043 | `bruit-goutte-a-goutte-derriere-cloison` | Bruit de goutte à goutte derrière une cloison : comment le localiser sans casser | recherche-fuite-encastree | 2 |
+| 044 | `lave-linge-qui-fuit-machine-ou-arrivee-eau` | Lave-linge qui fuit : comment savoir si le problème vient de la machine ou de l'arrivée d'eau | detection-fuite-non-destructive | 2 |
+| 045 | `lave-vaisselle-qui-fuit-machine-ou-canalisation` | Lave-vaisselle qui fuit : machine, joint ou canalisation, comment distinguer | detection-fuite-non-destructive | 2 |
+| 046 | `chaudiere-qui-fuit-vase-expansion-ou-canalisation` | Chaudière qui fuit : vase d'expansion, joint ou canalisation de chauffage | recherche-fuite-encastree | 2 |
+| 047 | `eau-qui-stagne-sous-electromenager` | Eau qui stagne sous un lave-vaisselle ou une machine à laver : vérifier avant de s'inquiéter | detection-fuite-non-destructive | 2 |
+| 048 | `degat-des-eaux-qui-se-repete-casser-cycle` | Dégât des eaux qui se répète : comment casser le cycle | assechement-degat-des-eaux, detection-fuite-non-destructive | 2 |
+| 049 | `fuite-eau-residence-secondaire-absence` | Résidence secondaire : comment se protéger d'une fuite pendant votre absence | urgence-fuite-eau | 2 |
+| 050 | `convention-irsi-expliquee-simplement` | Convention IRSI expliquée simplement : ce qu'elle change pour votre dossier | assechement-degat-des-eaux | 2 |
+
+**T2 : 13/40 titres rédigés (#38 à #50).** Restant à écrire : items #51 à #149 du calendrier
+(fin du T2, puis T3, T4).
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
