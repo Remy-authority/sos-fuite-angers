@@ -1,7 +1,31 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 (Autoblog — session 4, début du lot T2, drafts 038-050).
+> Dernière mise à jour : 2026-07-25 soir (CEO — point de reprise pour la prochaine session).
+
+---
+
+## 🔖 POINT DE REPRISE (état exact au 25/07/2026 soir — à lire en premier)
+
+**Site EN PROD sur `https://www.sos-fuite-angers.fr`** (canonical ok, GSC validée, sitemap soumis).
+**49 drafts en réserve** (002-050), publication auto lun/mer/ven 05:00 UTC (T1 complet + T2 13/40).
+
+**EN ATTENTE DE RÉPONSE (Rémy collera les comptes-rendus) :**
+1. **Builder** — branche `fix/mobile-centrage` : centrage mobile du contenu des cartes + têtes de
+   sections (conteneurs déjà centrés 16/16, c'est le contenu interne qui est collé à gauche).
+   → au retour : contrôle CEO à 390px ET 1440px avant merge.
+2. **Autoblog session 5** — articles #51-63 (T2, dont saisonniers gel #56-61).
+   → au retour : QC CEO (routine : total drafts, tirets, faq, doublons slug, mots, images) puis commit.
+3. Ensuite **session 6** (#64-77) → réserve finale 76 drafts ≈ 6 mois (message déjà donné à Rémy).
+
+**DÉCISIONS RÉCENTES :** réserve 6 mois validée ; point Search Console 15 min fin octobre
+(indexation + backlinks) ; vague 2 des pages zones (Montreuil-Juigné, Écouflant, Mûrs-Érigné…)
+décidée APRÈS le bilan d'octobre selon la data ; 3 articles/semaine en continu.
+
+**PORTEFEUILLE (dossier parent `RENT & RANK/`)** : CEO-Portefeuille (Fable 5) + Prospecteur et
+Analyste Concurrence (Sonnet 5) lancés pour benchmark de 5 nouvelles opportunités. Playbook de
+duplication : `docs/PLAYBOOK-NOUVEAU-SITE.md`. La shortlist finale doit repasser par le CEO
+d'Angers pour contre-check avant tout achat de domaine.
 
 ---
 
