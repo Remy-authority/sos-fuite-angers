@@ -5,27 +5,23 @@
 
 ---
 
-## 🔖 POINT DE REPRISE (état exact au 25/07/2026 — à lire en premier)
+## 🔖 POINT DE REPRISE (26/07/2026 — RÉGIME DE CROISIÈRE ATTEINT 🎯)
 
-**Site EN PROD sur `https://www.sos-fuite-angers.fr`** (canonical ok, GSC validée, sitemap soumis).
-**76 drafts en réserve** (002-077), publication auto lun/mer/ven 05:00 UTC. **T1 (37/37) et T2
-(40/40) intégralement rédigés** → réserve ≈ 6 mois de publication, comme prévu.
+**Site EN PROD sur `https://www.sos-fuite-angers.fr`** (refonte + centrage mobile mergés, canonical ok,
+GSC validée, sitemap soumis). **RÉSERVE COMPLÈTE : 76 drafts (002-077), T1+T2 = 6 mois** de
+publications auto lun/mer/ven 05:00 UTC. Plus AUCUNE action quotidienne requise.
 
-**EN ATTENTE DE RÉPONSE (Rémy collera les comptes-rendus) :**
-1. **Builder** — branche `fix/mobile-centrage` : centrage mobile du contenu des cartes + têtes de
-   sections. **✅ Validé par Rémy** (confirmé lors de la session Autoblog 6, mergé sur `main`
-   avec les drafts 051-063 dans le commit `92f4c82`), rien à refaire ici.
-2. **Prochaine session Autoblog** : T3 (février à avril 2027, 37 titres, #78 à #114 du calendrier),
-   par lots lors des prochaines sessions.
+**Prochains rendez-vous :**
+1. **~48 h après le 25/07** : vérifier dans GSC que le sitemap passe en « Réussite ».
+2. **Fin octobre 2026** : point data 15 min (indexation, positions, backlinks) + vague 2 zones
+   éventuelle + lancement du lot T3 (#78-114, sessions de ~12, messages à préparer par le CEO).
+3. **1er artisan loueur** : remplacer persona DEMO dans `config/site.config.ts`.
 
-**DÉCISIONS RÉCENTES :** réserve 6 mois validée ; point Search Console 15 min fin octobre
-(indexation + backlinks) ; vague 2 des pages zones (Montreuil-Juigné, Écouflant, Mûrs-Érigné…)
-décidée APRÈS le bilan d'octobre selon la data ; 3 articles/semaine en continu.
+**⚠️ Process autoblog (leçon session 6)** : l'Autoblog ne commite/pushe JAMAIS — il laisse ses
+fichiers non commités pour le QC CEO, qui commite ensuite. À écrire dans chaque brief T3+.
 
-**PORTEFEUILLE (dossier parent `RENT & RANK/`)** : CEO-Portefeuille (Fable 5) + Prospecteur et
-Analyste Concurrence (Sonnet 5) lancés pour benchmark de 5 nouvelles opportunités. Playbook de
-duplication : `docs/PLAYBOOK-NOUVEAU-SITE.md`. La shortlist finale doit repasser par le CEO
-d'Angers pour contre-check avant tout achat de domaine.
+**Portefeuille** : benchmark 5 nouveaux sites en cours dans `RENT & RANK/` (CEO-Portefeuille).
+La shortlist doit repasser ici pour contre-check avant tout achat de domaine.
 
 ---
 
