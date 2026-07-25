@@ -1,22 +1,22 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 (Autoblog — session 5, lot T2, drafts 051-063 terminé).
+> Dernière mise à jour : 2026-07-25 (Autoblog — session 6, lot T2 TERMINÉ, drafts 064-077).
 
 ---
 
 ## 🔖 POINT DE REPRISE (état exact au 25/07/2026 — à lire en premier)
 
 **Site EN PROD sur `https://www.sos-fuite-angers.fr`** (canonical ok, GSC validée, sitemap soumis).
-**62 drafts en réserve** (002-063), publication auto lun/mer/ven 05:00 UTC (T1 complet 37/37 +
-T2 26/40, articles #38-63 rédigés).
+**76 drafts en réserve** (002-077), publication auto lun/mer/ven 05:00 UTC. **T1 (37/37) et T2
+(40/40) intégralement rédigés** → réserve ≈ 6 mois de publication, comme prévu.
 
 **EN ATTENTE DE RÉPONSE (Rémy collera les comptes-rendus) :**
 1. **Builder** — branche `fix/mobile-centrage` : centrage mobile du contenu des cartes + têtes de
-   sections (conteneurs déjà centrés 16/16, c'est le contenu interne qui est collé à gauche).
-   → au retour : contrôle CEO à 390px ET 1440px avant merge.
-2. Ensuite **session 6 Autoblog** (#64-77, fin du T2) → réserve finale 76 drafts ≈ 6 mois (message
-   déjà donné à Rémy).
+   sections. **✅ Validé par Rémy** (confirmé lors de la session Autoblog 6, mergé sur `main`
+   avec les drafts 051-063 dans le commit `92f4c82`), rien à refaire ici.
+2. **Prochaine session Autoblog** : T3 (février à avril 2027, 37 titres, #78 à #114 du calendrier),
+   par lots lors des prochaines sessions.
 
 **DÉCISIONS RÉCENTES :** réserve 6 mois validée ; point Search Console 15 min fin octobre
 (indexation + backlinks) ; vague 2 des pages zones (Montreuil-Juigné, Écouflant, Mûrs-Érigné…)
@@ -55,11 +55,10 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 
 Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 001 publié automatiquement
 (commit `f7ef801`) → article en ligne sur `https://www.sos-fuite-angers.fr/conseils/fuite-eau-cuisine-endroits-verifier`
-(HTTP 200 vérifié). **62 drafts en réserve** (002-063), prochaine publication auto : lun/mer/ven
+(HTTP 200 vérifié). **76 drafts en réserve** (002-077), prochaine publication auto : lun/mer/ven
 05:00 UTC. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
-**T1 (37 titres) intégralement rédigé. T2 en cours : 26/40 titres rédigés (#38-63).** Reste à
-produire : fin du T2 (#64-77), T3 (37 titres, #78-114), T4 (35 titres, #115-149), par lots lors
-de prochaines sessions Autoblog.
+**T1 (37 titres) et T2 (40 titres) intégralement rédigés.** Reste à produire : T3 (37 titres,
+#78-114), T4 (35 titres, #115-149), par lots lors de prochaines sessions Autoblog.
 
 ## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
 
@@ -567,6 +566,35 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Prochaine étape éditoriale : fin du T2 (items #64 à #77 du calendrier, 14 titres restants),
     puis T3 (37 titres, #78-114).
 
+- **2026-07-25 (Autoblog, session 6 — fin du lot T2, drafts 064 à 077, T2 COMPLET)** : derniers
+  14 titres du T2 (`docs/CALENDRIER-EDITORIAL.md` §2, items #64 à #77, bloc local Angers/tuffeau,
+  assèchement, piscine hiver, urgence/nuit/gaz, comparatif/pilier). Fichiers `content/drafts/064-*.mdx`
+  à `077-*.mdx`, terminant les 40 titres T2. 700-1000 mots chacun (recompte final : tous ≥ 703),
+  réponse citable en intro, FAQ 4 questions en frontmatter, 2 images de corps + 1 cover par article
+  (42 images générées). **6 images régénérées après contrôle visuel**, toutes pour un vrai logo ou
+  une vraie marque échappés au prompt malgré les consignes anti-marque : logo Renault sur la calandre
+  d'une camionnette (#72 cover et #75 cover, corrigées en recadrant la prise de vue à l'arrière du
+  véhicule, angle qui ne montre plus la calandre), marque « Vaillant » lisible sur une chaudière en
+  arrière-plan (#69-01), marque « CASIO » lisible sur une calculatrice (#76-01), texte de marque sur
+  un déshumidificateur (#66 cover), cadran de compteur d'eau avec chiffres nets et lisibles de face
+  (#74-02, recadré avec le cadran incliné hors axe). Aucun chiffre inventé (climat océanique en #64
+  traité qualitativement sans date ni statistique précise ; canalisation en plomb en #70 sans année
+  inventée ; numéros d'urgence 18/112 en #73 = information publique réelle, pas un chiffre inventé).
+  Zéro tiret cadratin. Anti-cannibalisation du calendrier §3 respectée : #64 (climat océanique,
+  mécanisme et rareté du gel) explicitement différencié de #61 déjà publié (période précise à
+  surveiller), avec renvoi croisé en prose plutôt que redite ; #65 (tuffeau, porosité de la pierre)
+  différencié de #62/#63 déjà publiés (âge des réseaux, colonnes montantes) par un angle matériau
+  plutôt que réseau ; #74 (critères de décision urgence/programmée) et #75 (pourquoi la dispo 24h/24
+  compte une fois l'urgence identifiée) différenciés comme deux étapes distinctes d'un même parcours ;
+  #77 conçu comme une page hub qui reformule brièvement 8 questions et renvoie vers l'article dédié
+  de chacune, sans jamais redévelopper le contenu déjà publié ailleurs.
+  Les drafts restent **invisibles du site** (build vérifié : toujours 12 pages `/conseils/[slug]`,
+  inchangé par rapport à avant cette session).
+  - Build (`npm run build`) vert, 43 pages générées, aucun fichier hors périmètre touché.
+  - **76 drafts en réserve** (002 à 077). **T1 (37/37) et T2 (40/40) intégralement rédigés**,
+    réserve ≈ 6 mois de publication atteinte comme prévu. Détail complet au §6bis.
+  - Prochaine étape éditoriale : T3 (février à avril 2027, 37 titres, #78 à #114 du calendrier).
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
@@ -659,9 +687,23 @@ Ces 12 fichiers ne sont pas encore en ligne. Numéro = ordre du calendrier `docs
 | 061 | `premieres-gelees-angers-canalisations` | Premières gelées à Angers : la période à surveiller pour les canalisations extérieures | urgence-fuite-eau | 2 |
 | 062 | `canalisations-anciennes-quartiers-angers` | Pourquoi les canalisations sont plus anciennes dans certains quartiers d'Angers | detection-fuite-non-destructive | 2 |
 | 063 | `colonnes-montantes-angers-copropriete` | Habitat ancien du centre-ville d'Angers : colonnes montantes et risques de fuite en copropriété | assechement-degat-des-eaux, detection-fuite-non-destructive | 2 |
+| 064 | `gel-canalisations-angers-climat-oceanique` | Angers et le climat océanique : pourquoi le gel des canalisations reste rare mais pas impossible | urgence-fuite-eau | 2 |
+| 065 | `tuffeau-angers-bati-ancien-fuite-eau` | Angers et le tuffeau : ce bâti ancien face aux fuites d'eau, ce qu'il faut savoir | detection-fuite-non-destructive, recherche-fuite-encastree | 2 |
+| 066 | `deshumidificateur-ou-ventilation-apres-fuite` | Déshumidificateur ou ventilation naturelle : quelle solution après une fuite | assechement-degat-des-eaux | 2 |
+| 067 | `degat-eaux-parking-souterrain-cave-commune` | Dégât des eaux dans un parking souterrain ou une cave commune : particularités de l'assèchement | assechement-degat-des-eaux | 2 |
+| 068 | `fuite-piscine-hiver-intervenir-ou-attendre` | Fuite de piscine en hiver : faut-il intervenir avant le printemps ou attendre | recherche-fuite-piscine | 2 |
+| 069 | `plancher-chauffant-ne-chauffe-plus-fuite` | Plancher chauffant qui ne chauffe plus : et si c'était une fuite ? | recherche-fuite-encastree | 2 |
+| 070 | `canalisation-plomb-ancienne-risque-fuite` | Canalisation en plomb ancienne : un risque accru de fuite à surveiller | recherche-fuite-canalisation-enterree | 2 |
+| 071 | `coupure-eau-immeuble-fuite` | Coupure d'eau générale de l'immeuble : comment savoir si c'est lié à une fuite | urgence-fuite-eau | 2 |
+| 072 | `fuite-eau-nuit-angers-qui-appeler` | Fuite d'eau la nuit à Angers : qui appeler et dans quel ordre | urgence-fuite-eau | 2 |
+| 073 | `fuite-eau-odeur-gaz-simultanee` | Fuite d'eau et odeur de gaz en même temps : la priorité absolue | urgence-fuite-eau | 2 |
+| 074 | `recherche-fuite-urgence-ou-programmee` | Recherche de fuite en urgence ou intervention programmée : comment savoir | detection-fuite-non-destructive, urgence-fuite-eau | 2 |
+| 075 | `recherche-fuite-disponibilite-24h-urgence` | Recherche de fuite d'eau : pourquoi la disponibilité 24h/24 change tout en cas d'urgence | urgence-fuite-eau | 2 |
+| 076 | `facture-eau-stable-pas-de-fuite-mythe` | « Ma facture d'eau est stable, donc je n'ai pas de fuite » : pourquoi ce n'est pas toujours vrai | detection-fuite-non-destructive | 2 |
+| 077 | `questions-frequentes-recherche-fuite-eau` | Recherche de fuite d'eau : les questions les plus posées avant une intervention | detection-fuite-non-destructive | 2 |
 
-**T2 : 26/40 titres rédigés (#38 à #63).** Restant à écrire : items #64 à #149 du calendrier
-(fin du T2, puis T3, T4).
+**T2 complet (40/40 titres rédigés, #38 à #77).** Restant à écrire : T3 (37 titres, #78 à #114),
+T4 (35 titres, #115 à #149).
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
