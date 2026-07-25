@@ -1,7 +1,7 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 (Autoblog — session 2 du lot T1, drafts 013-024).
+> Dernière mise à jour : 2026-07-25 (Autoblog — session 3 du lot T1, drafts 025-037, T1 COMPLET).
 
 ---
 
@@ -31,9 +31,10 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 
 Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 001 publié automatiquement
 (commit `f7ef801`) → article en ligne sur `https://www.sos-fuite-angers.fr/conseils/fuite-eau-cuisine-endroits-verifier`
-(HTTP 200 vérifié). **23 drafts en réserve** (002-024), prochaine publication auto : lundi 05:00 UTC,
+(HTTP 200 vérifié). **36 drafts en réserve** (002-037), prochaine publication auto : lundi 05:00 UTC,
 puis lun/mer/ven. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
-Reste à produire : fin du T1, session 3 (titres 25-37), puis lots trimestriels après chaque bilan data.
+**T1 (37 titres) intégralement rédigé.** Reste à produire : T2 (40 titres, #38-77), T3 (37 titres,
+#78-114), T4 (35 titres, #115-149), par lots lors de prochaines sessions Autoblog.
 
 ## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
 
@@ -448,6 +449,30 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   - Build (`npm run build`) vert, 43 pages générées, aucun fichier hors périmètre touché.
   - Détail des 12 drafts au §6bis.
 
+- **2026-07-25 (Autoblog, session 3 du lot T1 — drafts 025 à 037, T1 COMPLET)** : dernière session
+  du lot T1. Items #25 à #37 du calendrier (`docs/CALENDRIER-EDITORIAL.md` §2, T1) rédigés comme
+  drafts : `content/drafts/025-*.mdx` à `037-*.mdx`, terminant les 37 titres T1. 700-1000 mots
+  chacun, réponse citable en intro, FAQ 4 questions en frontmatter, 2 images de corps + 1 cover
+  par article (39 images générées). **1 image régénérée après contrôle visuel** : une image en
+  collage à deux panneaux (au lieu d'une photo unique) affichant en plus le titre lisible d'un
+  vrai journal (« Le Monde ») en arrière-plan, remplacée par une photo unique sans texte.
+  Aucun chiffre inventé, zéro tiret cadratin. Anti-cannibalisation du calendrier §3 respectée :
+  #34 traité en angle « premier appel, avant devis chiffré » distinct de #12 (déjà écrit,
+  angle « questions à poser une fois le devis reçu ») ; #30 approfondit la sécurité électricité
+  sans reprendre le réflexe déjà mentionné dans #29 ; #36 mythbuste la croyance elle-même
+  (évolution des méthodes) sans reprendre l'argument économique de #15 (déjà écrit), les deux
+  se renvoyant l'un à l'autre ; #28 différencié de #19 (déjà écrit, mécanisme sécheresse-argile)
+  en couvrant les autres causes d'affaissement et en renvoyant vers #19 pour ce mécanisme
+  spécifique ; #37 (lexique) conçu comme une page de définitions courtes qui renvoie vers les
+  articles dédiés plutôt que de redévelopper chaque méthode.
+  Les drafts restent **invisibles du site** (build vérifié : toujours 12 pages `/conseils/[slug]`,
+  inchangé par rapport à avant cette session).
+  - Build (`npm run build`) vert, 43 pages générées, aucun fichier hors périmètre touché.
+  - **Les 37 titres du T1 (août à octobre 2026) sont désormais tous rédigés** : 001 publié,
+    002 à 037 en réserve dans `content/drafts/` (36 drafts). Détail complet au §6bis.
+  - Prochaine étape éditoriale : T2 (novembre 2026 à janvier 2027, 40 titres #38 à #77 du
+    calendrier), à traiter en lots lors de prochaines sessions Autoblog.
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
@@ -496,8 +521,21 @@ Ces 12 fichiers ne sont pas encore en ligne. Numéro = ordre du calendrier `docs
 | 022 | `bouchemaine-sol-argileux-canalisation-fuite` | Bouchemaine et les sols argileux du confluent Maine-Loire : un facteur de risque pour vos canalisations | recherche-fuite-canalisation-enterree | 2 |
 | 023 | `avrille-plancher-chauffant-fuite-vigilance` | Avrillé et ses pavillons avec plancher chauffant : un point de vigilance fuite spécifique | recherche-fuite-encastree | 2 |
 | 024 | `duree-sechage-degat-des-eaux` | Combien de temps faut-il pour assécher un logement après un dégât des eaux ? | assechement-degat-des-eaux | 2 |
+| 025 | `parquet-gondole-degat-eaux-remplacer-ou-secher` | Parquet gondolé après un dégât des eaux : faut-il le remplacer ou peut-il sécher ? | assechement-degat-des-eaux | 2 |
+| 026 | `fuite-sous-carrelage-salle-de-bain-localiser` | Fuite sous carrelage de salle de bain : comment la localiser sans tout retirer | recherche-fuite-encastree | 2 |
+| 027 | `fissure-plafond-fuite-ou-structurel` | Fissure au plafond qui s'agrandit : fuite encastrée ou problème structurel | recherche-fuite-encastree | 2 |
+| 028 | `affaissement-terrain-jardin-quand-suspecter-fuite` | Affaissement de terrain dans le jardin : quand suspecter une fuite enterrée | recherche-fuite-canalisation-enterree | 2 |
+| 029 | `fuite-eau-qui-gicle-reflexes-urgence` | Fuite d'eau qui gicle : les bons réflexes en attendant le professionnel | urgence-fuite-eau | 2 |
+| 030 | `fuite-eau-electricite-securite-precautions` | Fuite d'eau et électricité : les précautions de sécurité à prendre immédiatement | urgence-fuite-eau | 2 |
+| 031 | `vanne-arret-eau-introuvable-bloquee-urgence` | Vanne d'arrêt général introuvable ou bloquée : que faire en urgence | urgence-fuite-eau | 2 |
+| 032 | `duree-recherche-fuite-eau-deroulement` | Combien de temps dure une recherche de fuite d'eau ? Déroulé étape par étape | detection-fuite-non-destructive | 2 |
+| 033 | `artisan-independant-ou-enseigne-recherche-fuite` | Artisan indépendant ou grande enseigne pour une recherche de fuite : ce qui change concrètement | detection-fuite-non-destructive | 2 |
+| 034 | `devis-gratuit-recherche-fuite-angers-premier-appel` | Devis gratuit pour une recherche de fuite à Angers : à quoi s'attendre lors du premier appel | detection-fuite-non-destructive | 2 |
+| 035 | `mythe-fuite-invisible-pas-grave` | « Une fuite invisible n'est pas grave si on ne voit pas d'eau » : le mythe qui coûte cher | detection-fuite-non-destructive | 2 |
+| 036 | `faut-il-casser-pour-trouver-une-fuite` | « Il faut casser pour trouver une fuite » : pourquoi ce n'est plus vrai | detection-fuite-non-destructive | 2 |
+| 037 | `lexique-recherche-fuite-eau` | Lexique de la recherche de fuite d'eau : tous les termes expliqués simplement | detection-fuite-non-destructive | 2 |
 
-Restant à écrire : items #25 à #149 du calendrier (fin du T1 dès #25, puis T2/T3/T4).
+**T1 complet (37/37 titres rédigés).** Restant à écrire : items #38 à #149 du calendrier (T2, T3, T4).
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
 
