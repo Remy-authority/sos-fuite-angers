@@ -1,22 +1,22 @@
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.
-> Dernière mise à jour : 2026-07-25 soir (CEO — point de reprise pour la prochaine session).
+> Dernière mise à jour : 2026-07-25 (Autoblog — session 5, lot T2, drafts 051-063 terminé).
 
 ---
 
-## 🔖 POINT DE REPRISE (état exact au 25/07/2026 soir — à lire en premier)
+## 🔖 POINT DE REPRISE (état exact au 25/07/2026 — à lire en premier)
 
 **Site EN PROD sur `https://www.sos-fuite-angers.fr`** (canonical ok, GSC validée, sitemap soumis).
-**49 drafts en réserve** (002-050), publication auto lun/mer/ven 05:00 UTC (T1 complet + T2 13/40).
+**62 drafts en réserve** (002-063), publication auto lun/mer/ven 05:00 UTC (T1 complet 37/37 +
+T2 26/40, articles #38-63 rédigés).
 
 **EN ATTENTE DE RÉPONSE (Rémy collera les comptes-rendus) :**
 1. **Builder** — branche `fix/mobile-centrage` : centrage mobile du contenu des cartes + têtes de
    sections (conteneurs déjà centrés 16/16, c'est le contenu interne qui est collé à gauche).
    → au retour : contrôle CEO à 390px ET 1440px avant merge.
-2. **Autoblog session 5** — articles #51-63 (T2, dont saisonniers gel #56-61).
-   → au retour : QC CEO (routine : total drafts, tirets, faq, doublons slug, mots, images) puis commit.
-3. Ensuite **session 6** (#64-77) → réserve finale 76 drafts ≈ 6 mois (message déjà donné à Rémy).
+2. Ensuite **session 6 Autoblog** (#64-77, fin du T2) → réserve finale 76 drafts ≈ 6 mois (message
+   déjà donné à Rémy).
 
 **DÉCISIONS RÉCENTES :** réserve 6 mois validée ; point Search Console 15 min fin octobre
 (indexation + backlinks) ; vague 2 des pages zones (Montreuil-Juigné, Écouflant, Mûrs-Érigné…)
@@ -55,10 +55,10 @@ Décision modèles : Builder passé sur **Opus** pour le design (Sonnet insuffis
 
 Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 001 publié automatiquement
 (commit `f7ef801`) → article en ligne sur `https://www.sos-fuite-angers.fr/conseils/fuite-eau-cuisine-endroits-verifier`
-(HTTP 200 vérifié). **49 drafts en réserve** (002-050), prochaine publication auto : lundi 05:00 UTC,
-puis lun/mer/ven. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
-**T1 (37 titres) intégralement rédigé. T2 en cours : 13/40 titres rédigés (#38-50).** Reste à
-produire : fin du T2 (#51-77), T3 (37 titres, #78-114), T4 (35 titres, #115-149), par lots lors
+(HTTP 200 vérifié). **62 drafts en réserve** (002-063), prochaine publication auto : lun/mer/ven
+05:00 UTC. Calendrier éditorial 12 mois : `docs/CALENDRIER-EDITORIAL.md` (149 titres).
+**T1 (37 titres) intégralement rédigé. T2 en cours : 26/40 titres rédigés (#38-63).** Reste à
+produire : fin du T2 (#64-77), T3 (37 titres, #78-114), T4 (35 titres, #115-149), par lots lors
 de prochaines sessions Autoblog.
 
 ## ⚙️ AUTOBLOG SCHEDULER (publication automatique, branche `feat/autoblog-scheduler`)
@@ -545,6 +545,28 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
     dont les sujets saisonniers gel/hiver (#56 à #61) à traiter en respectant l'angle prévu au
     calendrier.
 
+- **2026-07-25 (Autoblog, session 5 — suite du lot T2, drafts 051 à 063)** : 13 titres suivants du
+  T2 (`docs/CALENDRIER-EDITORIAL.md` §2, items #51 à #63, bloc assurance/juridique + méthodes
+  techniques + saisonnier gel/hiver + local Angers). Fichiers `content/drafts/051-*.mdx` à
+  `063-*.mdx`. 700-1000 mots chacun (recompte final : tous ≥ 694, la plupart 700-770), réponse
+  citable en intro, FAQ 4 questions en frontmatter, 2 images de corps + 1 cover par article
+  (39 images générées). **1 image régénérée après contrôle visuel** : la cover de #51 (meublé de
+  tourisme) affichait un panneau inséré façon collage (plafond taché dans un cadre distinct du
+  reste de la pièce) au lieu d'une photo unique continue, remplacée par une scène simple et
+  cohérente. Aucun chiffre inventé (climat d'Angers en #61 traité qualitativement, sans date ni
+  statistique précise ; réseaux anciens en #62/#63 sans année inventée). Zéro tiret cadratin.
+  Anti-cannibalisation du calendrier §3 respectée : #54 (condensation) élargi à toutes les pièces
+  (fenêtre, cave, salle de bain) pour ne pas dupliquer la FAQ mur de P9 déjà publiée ; #56
+  (canalisations extérieures) et #60 (compteur extérieur) traités comme articles compagnons
+  distincts avec renvoi croisé plutôt que fusionnés ; #62 et #63 différenciés (vue d'ensemble par
+  quartier vs cas précis des colonnes montantes en copropriété centre-ville).
+  Les drafts restent **invisibles du site** (build vérifié : toujours 12 pages `/conseils/[slug]`,
+  inchangé par rapport à avant cette session).
+  - Build (`npm run build`) vert, 43 pages générées, aucun fichier hors périmètre touché.
+  - **62 drafts en réserve** (002 à 063). Détail complet au §6bis.
+  - Prochaine étape éditoriale : fin du T2 (items #64 à #77 du calendrier, 14 titres restants),
+    puis T3 (37 titres, #78-114).
+
 ## 6. ARTICLES DE CONSEILS PUBLIÉS
 
 | Slug | Titre | Services liés | Images corps |
@@ -624,8 +646,21 @@ Ces 12 fichiers ne sont pas encore en ligne. Numéro = ordre du calendrier `docs
 | 048 | `degat-des-eaux-qui-se-repete-casser-cycle` | Dégât des eaux qui se répète : comment casser le cycle | assechement-degat-des-eaux, detection-fuite-non-destructive | 2 |
 | 049 | `fuite-eau-residence-secondaire-absence` | Résidence secondaire : comment se protéger d'une fuite pendant votre absence | urgence-fuite-eau | 2 |
 | 050 | `convention-irsi-expliquee-simplement` | Convention IRSI expliquée simplement : ce qu'elle change pour votre dossier | assechement-degat-des-eaux | 2 |
+| 051 | `fuite-eau-meuble-tourisme-responsabilite` | Fuite d'eau dans un bien loué en meublé de tourisme : qui est responsable ? | urgence-fuite-eau | 2 |
+| 052 | `correlation-acoustique-localiser-fuite` | Corrélation acoustique : comment on localise une fuite au bruit | recherche-fuite-canalisation-enterree | 2 |
+| 053 | `test-pression-reseau-eau-fuite` | Test de pression sur un réseau d'eau : à quoi ça sert et comment ça se déroule | detection-fuite-non-destructive | 2 |
+| 054 | `condensation-ou-fuite-eau-difference` | Pourquoi une simple humidité ne veut pas dire fuite : le piège de la condensation | detection-fuite-non-destructive | 2 |
+| 055 | `pression-eau-trop-elevee-cause-fuite` | Pression réseau trop élevée : un facteur qui favorise l'apparition de fuites | detection-fuite-non-destructive | 2 |
+| 056 | `proteger-canalisations-exterieures-avant-hiver` | Protéger ses canalisations extérieures avant l'hiver : purge et isolation | urgence-fuite-eau | 2 |
+| 057 | `canalisation-gelee-signes-reflexes` | Canalisation gelée : les signes et les bons réflexes avant qu'elle n'éclate | urgence-fuite-eau | 2 |
+| 058 | `purger-radiateurs-avant-hiver-fuite` | Purger ses radiateurs avant l'hiver : un geste utile aussi pour repérer une fuite | recherche-fuite-encastree | 2 |
+| 059 | `degat-eaux-logement-vide-vacances-hiver` | Vacances de fin d'année : le risque de dégât des eaux en logement inoccupé et comment l'éviter | urgence-fuite-eau | 2 |
+| 060 | `proteger-compteur-eau-exterieur-gel` | Protéger son compteur d'eau extérieur du gel : ce qui le rend vulnérable | urgence-fuite-eau | 2 |
+| 061 | `premieres-gelees-angers-canalisations` | Premières gelées à Angers : la période à surveiller pour les canalisations extérieures | urgence-fuite-eau | 2 |
+| 062 | `canalisations-anciennes-quartiers-angers` | Pourquoi les canalisations sont plus anciennes dans certains quartiers d'Angers | detection-fuite-non-destructive | 2 |
+| 063 | `colonnes-montantes-angers-copropriete` | Habitat ancien du centre-ville d'Angers : colonnes montantes et risques de fuite en copropriété | assechement-degat-des-eaux, detection-fuite-non-destructive | 2 |
 
-**T2 : 13/40 titres rédigés (#38 à #50).** Restant à écrire : items #51 à #149 du calendrier
+**T2 : 26/40 titres rédigés (#38 à #63).** Restant à écrire : items #64 à #149 du calendrier
 (fin du T2, puis T3, T4).
 
 ## 7. IMAGES DES PAGES SERVICES (état après correction du 2026-07-25 soir)
