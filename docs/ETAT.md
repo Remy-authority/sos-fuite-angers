@@ -118,8 +118,8 @@ Test réel effectué par le CEO : déclenchement manuel de l'Action → draft 00
   « 10 ans »). ⚠️ Doctrine SEO : chiffres non validés à retirer ou confirmer.
 - **Stat « 30 min » / « Réponse garantie »** dans le hero : à confirmer, sinon non conforme.
 - `features.reviews = false` (bon — aucun faux avis). ✅
-- Téléphone présent : `07 56 85 31 25`. Email : `contact@sosfuite-angers.fr` (à vérifier :
-  domaine `sosfuite-angers` vs `sos-fuite-angers`).
+- Téléphone présent : `07 56 85 31 25`. Email : ✅ CORRIGÉ le 26/07 (branche `fix/email-domaine`)
+  vers `contact@sos-fuite-angers.fr` (le domaine sans tiret ne nous appartenait pas).
 - `canonicalBase` encore sur l'URL Vercel → à basculer sur le domaine final avant prod.
 - Plusieurs branches de travail ouvertes sur GitHub (NOU-38 hero-redesign, etc.).
 
@@ -194,6 +194,17 @@ Règle : un fichier = un seul propriétaire à la fois. Le CEO arbitre avant tou
   tant que le CNAME OVH n'est pas enregistré + propagé.
 
 ## 5. HISTORIQUE DES SESSIONS
+
+- **2026-07-26 (Builder — correction email domaine)** : branche `fix/email-domaine` (jamais
+  mergée sans validation). L'email affiché était `contact@sosfuite-angers.fr` (sans tiret, domaine
+  qui ne nous appartient pas). Remplacé par `contact@sos-fuite-angers.fr`. `grep -rn "sosfuite"`
+  a révélé **6 occurrences dont une non listée par le CEO** : `lib/config.ts` (constante `SITE`,
+  utilisée par `/cgu` et `/politique-cookies` où `SITE.email` est affiché). Corrigé : `config/
+  site.config.ts` (→ footer, qui lit `siteConfig.email`), `content/legal.json` (2 : `emailContact`
+  + texte RGPD « droits »), `lib/config.ts`, et neutralisation de la note d'audit dans ce fichier.
+  `llms.txt` n'affiche pas d'email (rien à faire). Vérifié : **0 occurrence de « sosfuite »** dans
+  le repo ET dans le build `.next` ; email correct rendu (footer + page cookies). Build vert, 43 pages.
+  **À valider par Rémy avant merge sur `main`**.
 
 - **2026-07-25 (Builder — centrage mobile des cartes et têtes de section)** : branche
   `fix/mobile-centrage` (jamais mergée sans validation). Problème (mobile ~390px uniquement) :

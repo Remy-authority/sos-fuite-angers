@@ -31,7 +31,7 @@ export const siteConfig = {
   // Numéro réel de Rémy (commit 90d70fd). E.164 pour tel:, display pour l'affichage.
   phone: '+33756853125',
   phoneDisplay: '07 56 85 31 25',
-  email: 'contact@sosfuite-angers.fr',
+  email: 'contact@sos-fuite-angers.fr',
 
   /* ── Branding : ces 3 hex re-thèment tout le site via CSS vars ── */
   logo: '/logo.svg',
