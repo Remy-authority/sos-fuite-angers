@@ -1,3 +1,13 @@
+## 02/10/2026 soir : publication débloquée (CEO-portefeuille)
+Les passages du 30/09 et du 02/10 ont échoué : la couverture pré-existante de l'article
+« fuite d'eau et électricité » était refusée par le garde-fou (étiquettes lisibles du tableau
+électrique), et le script arrêtait tout le passage. Article publié à la main le 02/10 soir
+(run manuel, commit 19a173b), les 3 images d'origine remises (regardées une par une : tableau
+avec étiquettes françaises correctes, électricien au multimètre, prise près d'une flaque),
+et `scripts/generate-article-images.mjs` corrigé : une couverture pré-existante refusée est
+désormais régénérée au lieu de bloquer. Un seul des deux articles manqués est rattrapé, le
+rythme lun/mer/ven reprend normalement ; stock 48 brouillons.
+
 # ETAT.md — Journal de bord SOS Fuite d'Eau Angers
 
 > Mémoire du projet. Chaque session lit ce fichier en arrivant et le met à jour avant de finir.

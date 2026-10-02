@@ -261,9 +261,17 @@ async function main() {
     // publish-next-draft) ne passait par aucun contrôle. On la vérifie ici aussi.
     const verdict = await imagePorteUnDocument(fs.readFileSync(coverDest))
     if (verdict.rejet) {
-      throw new Error(`couverture pré-existante refusée par le garde-fou (${coverRel}) : ${verdict.motif}`)
+      // 02/10/2026 : une couverture pré-existante refusée bloquait TOUTE la publication du
+      // site (deux passages perdus sur sos-fuite-angers) : on la remplace par une image neuve,
+      // qui passe elle-même par le garde-fou, au lieu d'arrêter le passage.
+      console.log(`  couverture pré-existante refusée par le garde-fou (${coverRel}) : ${verdict.motif} ; remplacée par une image neuve`)
+      fs.unlinkSync(coverDest)
+      const sceneCover = fm.coverAlt || fm.title || slug
+      const octets = await genererAvecReprises(habillerPrompt(sceneCover), 'couverture')
+      await ecrireJpeg(octets, coverDest)
+    } else {
+      console.log(`  couverture déjà présente, conservée et contrôlée : ${coverRel}`)
     }
-    console.log(`  couverture déjà présente, conservée et contrôlée : ${coverRel}`)
   } else {
     // Sans coverAlt, le titre de l'article fait une description de scène acceptable.
     const sceneCover = fm.coverAlt || fm.title || slug
