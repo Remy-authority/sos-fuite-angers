@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { siteConfig } from '@/config/site.config'
 
 type Step = 1 | 2 | 3
@@ -129,6 +129,10 @@ function ProgressBar({ step }: { step: Step }) {
 
 export default function LeadForm() {
   const [step, setStep] = useState<Step>(1)
+  // Étape atteinte, comptée par `SuiviVisite` (Rémy 13/11/2026 : savoir à quelle étape on abandonne).
+  useEffect(() => {
+    if (step > 1) window.dispatchEvent(new CustomEvent('rr-etape', { detail: step }))
+  }, [step])
   const [fields, setFields] = useState<Fields>({
     probleme: '',
     ville: '',
@@ -161,6 +165,7 @@ export default function LeadForm() {
 
   return (
     <div
+      data-clic-formulaire
       className="rounded-card p-6 md:p-8"
       style={{ background: 'rgb(var(--color-dark-rgb))' }}
       role="region"
