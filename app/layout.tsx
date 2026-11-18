@@ -15,7 +15,7 @@ const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap'
 const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display', display: 'swap', weight: ['600', '700'] })
 
 const homeTitle = `${siteConfig.trade} à ${siteConfig.city}, ${siteConfig.businessName}`
-const homeDesc = `${siteConfig.trade} à ${siteConfig.city} et environs. Méthode non destructive, intervention rapide.`
+const homeDesc = `${siteConfig.trade} à ${siteConfig.city} et environs. Méthode non destructive, rapport pour l’assurance.`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.canonicalBase),
