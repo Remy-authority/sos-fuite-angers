@@ -19,11 +19,13 @@ const homeDesc = `${siteConfig.trade} à ${siteConfig.city} et environs. Méthod
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.seo.canonicalBase),
+  ...buildMetadata({ title: homeTitle, description: homeDesc, path: '/' }),
+  // Après le spread (18/11/2026) : avant, le titre simple de buildMetadata écrasait le gabarit,
+  // et le suffixe « , SOS Fuite Angers » n'était servi sur aucune page.
   title: {
     default: homeTitle,
     template: `%s, ${siteConfig.businessName}`,
   },
-  ...buildMetadata({ title: homeTitle, description: homeDesc, path: '/' }),
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

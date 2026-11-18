@@ -39,6 +39,10 @@
 }
 
 @layer components {
+  .lien-nuit {
+    @apply text-slate-200 transition-colors hover:text-white;
+  }
+
   .surtitre {
     @apply mb-2 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-accent;
   }

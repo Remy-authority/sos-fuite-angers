@@ -10,7 +10,17 @@ interface NavItem {
   navTitle: string
 }
 
-export default function HeaderNavMobile({ services, blogEnabled }: { services: NavItem[]; blogEnabled: boolean }) {
+export default function HeaderNavMobile({
+  services,
+  zones,
+  nbZones,
+  blogEnabled,
+}: {
+  services: NavItem[]
+  zones: NavItem[]
+  nbZones: number
+  blogEnabled: boolean
+}) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -21,7 +31,7 @@ export default function HeaderNavMobile({ services, blogEnabled }: { services: N
         aria-expanded={open}
         aria-controls="mobile-nav"
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg text-slate-700 transition hover:bg-slate-100 lg:hidden"
+        className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-card text-slate-700 transition hover:bg-slate-100 lg:hidden"
       >
         <span className={`block h-0.5 w-5 rounded bg-current transition-all duration-200 ${open ? 'translate-y-2 rotate-45' : ''}`} />
         <span className={`block h-0.5 w-5 rounded bg-current transition-all duration-200 ${open ? 'opacity-0' : ''}`} />
@@ -36,7 +46,7 @@ export default function HeaderNavMobile({ services, blogEnabled }: { services: N
           <nav aria-label="Navigation mobile" className="container-site py-4">
             <ul className="space-y-1">
               <li>
-                <Link href="/" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
+                <Link href="/" onClick={() => setOpen(false)} className="block rounded-card px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
                   Accueil
                 </Link>
               </li>
@@ -48,28 +58,49 @@ export default function HeaderNavMobile({ services, blogEnabled }: { services: N
                       <Link
                         href={`/services/${s.slug}`}
                         onClick={() => setOpen(false)}
-                        className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-primary/5 hover:text-primary"
+                        className="block rounded-card px-3 py-2 text-sm text-slate-600 hover:bg-primary/5 hover:text-primary"
                       >
                         {s.navTitle}
                       </Link>
                     </li>
                   ))}
+                  <li>
+                    <Link href="/services" onClick={() => setOpen(false)} className="block rounded-card px-3 py-2 text-sm font-semibold text-primary hover:bg-primary/5">
+                      Toutes nos prestations →
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li>
-                <Link href="/zones" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
-                  Zones d'intervention
-                </Link>
+                <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Zones</p>
+                <ul>
+                  {zones.map((z) => (
+                    <li key={z.slug}>
+                      <Link
+                        href={`/zones/${z.slug}`}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-card px-3 py-2 text-sm text-slate-600 hover:bg-primary/5 hover:text-primary"
+                      >
+                        {z.navTitle}
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <Link href="/zones" onClick={() => setOpen(false)} className="block rounded-card px-3 py-2 text-sm font-semibold text-primary hover:bg-primary/5">
+                      Les {nbZones} communes →
+                    </Link>
+                  </li>
+                </ul>
               </li>
               {blogEnabled && (
                 <li>
-                  <Link href="/conseils" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
+                  <Link href="/conseils" onClick={() => setOpen(false)} className="block rounded-card px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
                     Conseils
                   </Link>
                 </li>
               )}
               <li>
-                <Link href="/contact" onClick={() => setOpen(false)} className="block rounded-lg px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
+                <Link href="/contact" onClick={() => setOpen(false)} className="block rounded-card px-3 py-2.5 font-medium text-slate-700 hover:bg-primary/5 hover:text-primary">
                   Contact
                 </Link>
               </li>
@@ -86,7 +117,7 @@ export default function HeaderNavMobile({ services, blogEnabled }: { services: N
                 </a>
               ) : (
                 <Link
-                  href="/contact"
+                  href="/contact#formulaire"
                   className="btn-accent w-full justify-center text-base"
                   onClick={() => setOpen(false)}
                 >

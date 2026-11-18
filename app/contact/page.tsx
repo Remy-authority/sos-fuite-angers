@@ -4,7 +4,7 @@ import { buildMetadata } from '@/lib/seo'
 import LeadForm from '@/components/ui/LeadForm'
 
 export const metadata: Metadata = buildMetadata({
-  title: `Contact, ${siteConfig.businessName}`,
+  title: `Contact et devis, recherche de fuite`,
   description: `Contactez ${siteConfig.businessName} pour une recherche de fuite d'eau à ${siteConfig.city}. Devis gratuit, réponse rapide.`,
   path: '/contact',
 })
