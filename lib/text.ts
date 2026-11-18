@@ -35,3 +35,29 @@ export function extractNumberedSteps(body: string): NumberedSteps | null {
 
   return { lead, steps }
 }
+
+/**
+ * Découpe un corps de bloc en paragraphes de `max` mots au plus (règle #R67 : 45 mots par
+ * paragraphe sur les pages intérieures), aux fins de phrase, sans changer un mot. Un double
+ * saut de ligne dans le texte force une coupure.
+ */
+export function decoupeParagraphes(body: string, max = 45): string[] {
+  const sortie: string[] = []
+  for (const bloc of body.split(/\n{2,}/)) {
+    const phrases = bloc.trim().split(/(?<=[.!?…])\s+(?=[A-ZÀ-ÝÉ0-9«])/)
+    let courant: string[] = []
+    let mots = 0
+    for (const p of phrases) {
+      const n = p.split(/\s+/).length
+      if (courant.length && mots + n > max) {
+        sortie.push(courant.join(' '))
+        courant = []
+        mots = 0
+      }
+      courant.push(p)
+      mots += n
+    }
+    if (courant.length) sortie.push(courant.join(' '))
+  }
+  return sortie.filter(Boolean)
+}

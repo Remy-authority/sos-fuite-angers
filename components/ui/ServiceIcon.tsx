@@ -58,6 +58,8 @@ const BLOCK_ICON_PATHS = {
   pool: 'M2 12h20M2 18h20M2 6h20',
   dry: 'M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2',
   droplet: 'M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z',
+  valve: 'M7 5h8M11 5v4M3 9h12a4 4 0 0 1 4 4v2M3 9v5h8M19 19v.5',
+  search: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14M21 21l-5-5',
 } as const
 
 type BlockIconKey = keyof typeof BLOCK_ICON_PATHS
@@ -69,6 +71,7 @@ const BLOCK_ICON_RULES: [RegExp, BlockIconKey][] = [
   [/protocole|déroulé|intervention|étape/i, 'checklist'],
   [/attendant|que faire/i, 'checklist'],
   [/signe|détrempé/i, 'warning'],
+  [/couper|robinet|vanne/i, 'valve'],
   [/zone|couvert/i, 'map'],
   [/assurance|irsi|rapport/i, 'doc'],
   [/canalisation|enterrée/i, 'pipe'],
@@ -76,6 +79,7 @@ const BLOCK_ICON_RULES: [RegExp, BlockIconKey][] = [
   [/sol\b|plancher/i, 'floor'],
   [/piscine|liner|bassin/i, 'pool'],
   [/assèchement|séchage|humidité/i, 'dry'],
+  [/localis|recherche|méthode|détection/i, 'search'],
 ]
 
 /** Associe un intitulé de bloc (H2) à une icône par mots-clés. Repli : goutte d'eau. */
@@ -86,12 +90,21 @@ export function matchBlockIcon(heading: string): BlockIconKey {
   return 'droplet'
 }
 
-export function BlockIcon({ heading, className = 'h-5 w-5' }: { heading: string; className?: string }) {
+export function BlockIcon({
+  heading,
+  className = 'h-5 w-5',
+  anime = false,
+}: {
+  heading: string
+  className?: string
+  /** Trait qui se dessine à l'apparition (classe .trace, sous un <Apparition>). */
+  anime?: boolean
+}) {
   const key = matchBlockIcon(heading)
   const d = BLOCK_ICON_PATHS[key] ?? BLOCK_ICON_PATHS.droplet
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={d} />
+      {anime ? <path d={d} pathLength={1} className="trace" style={{ ['--retard' as string]: '250ms' }} /> : <path d={d} />}
     </svg>
   )
 }
