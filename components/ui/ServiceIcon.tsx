@@ -15,21 +15,30 @@ export const SERVICE_ICON_PATHS: Record<string, string> = {
   search: 'M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z',
   droplet: 'M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z',
   tools: 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z',
-  pool: 'M2 12h20M2 18h20M2 6h20',
+  pool: 'M7 15V5a2 2 0 0 1 4 0M15 15V5a2 2 0 0 1 4 0M7 8h8M7 12h8M2 19c2.5 0 2.5-1.5 5-1.5s2.5 1.5 5 1.5 2.5-1.5 5-1.5 2.5 1.5 5 1.5',
   water: 'M4.5 12.5c3.5 0 3.5-3 7-3s3.5 3 7 3M4.5 18.5c3.5 0 3.5-3 7-3s3.5 3 7 3',
   // Ajoutés (NOU-29) : ces 3 clés étaient utilisées par content/services/*.json
   // (canalisation-enterree="pipe", encastree="wall", assechement="dry") mais absentes
   // de la table -> repli silencieux sur l'icône "search" pour ces 3 services. Corrigé.
   pipe: 'M4 14h5a3 3 0 0 0 3-3V6a3 3 0 0 1 3-3h5M4 14l3-3M4 14l3 3M20 14v4a3 3 0 0 1-3 3H7',
   wall: 'M3 4h18v6H3zM3 14h8v6H3zM13 14h8v6h-8z',
-  dry: 'M9.5 2a5 5 0 0 0 3 8.5A5.5 5.5 0 1 1 4 15c0-2.5 2-4 3-6.5C8 5.5 9 4 9.5 2zM17 13a3 3 0 0 0 1.5 5.5A2.5 2.5 0 1 1 15 21c0-1.2.8-2 1.3-3',
+  dry: 'M11 3a8 8 0 1 0 0 16a8 8 0 1 0 0-16M11 11V6.5M11 11l3.9 2.3M11 11l-3.9 2.3M5 21h12M20 7h2M20 11h3M20 15h2',
 }
 
-export function ServiceIcon({ icon, className = 'h-5 w-5' }: { icon: string; className?: string }) {
+export function ServiceIcon({
+  icon,
+  className = 'h-5 w-5',
+  anime = false,
+}: {
+  icon: string
+  className?: string
+  /** Trait qui se dessine à l'apparition (classe .trace, sous un <Apparition>). */
+  anime?: boolean
+}) {
   const d = SERVICE_ICON_PATHS[icon] ?? SERVICE_ICON_PATHS.search
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={d} />
+      {anime ? <path d={d} pathLength={1} className="trace" style={{ ['--retard' as string]: '200ms' }} /> : <path d={d} />}
     </svg>
   )
 }

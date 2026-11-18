@@ -130,26 +130,27 @@ export const siteConfig = {
   homeFaq: [
     {
       q: "Combien coûte une recherche de fuite d'eau à Angers ?",
-      // DEMO – à remplacer par les infos du loueur
-      a: "Le déplacement et le diagnostic de base sont gratuits et sans engagement. Le tarif de l'intervention dépend de la complexité de la fuite et de la méthode utilisée (gaz traceur, acoustique, thermique). Contactez-nous pour un devis personnalisé.",
+      a: "En général de 200 à 500 € selon la méthode et l'accès, d'après les prix relevés en France. Le devis est gratuit : vous connaissez le prix avant notre venue.",
     },
     {
-      q: "Intervenez-vous en urgence les week-ends et jours fériés ?",
-      a: "Oui, nous intervenons 24h/24 et 7j/7, week-ends et jours fériés inclus, sur Angers et dans un rayon de 25 km.",
+      q: "Faut-il casser un mur ou du carrelage pour trouver la fuite ?",
+      a: "Non. Caméra thermique, gaz traceur, écoute et humidimètre localisent la fuite sans rien ouvrir. Nous marquons le point exact : seule cette petite zone sera ouverte pour la réparation.",
     },
     {
-      q: "Faut-il casser des murs ou du carrelage pour trouver la fuite ?",
-      // DEMO – à remplacer par les infos du loueur
-      a: "Non. Nos méthodes non destructives (gaz traceur, caméra thermique et acoustique) permettent de localiser précisément la fuite sans aucune destruction préalable. Nous indiquons l'emplacement exact avant toute intervention.",
+      q: "Mon assurance prend-elle en charge la recherche de fuite ?",
+      a: "Souvent, quand la fuite a causé un dégât des eaux : la convention IRSI encadre cette prise en charge entre assureurs. Notre rapport, avec méthode et photos, accompagne votre déclaration. Vérifiez votre contrat.",
     },
     {
-      q: "Le rapport de localisation est-il accepté par les assurances ?",
-      // DEMO – à remplacer par les infos du loueur
-      a: "Oui. Nous rédigeons un rapport technique officiel de localisation de fuite, reconnu par les compagnies d'assurance et les syndics de copropriété pour la prise en charge des travaux.",
+      q: "Comment savoir si j'ai une fuite cachée ?",
+      a: "Relevez le compteur le soir sans utiliser d'eau, puis le matin : s'il a avancé, l'eau s'échappe quelque part. Tache au plafond, odeur de moisi ou facture en hausse sont d'autres signes.",
     },
     {
-      q: "Intervenez-vous dans tout le Maine-et-Loire ?",
-      a: "Nous couvrons Angers et ses environs dans un rayon de 25 km : Avrillé, Saint-Barthélemy, Trélazé, Bouchemaine, les Ponts-de-Cé, Sainte-Gemmes-sur-Loire et les communes alentour.",
+      q: "Que faire en attendant votre passage ?",
+      a: "Fermez le robinet d'arrivée d'eau, souvent près du compteur, et coupez l'électricité de la pièce touchée. Photographiez les dégâts et prévenez le voisin du dessous si vous êtes en appartement.",
+    },
+    {
+      q: "Dans quelles communes autour d'Angers intervenez-vous ?",
+      a: "Angers et toutes les communes à 40 km ou moins : Avrillé, Trélazé, Beaucouzé, Les Ponts-de-Cé, Bouchemaine, Saint-Barthélemy-d'Anjou, Sainte-Gemmes-sur-Loire, Verrières-en-Anjou et les bourgs alentour.",
     },
   ],
 

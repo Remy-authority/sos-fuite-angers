@@ -46,6 +46,10 @@ const config: Config = {
       },
       borderRadius: {
         card: '6px',
+        panel: '10px',
+      },
+      boxShadow: {
+        panel: '0 1px 2px rgb(20 24 27 / 0.08), 0 8px 24px -12px rgb(20 24 27 / 0.22)',
       },
       keyframes: {
         'hero-shine': {

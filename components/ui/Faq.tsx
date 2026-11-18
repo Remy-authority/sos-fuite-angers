@@ -11,9 +11,9 @@ export default function Faq({ items, title = 'Questions fréquentes' }: { items:
   return (
     <section className="section bg-light" aria-labelledby="faq-title">
       <div className="container-site max-w-3xl">
-        <div className="text-center sm:text-left">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">FAQ</p>
-          <h2 id="faq-title" className="text-2xl font-bold text-slate-900 md:text-3xl">{title}</h2>
+        <div className="text-center">
+          <p className="surtitre justify-center">FAQ</p>
+          <h2 id="faq-title" className="font-display text-[1.7rem] font-bold leading-tight text-nuit md:text-[2.1rem]">{title}</h2>
         </div>
         <script
           type="application/ld+json"
@@ -23,9 +23,9 @@ export default function Faq({ items, title = 'Questions fréquentes' }: { items:
           {items.map((item, i) => (
             <details
               key={i}
-              className="group rounded-xl border border-slate-200 bg-white shadow-sm open:shadow-md"
+              className="group rounded-card border border-slate-200 bg-white shadow-sm open:shadow-md"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 font-semibold text-slate-900 marker:hidden [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 text-center font-semibold text-slate-900 md:text-left marker:hidden [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <svg
                   className="ml-4 h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
@@ -39,7 +39,7 @@ export default function Faq({ items, title = 'Questions fréquentes' }: { items:
                 </svg>
               </summary>
               <div className="border-t border-slate-100 px-5 pb-4 pt-3">
-                <p className="leading-relaxed text-slate-600">{item.a}</p>
+                <p className="text-center leading-relaxed text-slate-600 md:text-left">{item.a}</p>
               </div>
             </details>
           ))}

@@ -47,7 +47,7 @@
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
   }
   .section {
-    @apply py-12 md:py-16;
+    @apply py-6 md:py-16 lg:py-20; /* 48 px entre deux blocs au téléphone (#R61) */
   }
   /* CTA principal = accent orange (urgence), toujours ≥ 48px de haut */
   .btn-accent {
@@ -109,4 +109,111 @@
   .article-prose p:has(> em:only-child) {
     @apply mt-2 text-center text-sm not-italic text-slate-500;
   }
+}
+
+/* ── Apparition au défilement (mise à jour du 07/11/2026) ─────────────────
+ * Le composant <Apparition> pose data-attente au montage si le bloc est encore
+ * hors de l'écran, puis l'enlève quand il entre : sans JavaScript, tout reste
+ * visible. Coupé net si « réduire les animations ». */
+@layer utilities {
+  .glisse {
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--retard, 0ms);
+  }
+  [data-attente] .glisse,
+  [data-attente].glisse {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  /* Traits d'icône qui se dessinent (pathLength="1"). */
+  .trace {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1.1s cubic-bezier(0.5, 0, 0.2, 1);
+    transition-delay: var(--retard, 0ms);
+  }
+  [data-attente] .trace {
+    stroke-dashoffset: 1;
+  }
+  /* Barre de prix qui s'étire depuis la gauche (page Tarifs). */
+  .etire {
+    transform-origin: left center;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--retard, 0ms) + 200ms);
+  }
+  [data-attente] .etire {
+    transform: scaleX(0);
+  }
+  .surgit {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.3, 1.5, 0.5, 1);
+    transition-delay: var(--retard, 0ms);
+  }
+  [data-attente] .surgit {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  .tombe {
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1);
+    transition-delay: var(--retard, 0ms);
+  }
+  [data-attente] .tombe {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  /* Animations en boucle douce, lancées une fois l'icône dessinée. */
+  .balaie { animation: balaie 3.2s ease-in-out 1.2s infinite; transform-box: fill-box; transform-origin: center; }
+  .souffle { animation: souffle 2.6s ease-in-out 1.2s infinite; }
+  .tremble { animation: tremble 3s ease-in-out 1.4s infinite; transform-box: fill-box; transform-origin: 0% 100%; }
+  [data-attente] .balaie, [data-attente] .souffle, [data-attente] .tremble { animation: none; }
+  /* Mise en attente instantanée : un bloc hors de l'écran se cache sans animer
+   * (sinon toutes les icônes se « dé-dessinent » pendant le premier affichage). */
+  [data-attente] .glisse, [data-attente].glisse, [data-attente] .trace,
+  [data-attente] .surgit, [data-attente] .tombe, [data-attente] .etire { transition: none; }
+  @keyframes balaie { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6px, -3px); } }
+  @keyframes souffle { 0%, 100% { stroke-dashoffset: 0; } 50% { stroke-dashoffset: 0.18; } }
+  @keyframes tremble { 0%, 100% { transform: rotate(0deg); } 40% { transform: rotate(-7deg); } 55% { transform: rotate(2deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .glisse, .trace, .surgit, .tombe, .etire { transition: none; }
+    [data-attente] .etire { transform: none; }
+    [data-attente] .glisse, [data-attente].glisse, [data-attente] .surgit, [data-attente] .tombe { opacity: 1; transform: none; }
+    [data-attente] .trace { stroke-dashoffset: 0; }
+    .balaie, .souffle, .tremble { animation: none; }
+  }
+}
+
+/* ── Carte du secteur de 40 km (Rémy 08/11/2026, modèle Sniper) ───────────
+ * Le vert part d’Angers et s'étend en cercle quand la carte entre à l'écran
+ * (data-attente posé par <Apparition>) ; le rayon et son « 40 km » arrivent
+ * ensuite. « Agrandir la carte » (téléphone, tablette) la grossit 2,5 fois dans
+ * son cadre carré, on la déplace du doigt. */
+.carte-secteur .carte-vert {
+  clip-path: circle(75% at var(--cx) var(--cy));
+  transition: clip-path 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s;
+}
+.carte-secteur[data-attente] .carte-vert { clip-path: circle(0% at var(--cx) var(--cy)); transition: none; }
+.carte-secteur[data-attente] .carte-rayon, .carte-secteur[data-attente] .carte-onde { transition: none; animation: none; }
+.carte-secteur .carte-rayon { opacity: 0.8; transition: opacity 0.6s ease-out 1.6s; }
+.carte-secteur[data-attente] .carte-rayon { opacity: 0; transition: none; }
+.carte-secteur .carte-onde {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: carte-onde 2.6s ease-out infinite;
+}
+@keyframes carte-onde {
+  from { transform: scale(1); opacity: 0.9; }
+  to { transform: scale(4.5); opacity: 0; }
+}
+.carte-secteur [data-grande] .carte-cadre {
+  aspect-ratio: 1;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.carte-secteur [data-grande] .carte-plan { width: 250%; }
+@media (prefers-reduced-motion: reduce) {
+  .carte-secteur .carte-vert, .carte-secteur .carte-rayon { transition: none; }
+  .carte-secteur[data-attente] .carte-vert { clip-path: circle(75% at var(--cx) var(--cy)); }
+  .carte-secteur[data-attente] .carte-rayon { opacity: 0.8; }
+  .carte-secteur .carte-onde { animation: none; opacity: 0; }
 }
