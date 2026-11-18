@@ -26,7 +26,7 @@ export default function Faq({ items, title = 'Questions fréquentes' }: { items:
               className="group rounded-card border border-slate-200 bg-white shadow-sm open:shadow-md"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 text-center font-semibold text-slate-900 md:text-left marker:hidden [&::-webkit-details-marker]:hidden">
-                {item.q}
+                {item.q.replace(/ ([?!:;])/g, '\u00a0$1')}
                 <svg
                   className="ml-4 h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
                   viewBox="0 0 24 24"
