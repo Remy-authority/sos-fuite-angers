@@ -31,8 +31,8 @@ export default function ZonesHub() {
       a: `Nous intervenons à ${siteConfig.city} et dans toutes les communes à 40 km autour. Huit d'entre elles ont leur page : ${names.join(', ')}.`,
     },
     {
-      q: 'Ma commune ne figure pas dans la liste : est-elle couverte ?',
-      a: `Tout le cercle tracé sur la carte est couvert, page dédiée ou non. Le code postal saisi dans le formulaire suffit pour que nous vérifiions la distance.`,
+      q: 'Pas de page pour ma ville : la recherche de fuite y est-elle possible ?',
+      a: `Tout le cercle tracé sur la carte est couvert, page dédiée ou non. Votre code postal, demandé à la dernière étape du formulaire, nous dit aussitôt si votre adresse tombe dans le cercle.`,
     },
     {
       q: 'Quand pouvez-vous passer chez moi ?',
