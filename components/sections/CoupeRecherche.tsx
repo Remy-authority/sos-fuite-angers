@@ -339,8 +339,8 @@ export default function CoupeRecherche() {
     return (
       <section className="section bg-nuit" aria-label="La recherche de fuite en cinq étapes">
         {entete}
-        <div className="container-site mt-8 grid items-center gap-8 lg:grid-cols-[1fr_1.4fr]">
-          <ol className="space-y-4 text-left">
+        <div className="container-site mt-8 grid items-stretch gap-8 lg:grid-cols-[1fr_1.4fr]">
+          <ol className="flex flex-col justify-center space-y-4 text-left">
             {ETAPES.map((e, i) => (
               <li key={e.titre} className="flex gap-4">
                 <span className="font-mono text-sm font-bold" style={{ color: MIEL }}>
@@ -366,8 +366,8 @@ export default function CoupeRecherche() {
           ref={scene}
           className="sticky top-[4.25rem] flex h-[calc(100svh-4.25rem-3.5rem)] items-center lg:h-[calc(100svh-4.25rem)]"
         >
-          <div className="container-site grid w-full items-center gap-4 lg:grid-cols-[0.72fr_1.6fr] lg:gap-12">
-            <div className="order-2 text-center lg:order-1 lg:text-left">
+          <div className="container-site grid w-full items-stretch gap-4 lg:grid-cols-[0.72fr_1.6fr] lg:gap-12">
+            <div className="order-2 flex flex-col justify-center text-center lg:order-1 lg:text-left">
               <p className="font-mono text-sm font-bold tracking-widest" aria-hidden="true">
                 <span style={{ color: MIEL }}>{pad2(actif)}</span>
                 <span className="text-white/45"> / {pad2(N)}</span>
@@ -402,7 +402,7 @@ export default function CoupeRecherche() {
                 ))}
               </ol>
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 flex flex-col justify-center lg:order-2">
               <Dessin svgRef={dessin} className="mx-auto block h-auto max-h-[min(54svh,520px)] w-full lg:max-h-[calc(100svh-9rem)]" />
             </div>
           </div>

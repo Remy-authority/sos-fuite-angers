@@ -21,15 +21,15 @@ export default function CtaBanner({
 }) {
   return (
     <section id={id} className={`section scroll-mt-20 ${fond}`} aria-labelledby={`${id}-titre`}>
-      <div className="container-site grid items-center gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-14">
-        <div className="text-center lg:text-left">
+      <div className="container-site grid items-stretch gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-14">
+        <div className="flex flex-col justify-center text-center lg:text-left">
           <p className="surtitre justify-center lg:justify-start">Devis gratuit</p>
           <h2 id={`${id}-titre`} className="mt-3 font-display text-[1.75rem] font-bold leading-tight text-nuit md:text-[2.2rem]">
             {title}
           </h2>
           <p className="mx-auto mt-4 max-w-md text-slate-600 lg:mx-0">{subtitle}</p>
         </div>
-        <div className="mx-auto w-full max-w-[440px]">
+        <div className="mx-auto flex w-full max-w-[440px] flex-col justify-center">
           <LeadForm idPrefix={`${id}-`} />
         </div>
       </div>

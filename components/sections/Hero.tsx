@@ -42,11 +42,11 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="container-site grid lg:max-w-7xl min-h-[calc(100svh-4.25rem)] content-center items-center gap-6 py-7 sm:gap-8 lg:grid-cols-[minmax(0,600px)_minmax(0,450px)] lg:justify-between lg:gap-14 lg:py-12">
-        <div className="text-center lg:text-left">
+      <div className="container-site grid lg:max-w-7xl min-h-[calc(100svh-4.25rem)] content-center items-stretch gap-6 py-7 sm:gap-8 lg:grid-cols-[minmax(0,600px)_minmax(0,450px)] lg:justify-between lg:gap-14 lg:py-12">
+        <div className="flex flex-col justify-center text-center lg:text-left">
           <h1
             id="titre-hero"
-            className="font-display text-[clamp(1.75rem,7.6vw,3.6rem)] font-bold leading-[1.08] text-white [text-shadow:0_2px_18px_rgb(0_0_0/0.35)] lg:text-[3.6rem]"
+            className="font-display text-[clamp(1.75rem,7.6vw,3.6rem)] font-bold leading-[1.08] text-white [text-shadow:0_2px_18px_rgb(0_0_0/0.35)] lg:text-[clamp(2.5rem,4.5vw,3.6rem)]"
           >
             Recherche de fuite d&apos;eau <span className="whitespace-nowrap text-accent-clair">à Angers</span>
           </h1>
@@ -54,7 +54,7 @@ export default function Hero() {
             Nous trouvons la fuite sans casser&nbsp;: caméra thermique, gaz traceur, écoute.
           </p>
         </div>
-        <div className="mx-auto w-full max-w-[450px]">
+        <div className="mx-auto flex w-full max-w-[450px] flex-col justify-center">
           <LeadForm ecran1 idPrefix="h1-" />
         </div>
       </div>
