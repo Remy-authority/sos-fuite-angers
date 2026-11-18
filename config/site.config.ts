@@ -98,8 +98,8 @@ export const siteConfig = {
       a: "Souvent, quand la fuite a causé un dégât des eaux : la convention IRSI encadre cette prise en charge entre assureurs. Notre rapport, avec méthode et photos, accompagne votre déclaration. Vérifiez votre contrat.",
     },
     {
-      q: "Comment savoir si j'ai une fuite cachée ?",
-      a: "Relevez le compteur le soir sans utiliser d'eau, puis le matin : s'il a avancé, l'eau s'échappe quelque part. Tache au plafond, odeur de moisi ou facture en hausse sont d'autres signes.",
+      q: 'Qui répare la fuite une fois trouvée ?',
+      a: 'Une fois la fuite marquée, nous vous expliquons la réparation à prévoir et pouvons la chiffrer. Vous restez libre de la confier à qui vous voulez.',
     },
     {
       q: "Que faire en attendant votre passage ?",

@@ -170,7 +170,12 @@
   .balaie { animation: balaie 3.2s ease-in-out 1.2s infinite; transform-box: fill-box; transform-origin: center; }
   .souffle { animation: souffle 2.6s ease-in-out 1.2s infinite; }
   .tremble { animation: tremble 3s ease-in-out 1.4s infinite; transform-box: fill-box; transform-origin: 0% 100%; }
-  [data-attente] .balaie, [data-attente] .souffle, [data-attente] .tremble { animation: none; }
+  /* Aiguille du compteur qui tourne autour du centre du cadran (24, 26). */
+  .tourne { animation: tourne 5s linear 1.3s infinite; transform-box: view-box; transform-origin: 24px 26px; }
+  /* Goutte qui perle puis tombe, en boucle. */
+  .perle { animation: perle 2.8s ease-in 1.3s infinite; transform-box: fill-box; transform-origin: center top; }
+  [data-attente] .balaie, [data-attente] .souffle, [data-attente] .tremble,
+  [data-attente] .tourne, [data-attente] .perle { animation: none; }
   /* Mise en attente instantanée : un bloc hors de l'écran se cache sans animer
    * (sinon toutes les icônes se « dé-dessinent » pendant le premier affichage). */
   [data-attente] .glisse, [data-attente].glisse, [data-attente] .trace,
@@ -178,12 +183,14 @@
   @keyframes balaie { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6px, -3px); } }
   @keyframes souffle { 0%, 100% { stroke-dashoffset: 0; } 50% { stroke-dashoffset: 0.18; } }
   @keyframes tremble { 0%, 100% { transform: rotate(0deg); } 40% { transform: rotate(-7deg); } 55% { transform: rotate(2deg); } }
+  @keyframes tourne { to { transform: rotate(360deg); } }
+  @keyframes perle { 0%, 35% { transform: translateY(0) scale(0.6); opacity: 0; } 50% { transform: translateY(0) scale(1); opacity: 1; } 85% { transform: translateY(9px) scale(1); opacity: 1; } 100% { transform: translateY(12px) scale(1); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) {
     .glisse, .trace, .surgit, .tombe, .etire { transition: none; }
     [data-attente] .etire { transform: none; }
     [data-attente] .glisse, [data-attente].glisse, [data-attente] .surgit, [data-attente] .tombe { opacity: 1; transform: none; }
     [data-attente] .trace { stroke-dashoffset: 0; }
-    .balaie, .souffle, .tremble { animation: none; }
+    .balaie, .souffle, .tremble, .tourne, .perle { animation: none; }
   }
 }
 
