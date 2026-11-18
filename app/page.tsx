@@ -6,7 +6,7 @@ import { buildMetadata } from '@/lib/seo'
 import CtaBanner from '@/components/ui/CtaBanner'
 import Faq from '@/components/ui/Faq'
 import Hero from '@/components/sections/Hero'
-import Process from '@/components/sections/Process'
+import CoupeRecherche from '@/components/sections/CoupeRecherche'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 
 const TITLE = "Recherche de fuite d'eau à Angers, détection non destructive"
@@ -61,7 +61,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Process />
+      <CoupeRecherche />
 
       <Faq items={homeFaq} />
 
