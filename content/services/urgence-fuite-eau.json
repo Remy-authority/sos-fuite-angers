@@ -15,14 +15,14 @@
   "blocks": [
     {
       "heading": "Que faire en attendant : couper l'eau",
-      "body": "Avant notre passage, voici les gestes essentiels. 1. Coupez l'alimentation en eau au robinet d'arrêt général : il se trouve souvent sous l'évier de cuisine, dans le garage ou à l'entrée de la cave. Dans un appartement, la vanne de pied de colonne est généralement dans le couloir ou un local technique. 2. Coupez l'électricité dans les pièces concernées si l'eau menace les équipements. 3. Placez des serviettes ou des récipients pour recueillir l'eau et limiter les dégâts. 4. Photographiez les dommages avant de nettoyer : ces images sont utiles pour votre déclaration d'assurance. Ne percez pas les murs et ne tentez pas de localiser la fuite vous-même : vous risquez d'aggraver les dommages.",
+      "body": "Avant notre passage, voici les gestes essentiels. 1. Coupez l'alimentation en eau au robinet d'arrêt général : il se trouve souvent sous l'évier de cuisine, dans le garage ou à l'entrée de la cave. En immeuble, cherchez aussi le robinet d'arrêt de votre logement, souvent sous l'évier ou près du compteur divisionnaire. 2. Coupez l'électricité dans les pièces concernées si l'eau menace les équipements. 3. Placez des serviettes ou des récipients pour recueillir l'eau et limiter les dégâts. 4. Avant d'éponger, prenez quelques photos des pièces touchées : l'assureur vous les réclamera. Ne percez pas les murs et ne tentez pas de localiser la fuite vous-même : vous risquez d'aggraver les dommages.",
       "image": "/services/urgence-fuite-eau-robinet.jpg",
       "imageAlt": "Fermeture du robinet d'arrêt général sous un évier avec une clé",
       "imageCaption": "Le robinet d'arrêt général se trouve souvent sous l'évier, en cave ou au garage."
     },
     {
       "heading": "Recherche de fuite en urgence : notre méthode",
-      "body": "À réception de votre demande, nous faisons le point avec vous sur la situation. Nous venons avec le matériel complet : détecteur de gaz traceur, caméra thermique, géophones et corrélateur acoustique. Sur place, nous commençons par un test de pression pour confirmer qu'il y a bien une fuite active et identifier le circuit concerné. Nous choisissons ensuite la méthode adaptée au réseau pour localiser la source précisément. Une fois la fuite localisée, nous marquons le point exact et vous remettons un rapport technique : la réparation se fait au bon endroit.",
+      "body": "À réception de votre demande, nous faisons le point avec vous sur la situation. Nous venons avec le matériel complet : détecteur de gaz traceur, caméra thermique, géophones et corrélateur acoustique. Chez vous, la mise sous pression du réseau vient en premier : elle prouve que l'eau s'échappe encore et désigne la branche qui fuit. Nous choisissons ensuite la méthode adaptée au réseau pour localiser la source précisément. Une fois la fuite localisée, nous marquons le point exact et vous remettons un rapport technique : la réparation se fait au bon endroit.",
       "image": "/services/urgence-fuite-eau-materiel.jpg",
       "imageAlt": "Mallette de matériel de détection de fuite : gaz traceur, caméra thermique, géophones",
       "imageCaption": "Le matériel que nous déplaçons à chaque intervention d'urgence."
@@ -39,7 +39,7 @@
   "faq": [
     {
       "q": "Que faire si je ne trouve pas le robinet d'arrêt général ?",
-      "a": "Le robinet d'arrêt général est généralement sous l'évier de cuisine, dans la cave ou dans le garage. Dans un appartement, la vanne de pied de colonne se trouve souvent dans le couloir ou un local technique. En dernier recours, la vanne principale sur la voie publique peut être fermée par les pompiers ou votre service des eaux local. En attendant, coupez l'électricité des pièces touchées et recueillez l'eau avec des serviettes ou des seaux."
+      "a": "Le robinet d'arrêt général est généralement sous l'évier de cuisine, dans la cave ou dans le garage. Dans un appartement, la vanne de pied de colonne se trouve souvent dans le couloir ou un local technique. Si aucun robinet ne répond, seul le service des eaux, ou les pompiers, peut manœuvrer la vanne sous le trottoir. En attendant, coupez l'électricité des pièces touchées et recueillez l'eau avec des serviettes ou des seaux."
     },
     {
       "q": "Puis-je envoyer une demande la nuit ou le week-end ?",

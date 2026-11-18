@@ -15,7 +15,7 @@ import Apparition from '@/components/ui/Apparition'
 export const metadata: Metadata = buildMetadata({
   title: 'Prix d’une recherche de fuite à Angers',
   description:
-    'Combien coûte une recherche de fuite d’eau à Angers ? Fourchettes sourcées par méthode, ce qui fait varier le prix, assurance et facture d’eau plafonnée.',
+    'Tarifs de la recherche de fuite d’eau à Angers : fourchettes sourcées par méthode, ce qui fait varier le prix, assurance et facture d’eau plafonnée.',
   path: '/tarifs',
   ogImage: '/services/detection-fuite-non-destructive.jpg',
 })

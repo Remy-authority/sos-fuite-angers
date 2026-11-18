@@ -17,7 +17,7 @@ export const metadata: Metadata = buildMetadata({
 const FAQ_CONTACT = [
   {
     q: 'Que se passe-t-il après l’envoi du formulaire ?',
-    a: 'Nous lisons votre demande, puis nous revenons vers vous pour préciser la situation : où apparaît l’eau, depuis quand, type de logement. Nous proposons ensuite la méthode adaptée et son prix.',
+    a: 'Chaque demande est lue par nos soins ; nous vous recontactons ensuite pour savoir où l’eau se montre, depuis quand, et dans quel type de logement. Nous proposons ensuite la méthode adaptée et son prix.',
   },
   {
     q: 'Que préparer avant notre échange ?',

@@ -31,16 +31,16 @@ export default function ZonesHub() {
       a: `Nous intervenons à ${siteConfig.city} et dans toutes les communes à 40 km autour. Huit d'entre elles ont leur page : ${names.join(', ')}.`,
     },
     {
-      q: 'Ma commune n’a pas de page, intervenez-vous quand même ?',
-      a: `Oui, si elle se trouve dans le cercle de 40 km de la carte. Indiquez votre code postal dans le formulaire, nous confirmons le secteur avec le devis.`,
+      q: 'Ma commune ne figure pas dans la liste : est-elle couverte ?',
+      a: `Tout le cercle tracé sur la carte est couvert, page dédiée ou non. Le code postal saisi dans le formulaire suffit pour que nous vérifiions la distance.`,
     },
     {
       q: 'Quand pouvez-vous passer chez moi ?',
       a: 'La date dépend de notre planning et de la commune. Nous vous la proposons quand nous revenons vers vous après votre demande.',
     },
     {
-      q: 'Combien coûte une recherche de fuite dans une commune voisine ?',
-      a: 'Le prix dépend de la méthode employée et de l’accès à la canalisation, pas de la commune. Les fourchettes publiées en France sont sur notre page Tarifs, le devis est gratuit.',
+      q: 'Le prix change-t-il d’une commune à l’autre ?',
+      a: 'Non : c’est la technique de détection et l’accès au tuyau qui comptent, quelle que soit la ville. Les ordres de prix par méthode figurent en page Tarifs, et l’estimation ne vous coûte rien.',
     },
   ]
 

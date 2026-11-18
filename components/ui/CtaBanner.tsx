@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site.config'
  */
 export default function CtaBanner({
   title = `Une fuite à ${siteConfig.city} ? Nous la localisons sans casser`,
-  subtitle = 'Trois questions, puis nous vous rappelons pour fixer le passage du technicien.',
+  subtitle = 'Décrivez la fuite en trois clics ; nous revenons vers vous avec la méthode et le prix.',
   id = 'devis',
   fond = 'bg-neige',
 }: {

@@ -86,11 +86,11 @@ export const siteConfig = {
   /* ── FAQ accueil (réécrite le 18/11/2026, sans promesse ni chiffre inventé) ── */
   homeFaq: [
     {
-      q: "Combien coûte une recherche de fuite d'eau à Angers ?",
+      q: "Quel budget prévoir pour localiser une fuite à Angers ?",
       a: "En général de 200 à 500 € selon la méthode et l'accès, d'après les prix relevés en France. Le devis est gratuit : vous connaissez le prix avant notre venue.",
     },
     {
-      q: "Faut-il casser un mur ou du carrelage pour trouver la fuite ?",
+      q: "Va-t-on devoir ouvrir un mur ou soulever du carrelage ?",
       a: "Non. Caméra thermique, gaz traceur, écoute et humidimètre localisent la fuite sans rien ouvrir. Nous marquons le point exact : seule cette petite zone sera ouverte pour la réparation.",
     },
     {

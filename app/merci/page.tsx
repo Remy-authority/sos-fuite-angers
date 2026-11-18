@@ -16,7 +16,7 @@ export default function MerciPage() {
       <div className="max-w-md">
         <h1 className="mt-4 text-3xl">Demande reçue</h1>
         <p className="mt-3 text-slate-600">
-          Merci, nous vous rappelons au numéro indiqué pour convenir du passage.
+          Votre demande nous est bien parvenue : nous reprenons contact au numéro laissé pour fixer la date.
         </p>
         <div className="mt-6 flex flex-col items-center gap-3">
           <Link href="/" className="text-primary underline">← Retour à l'accueil</Link>

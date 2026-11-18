@@ -50,7 +50,7 @@ const FAQ = [
   },
   {
     q: 'Combien coûte une recherche de fuite ?',
-    a: 'Le prix dépend de la méthode et de l’accès. Les fourchettes observées en France et nos repères sont sur la page Tarifs ; le devis est gratuit.',
+    a: 'Caméra, gaz traceur ou écoute : la méthode retenue et l’accès au tuyau fixent le prix. Les fourchettes observées en France et nos repères sont sur la page Tarifs ; le devis est gratuit.',
   },
 ]
 

@@ -12,7 +12,7 @@ import SignesFuite from '@/components/sections/SignesFuite'
 import LogementsAngers from '@/components/sections/LogementsAngers'
 import CarteSecteur from '@/components/sections/CarteSecteur'
 
-const TITLE = "Recherche de fuite d'eau à Angers, détection non destructive"
+const TITLE = "Recherche de fuite d'eau à Angers : caméra, gaz, acoustique"
 const DESC =
   "Recherche de fuite d'eau à Angers et 40 km autour : caméra thermique, gaz traceur, écoute. Point de fuite marqué, rapport pour l'assureur, devis gratuit."
 

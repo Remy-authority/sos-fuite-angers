@@ -59,8 +59,8 @@ export default function MentionsLegales() {
         <section>
           <h2 className="text-xl">Propriété intellectuelle</h2>
           <p className="mt-2">
-            L'ensemble des contenus de ce site est protégé par le droit de la propriété
-            intellectuelle. Toute reproduction est interdite sans autorisation préalable.
+            Nos articles sur la recherche de fuite, nos schémas de canalisations, nos photos et notre
+            logo nous appartiennent : merci de nous écrire avant d'en reprendre le moindre extrait.
           </p>
         </section>
 
