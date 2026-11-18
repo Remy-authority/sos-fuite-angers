@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site.config'
 import { buildMetadata } from '@/lib/seo'
 import LeadForm from '@/components/ui/LeadForm'
-import PhoneButton from '@/components/ui/PhoneButton'
 
 export const metadata: Metadata = buildMetadata({
   title: `Contact, ${siteConfig.businessName}`,
@@ -10,28 +9,22 @@ export const metadata: Metadata = buildMetadata({
   path: '/contact',
 })
 
+/** Page contact : le formulaire d'abord, sans décor (#R84). */
 export default function ContactPage() {
   return (
     <section className="container-site section">
-      <div className="grid gap-10 lg:grid-cols-2">
-        <div>
-          <h1 className="text-3xl md:text-4xl">Contact & devis gratuit</h1>
-          <p className="mt-4 text-slate-600">
-            Une fuite d'eau à {siteConfig.city} ou dans les environs ? Appelez-nous ou
-            remplissez le formulaire : nous vous recontactons rapidement.
+      <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-14">
+        <div className="text-center lg:order-1 lg:text-left">
+          <h1 className="font-display text-3xl font-bold md:text-4xl">Contact et devis gratuit</h1>
+          <p className="mx-auto mt-4 max-w-md text-slate-600 lg:mx-0">
+            Une fuite d&apos;eau à {siteConfig.city} ou autour ? Trois questions, puis nous vous rappelons.
           </p>
-          <div className="mt-6 space-y-3 text-slate-700">
-            <p><strong>Téléphone :</strong> {siteConfig.phoneDisplay}</p>
-            <p><strong>Email :</strong> {siteConfig.email}</p>
-            <p><strong>Disponibilité :</strong> {siteConfig.availability}</p>
-            <p><strong>Zone :</strong> {siteConfig.serviceArea.base} + rayon ~{siteConfig.serviceArea.radiusKm} km</p>
-          </div>
-          <div className="mt-6">
-            <PhoneButton label={`Appeler ${siteConfig.phoneDisplay}`} />
-          </div>
+          <p className="mt-4 text-sm text-slate-500">
+            Par écrit : <a className="text-primary underline underline-offset-2" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          </p>
         </div>
-        <div id="formulaire">
-          <LeadForm />
+        <div id="formulaire" className="mx-auto w-full max-w-[440px] lg:order-2">
+          <LeadForm idPrefix="contact-" />
         </div>
       </div>
     </section>

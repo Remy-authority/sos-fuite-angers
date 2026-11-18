@@ -9,7 +9,7 @@ export default function NotFound() {
       <p className="mt-2 text-slate-600">La page demandée n'existe pas ou a été déplacée.</p>
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row">
         <Link href="/" className="btn-primary">Retour à l'accueil</Link>
-        <PhoneButton />
+        <PhoneButton className="btn-accent" />
       </div>
     </section>
   )

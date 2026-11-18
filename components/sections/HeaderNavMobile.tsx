@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site.config'
+import { LIBELLE_DEVIS } from '@/lib/cta'
 
 interface NavItem {
   slug: string
@@ -40,7 +41,7 @@ export default function HeaderNavMobile({ services, blogEnabled }: { services: N
                 </Link>
               </li>
               <li>
-                <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Services</p>
+                <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Services</p>
                 <ul>
                   {services.map((s) => (
                     <li key={s.slug}>
@@ -74,14 +75,25 @@ export default function HeaderNavMobile({ services, blogEnabled }: { services: N
               </li>
             </ul>
             <div className="mt-4 border-t border-slate-100 pt-4">
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="btn-accent w-full justify-center text-base"
-                onClick={() => setOpen(false)}
-              >
-                <PhoneIcon />
-                {siteConfig.phoneDisplay}
-              </a>
+              {siteConfig.phone ? (
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="btn-accent w-full justify-center text-base"
+                  onClick={() => setOpen(false)}
+                >
+                  <PhoneIcon />
+                  {siteConfig.phoneDisplay}
+                </a>
+              ) : (
+                <Link
+                  href="/contact"
+                  className="btn-accent w-full justify-center text-base"
+                  onClick={() => setOpen(false)}
+                >
+                  <FormIcon />
+                  {LIBELLE_DEVIS}
+                </Link>
+              )}
             </div>
           </nav>
         </div>
@@ -94,6 +106,14 @@ function PhoneIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+    </svg>
+  )
+}
+
+function FormIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   )
 }

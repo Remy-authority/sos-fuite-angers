@@ -10,7 +10,7 @@ import { getServices, getZones } from '@/lib/content'
 export const dynamic = 'force-static'
 
 export function GET() {
-  const { businessName, trade, city, region, department, phoneDisplay, availability } = siteConfig
+  const { businessName, trade, city, region, department, phoneDisplay } = siteConfig
   const radius = siteConfig.serviceArea.radiusKm
   const base = absUrl('/').replace(/\/$/, '')
 
@@ -20,7 +20,7 @@ export function GET() {
   const lines: string[] = [
     `# ${businessName}`,
     '',
-    `> ${trade} à ${city} (${region}, ${department}) et dans un rayon de ${radius} km. Détection non destructive, sans casse. Disponible ${availability}.`,
+    `> ${trade} à ${city} (${region}, ${department}) et dans un rayon de ${radius} km. Détection non destructive, sans casse.`,
     '',
     '## Activité',
     `${businessName} est un service de ${trade.toLowerCase()} à ${city} et dans son agglomération. Nous localisons précisément les fuites d'eau avant toute intervention, sans casser murs, sols ni revêtements, puis remettons un rapport de localisation utilisable auprès des assurances. Nous ne réalisons pas nous-mêmes la réparation de plomberie : nous localisons la fuite pour que l'artisan intervienne au bon endroit.`,
@@ -36,14 +36,13 @@ export function GET() {
     ...zones.map((z) => `- ${z.name} (${z.postalCode}) : ${absUrl(`/zones/${z.slug}`)}`),
     '',
     '## Contact',
-    `- Téléphone : ${phoneDisplay}`,
+    ...(phoneDisplay ? [`- Téléphone : ${phoneDisplay}`] : []),
     `- Site : ${base}`,
     `- Devis : ${absUrl('/contact')}`,
     `- Conseils : ${absUrl('/conseils')}`,
     '',
     '## Bon à savoir',
     "- Devis et diagnostic de base gratuits, sans engagement.",
-    '- Intervention 7j/7, y compris week-ends et jours fériés pour les urgences.',
     "- Rapport de localisation reconnu par les assurances (dont convention IRSI en copropriété).",
     '',
   ]

@@ -82,23 +82,11 @@ export function plumberJsonLd() {
     '@type': 'Plumber',
     '@id': ORG_ID,
     name: siteConfig.businessName,
-    description: `${siteConfig.trade} à ${siteConfig.city} et ses environs. Détection non destructive, intervention rapide.`,
+    description: `${siteConfig.trade} à ${siteConfig.city} et ses environs. Détection non destructive, sans casse.`,
     url: BASE,
-    telephone: siteConfig.phone,
     email: siteConfig.email,
     image: absUrl(siteConfig.seo.defaultOgImage),
     areaServed: areaServed.map((name) => ({ '@type': 'City', name })),
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: [
-          'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-          'Friday', 'Saturday', 'Sunday',
-        ],
-        opens: '00:00',
-        closes: '23:59',
-      },
-    ],
     knowsAbout: siteConfig.methods,
   }
   // address UNIQUEMENT si Rémy a tranché (showAddress=true).

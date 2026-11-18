@@ -1,41 +1,77 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { siteConfig } from '@/config/site.config'
+import { LIBELLE_DEVIS } from '@/lib/cta'
 
 /**
- * MobileStickyBar, barre fixe en bas d'écran sur mobile uniquement.
- * Dual CTA : appel direct (accent orange) + devis en ligne (primary bleu).
- * Masquée sur desktop (md:hidden).
+ * MobileStickyBar, barre fixe en bas d'écran (téléphone et tablette).
+ * FORMULAIRE SEUL (décision Rémy 21/08/2026) : un seul bouton pleine largeur, même mot que
+ * partout ailleurs (`LIBELLE_DEVIS`). Si la page porte un formulaire, le bouton y amène au lieu
+ * d'ouvrir /contact ; la barre s'efface tant qu'un formulaire est à l'écran (elle ne couvre
+ * jamais les cases et ne double pas le bouton d'envoi).
  */
 export default function MobileStickyBar() {
+  const [masquee, setMasquee] = useState(false)
+
+  useEffect(() => {
+    const formulaires = Array.from(document.querySelectorAll('[data-lead-form]'))
+    if (!formulaires.length || !('IntersectionObserver' in window)) return
+    const visibles = new Set<Element>()
+    const obs = new IntersectionObserver(
+      (entrees) => {
+        entrees.forEach((e) => (e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target)))
+        setMasquee(visibles.size > 0)
+      },
+      { threshold: 0.25 },
+    )
+    formulaires.forEach((f) => obs.observe(f))
+    return () => obs.disconnect()
+  }, [])
+
+  function versFormulaire(e: React.MouseEvent<HTMLAnchorElement>) {
+    const cible = document.querySelector<HTMLElement>('[data-lead-form]')
+    if (!cible) return
+    e.preventDefault()
+    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    cible.scrollIntoView({ behavior: reduit ? 'auto' : 'smooth', block: 'center' })
+  }
+
+  const icone = (
+    <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z" />
+      <path d="M14 3v5h5M8.5 13h7M8.5 17h4.5" />
+    </svg>
+  )
+
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-40 flex border-t border-slate-200 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.12)] md:hidden"
+      className={`fixed bottom-0 left-0 right-0 z-40 flex border-t border-slate-200 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.12)] transition-transform duration-200 lg:hidden ${masquee ? 'translate-y-full' : ''}`}
       role="complementary"
       aria-label="Actions rapides"
+      aria-hidden={masquee || undefined}
     >
-      <a
-        href={`tel:${siteConfig.phone}`}
-        className="flex flex-1 items-center justify-center gap-2 bg-accent py-4 text-sm font-bold text-white active:bg-accent/90"
-        aria-label={`Appeler le ${siteConfig.phoneDisplay}`}
-        data-cta="phone-sticky"
-      >
-        <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
-        </svg>
-        Appeler
-      </a>
-      <div className="w-px bg-white/20" aria-hidden="true" />
+      {siteConfig.phone ? (
+        <a
+          href={`tel:${siteConfig.phone}`}
+          className="flex flex-1 items-center justify-center gap-2 bg-primary py-4 text-sm font-bold text-white"
+          aria-label={`Appeler le ${siteConfig.phoneDisplay}`}
+          data-cta="phone-sticky"
+          tabIndex={masquee ? -1 : undefined}
+        >
+          Appeler
+        </a>
+      ) : null}
       <Link
         href="/contact"
-        className="flex flex-1 items-center justify-center gap-2 bg-primary py-4 text-sm font-bold text-white active:bg-primary-dark"
+        onClick={versFormulaire}
+        className="flex flex-1 items-center justify-center gap-2 bg-accent py-4 text-[15px] font-bold text-white active:bg-accent/90"
         data-cta="devis-sticky"
+        tabIndex={masquee ? -1 : undefined}
       >
-        <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-        </svg>
-        Devis gratuit
+        {icone}
+        {LIBELLE_DEVIS}
       </Link>
     </div>
   )

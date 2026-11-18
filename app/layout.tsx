@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Sora } from 'next/font/google'
+import { Bricolage_Grotesque, Sora } from 'next/font/google'
 import './globals.css'
 import { siteConfig } from '@/config/site.config'
 import { themeCssVars } from '@/lib/theme'
@@ -7,11 +7,12 @@ import { absUrl, buildMetadata, jsonLdScript, plumberJsonLd } from '@/lib/seo'
 import Header from '@/components/sections/Header'
 import Footer from '@/components/sections/Footer'
 import MobileStickyBar from '@/components/ui/MobileStickyBar'
-import FloatingCallButton from '@/components/ui/FloatingCallButton'
 import SuiviVisite from '@/components/ui/SuiviVisite'
 
 // next/font = polices self-hostées au build (pas de requête Google runtime, pas de FOUT).
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' })
+// Titres : une police à caractère, pour sortir du rendu « gabarit » (mise à jour 18/11/2026).
+const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display', display: 'swap', weight: ['600', '700'] })
 
 const homeTitle = `${siteConfig.trade} à ${siteConfig.city}, ${siteConfig.businessName}`
 const homeDesc = `${siteConfig.trade} à ${siteConfig.city} et environs. Méthode non destructive, intervention rapide.`
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={siteConfig.seo.lang} className={sora.variable} style={themeCssVars()}>
+    <html lang={siteConfig.seo.lang} className={`${sora.variable} ${display.variable}`} style={themeCssVars()}>
       <head>
         <script
           type="application/ld+json"
@@ -45,7 +46,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <MobileStickyBar />
-        <FloatingCallButton />
         <SuiviVisite />
       </body>
     </html>

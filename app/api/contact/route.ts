@@ -137,6 +137,18 @@ async function alerterSms(lead: Lead): Promise<void> {
   }
 }
 
+/**
+ * L'APERÇU N'ENVOIE RIEN (règle-formulaire, Rémy 13/11/2026) : sur un déploiement de
+ * prévisualisation Vercel, la demande est acceptée puis jetée, ni mail ni SMS. Jamais de
+ * fausse demande chez Rémy ni chez un partenaire. La production n'est pas concernée.
+ */
+const APERCU = process.env.VERCEL_ENV === 'preview'
+
+/** Preuve lisible au curl : `{"envoi":false}` sur l'aperçu, `{"envoi":true}` en production. */
+export async function GET() {
+  return NextResponse.json({ envoi: !APERCU })
+}
+
 export async function POST(request: NextRequest) {
   const formPost = isFormPost(request)
   try {
@@ -155,8 +167,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: false, error: 'Nom et téléphone requis.' }, { status: 400 })
     }
 
-    await deliver(lead)
-    await alerterSms(lead)
+    if (!APERCU) {
+      await deliver(lead)
+      await alerterSms(lead)
+    }
 
     return formPost
       ? NextResponse.redirect(new URL('/merci', request.url), 303)

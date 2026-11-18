@@ -26,15 +26,26 @@ const config: Config = {
           DEFAULT: withOpacity('--color-primary-rgb'),
           dark: withOpacity('--color-primary-dark-rgb'),
         },
-        accent: withOpacity('--color-accent-rgb'),
+        accent: {
+          DEFAULT: withOpacity('--color-accent-rgb'),
+          /* orange clair : bordures et repères sur fond nuit (formulaire, bloc 3) */
+          clair: '#FDBA74',
+        },
         dark: withOpacity('--color-dark-rgb'),
+        /* nuit = fond des cartes de formulaire et des blocs sombres */
+        nuit: withOpacity('--color-dark-rgb'),
+        /* jaune miel des traits du bloc 3 (règle #R66) */
+        miel: '#FCD680',
         light: withOpacity('--color-light-rgb'),
+        /* neige = bloc clair qui porte la carte nuit du formulaire de fin de page */
+        neige: withOpacity('--color-light-rgb'),
       },
       fontFamily: {
         sans: ['var(--font-sora)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'var(--font-sora)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        card: '20px',
+        card: '6px',
       },
       keyframes: {
         'hero-shine': {

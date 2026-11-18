@@ -3,8 +3,6 @@ export const SITE = {
   communeCode: '49',
   postalCode: '49000',
   name: 'SOS Fuite Angers',
-  phone: '+33 7 56 85 31 25',
-  phoneHref: 'tel:+33756853125',
   email: 'contact@sos-fuite-angers.fr',
   communesVoisines: [
     'Trélazé',

@@ -36,7 +36,7 @@ export default function MentionsLegales() {
             <li><strong>Numéro d'immatriculation :</strong> <V>{e.numeroImmatriculation}</V>, <V>{e.registre}</V></li>
             <li><strong>Siège social :</strong> <V>{e.adresse}</V></li>
             <li><strong>Directeur de la publication :</strong> <V>{e.directeurPublication}</V></li>
-            <li><strong>Contact :</strong> {e.emailContact} · {e.telephone}</li>
+            <li><strong>Contact :</strong> {e.emailContact}{e.telephone ? ` · ${e.telephone}` : ''}</li>
           </ul>
         </section>
 

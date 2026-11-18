@@ -55,13 +55,9 @@ export default function Header() {
           <Link href="/contact" className="rounded-lg px-3 py-2 transition-colors hover:bg-slate-100 hover:text-primary">Contact</Link>
         </nav>
 
-        {/* CTA droite + menu mobile */}
+        {/* CTA droite + menu mobile : logo, navigation, un bouton, rien d'autre. */}
         <div className="flex items-center gap-2">
-          <div className="hidden text-right lg:block">
-            <p className="text-xs font-semibold text-slate-900">{siteConfig.availability}</p>
-            <p className="text-xs text-slate-500">{siteConfig.responseTime}</p>
-          </div>
-          <PhoneButton className="btn-accent hidden !px-4 !py-2 text-sm sm:inline-flex" />
+          <PhoneButton className="btn-accent hidden !min-h-[42px] !px-4 !py-2 text-sm sm:inline-flex" />
           <HeaderNavMobile
             services={services.map((s) => ({ slug: s.slug, navTitle: s.navTitle }))}
             blogEnabled={siteConfig.features.blog}

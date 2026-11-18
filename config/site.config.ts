@@ -28,9 +28,11 @@ export const siteConfig = {
   department: '49',
 
   /* ── Contact (variables, remplaçables sans toucher au SEO) ── */
-  // Numéro réel de Rémy (commit 90d70fd). E.164 pour tel:, display pour l'affichage.
-  phone: '+33261910041',
-  phoneDisplay: '02 61 91 00 41',
+  // Aucun numéro tant que le 09 Twilio du site n'est pas acheté (#R12, Rémy 21/08/2026).
+  // L'ancien 02 61 91 00 41 était FICTIF (commentaire « numéro réel » faux, corrigé le 18/11/2026).
+  // Vide = aucun lien tel:, chaque bouton d'appel devient le bouton de devis.
+  phone: '',
+  phoneDisplay: '',
   email: 'contact@sos-fuite-angers.fr',
 
   /* ── Branding : ces 3 hex re-thèment tout le site via CSS vars ── */
@@ -53,7 +55,7 @@ export const siteConfig = {
   /* ── Zone d'intervention (schema areaServed + bloc zones) ── */
   serviceArea: {
     base: 'Angers',
-    radiusKm: 25,
+    radiusKm: 40,
     // Quartiers d'Angers cités pour la couverture géo fine (maillage, pas de page dédiée).
     districts: [
       'Doutre', 'Belle-Beille', 'Lac de Maine', 'Monplaisir', 'La Roseraie',
