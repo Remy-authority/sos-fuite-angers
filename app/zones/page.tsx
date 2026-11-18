@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getZones } from '@/lib/content'
+import { getZones, aLaCommune } from '@/lib/content'
 import { buildMetadata } from '@/lib/seo'
 import { siteConfig } from '@/config/site.config'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
@@ -85,7 +85,7 @@ export default function ZonesHub() {
                     <span className="relative block aspect-[16/10] w-full overflow-hidden">
                       <Image
                         src={z.image}
-                        alt={z.imageAlt || `Recherche de fuite à ${z.name}`}
+                        alt={z.imageAlt || `Recherche de fuite ${aLaCommune(z)}`}
                         fill
                         sizes="(min-width: 1024px) 25vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -98,7 +98,7 @@ export default function ZonesHub() {
                       {z.postalCode}
                       {z.distanceKm ? ` · ${z.distanceKm.toLocaleString('fr-FR', { maximumFractionDigits: 1 })} km d’Angers` : ''}
                     </span>
-                    <span className="mt-3 hidden text-sm font-semibold text-primary sm:block">Recherche de fuite à {z.name} →</span>
+                    <span className="mt-3 hidden text-sm font-semibold text-primary sm:block">Recherche de fuite {aLaCommune(z)} →</span>
                   </span>
                 </Link>
               </li>

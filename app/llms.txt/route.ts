@@ -42,8 +42,8 @@ export function GET() {
     `- Conseils : ${absUrl('/conseils')}`,
     '',
     '## Bon à savoir',
-    "- Devis et diagnostic de base gratuits, sans engagement.",
-    "- Rapport de localisation reconnu par les assurances (dont convention IRSI en copropriété).",
+    "- Devis gratuit, sans engagement.",
+    "- Rapport de localisation à joindre à votre déclaration d'assurance (convention IRSI en copropriété).",
     '',
   ]
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
-import { getZone, getZones, getServices } from '@/lib/content'
+import { getZone, getZones, getServices, aLaCommune } from '@/lib/content'
 import { buildMetadata, zoneJsonLd, jsonLdScript } from '@/lib/seo'
 import Breadcrumbs from '@/components/ui/Breadcrumbs'
 import Faq from '@/components/ui/Faq'
@@ -135,7 +135,7 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
 
           <div>
             <h2 id="prestations-titre" className="text-center font-display text-xl font-bold leading-tight text-nuit lg:text-left">
-              Nos prestations à {zone.name}
+              Nos prestations {aLaCommune(zone)}
             </h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2" role="list">
               {services.map((s) => (
@@ -172,7 +172,7 @@ export default function ZonePage({ params }: { params: { slug: string } }) {
       <Faq items={zone.faq} />
       <CtaBanner
         fond="bg-white"
-        title={`Recherche de fuite à ${zone.name} : votre devis gratuit`}
+        title={`Recherche de fuite ${aLaCommune(zone)} : votre devis gratuit`}
         subtitle="Trois questions, puis nous revenons vers vous avec la méthode prévue et son prix."
       />
     </>

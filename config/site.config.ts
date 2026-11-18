@@ -29,7 +29,6 @@ export const siteConfig = {
 
   /* ── Contact (variables, remplaçables sans toucher au SEO) ── */
   // Aucun numéro tant que le 09 Twilio du site n'est pas acheté (#R12, Rémy 21/08/2026).
-  // L'ancien 02 61 91 00 41 était FICTIF (commentaire « numéro réel » faux, corrigé le 18/11/2026).
   // Vide = aucun lien tel:, chaque bouton d'appel devient le bouton de devis.
   phone: '',
   phoneDisplay: '',
@@ -71,7 +70,7 @@ export const siteConfig = {
   seo: {
     // NB: basculer sur le domaine final au Gate C. Preview = URL vercel.
     canonicalBase: 'https://www.sos-fuite-angers.fr',
-    defaultOgImage: '/og.png',
+    defaultOgImage: '/accueil/hero-recherche-fuite-angers.jpg',
     locale: 'fr_FR',
     lang: 'fr',
   },

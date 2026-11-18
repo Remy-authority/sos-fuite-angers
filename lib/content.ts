@@ -58,6 +58,8 @@ export interface Service {
 export interface Zone {
   slug: string
   name: string
+  /** « aux Ponts-de-Cé » quand « à + nom » est faux ; sinon « à <nom> » (voir aLaCommune). */
+  aCommune?: string
   postalCode: string
   /** Phrase de contexte courte (carte du hub /zones). Optionnel. */
   context?: string
@@ -140,6 +142,11 @@ export function getZones(): Zone[] {
   return readJsonDir<Zone>('zones', [
     'slug', 'name', 'postalCode', 'metaTitle', 'metaDescription',
   ]).sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+}
+
+/** « à Avrillé », « aux Ponts-de-Cé » : la bonne préposition devant le nom de la commune. */
+export function aLaCommune(z: Pick<Zone, 'name' | 'aCommune'>): string {
+  return z.aCommune ?? `à ${z.name}`
 }
 
 export function getZone(slug: string): Zone | undefined {

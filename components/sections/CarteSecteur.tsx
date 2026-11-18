@@ -61,7 +61,7 @@ export default function CarteSecteur({ commune, titre, compacte }: { commune?: s
                     {ici ? `, ${ici.nom} en couleur` : ''}
                   </title>
                   {PAGES.map((p) => (
-                    <Link key={p.slug} href={`/zones/${p.slug}`} aria-label={`Recherche de fuite à ${p.nom}`} className="group">
+                    <Link key={p.slug} href={`/zones/${p.slug}`} aria-label={`Recherche de fuite ${p.nom.startsWith('Les ') ? `aux ${p.nom.slice(4)}` : `à ${p.nom}`}`} className="group">
                       <path
                         d={p.d}
                         className={
