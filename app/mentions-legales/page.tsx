@@ -11,7 +11,7 @@ import { buildMetadata } from '@/lib/seo'
  */
 export const metadata: Metadata = buildMetadata({
   title: 'Mentions légales',
-  description: `Mentions légales de ${siteConfig.businessName}.`,
+  description: `Mentions légales du site ${siteConfig.businessName} : éditeur, hébergeur, propriété intellectuelle, données personnelles et conditions d'utilisation.`,
   path: '/mentions-legales',
 })
 

@@ -75,6 +75,9 @@ export interface Article {
   slug: string
   title: string
   description: string
+  /** Titre et description servis à Google (frontmatter `metaTitle` / `metaDescription`), le H1 reste `title`. */
+  metaTitle?: string
+  metaDescription?: string
   date: string
   category: string
   cover?: string
@@ -151,6 +154,8 @@ export function getArticles(): Article[] {
         slug: (data.slug as string) || f.replace(/\.mdx$/, ''),
         title: (data.title as string) || '',
         description: (data.description as string) || '',
+        metaTitle: data.metaTitle as string | undefined,
+        metaDescription: data.metaDescription as string | undefined,
         date: (data.date as string) || '1970-01-01',
         category: (data.category as string) || 'Conseils',
         cover: data.cover as string | undefined,

@@ -36,6 +36,17 @@ type BuildMetaArgs = {
   ogImage?: string
 }
 
+/** Suffixe ajouté par le gabarit de titre du layout (`%s, SOS Fuite Angers`). */
+export const SUFFIXE_TITRE = `, ${siteConfig.businessName}`
+
+/**
+ * Titre servi entre 30 et 60 caractères (règle #R50) : le suffixe de marque n'est ajouté que
+ * s'il tient dans les 60 ; sinon le titre est servi seul (`absolute`), jamais tronqué par Google.
+ */
+export function titreServi(title: string): Metadata['title'] {
+  return title.length + SUFFIXE_TITRE.length <= 60 ? title : { absolute: title }
+}
+
 /** Fabrique une Metadata Next complète (canonical, OG, robots). */
 export function buildMetadata({
   title,
@@ -47,7 +58,7 @@ export function buildMetadata({
   const url = absUrl(path)
   const index = !noindex && !IS_NOINDEX
   return {
-    title,
+    title: titreServi(title),
     description,
     alternates: { canonical: url },
     openGraph: {

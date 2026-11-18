@@ -9,7 +9,7 @@ import CtaBanner from '@/components/ui/CtaBanner'
 
 export const metadata: Metadata = buildMetadata({
   title: `Zones d'intervention, recherche de fuite près d'${siteConfig.city}`,
-  description: `Communes desservies autour d'${siteConfig.city} pour la recherche de fuite d'eau : rayon d'environ ${siteConfig.serviceArea.radiusKm} km.`,
+  description: `Recherche de fuite d'eau à ${siteConfig.city} et dans les communes à 40 km autour, en Maine-et-Loire : la carte du secteur et la page de chaque commune.`,
   path: '/zones',
 })
 

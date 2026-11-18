@@ -27,8 +27,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const a = getArticle(params.slug)
   if (!a) return {}
   return buildMetadata({
-    title: a.title,
-    description: a.description,
+    title: a.metaTitle || a.title,
+    description: a.metaDescription || a.description,
     path: `/conseils/${a.slug}`,
     ogImage: a.cover,
   })

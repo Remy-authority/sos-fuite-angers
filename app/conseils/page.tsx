@@ -8,7 +8,7 @@ import { siteConfig } from '@/config/site.config'
 
 export const metadata: Metadata = buildMetadata({
   title: `Conseils, recherche de fuite d'eau à ${siteConfig.city}`,
-  description: `Guides et conseils sur la recherche de fuite d'eau, la détection, l'assurance et la prévention à ${siteConfig.city} et environs.`,
+  description: `Guides pratiques sur la recherche de fuite d'eau à ${siteConfig.city} : signes d'alerte, méthodes de détection, assurance, dégât des eaux et prévention.`,
   path: '/conseils',
 })
 

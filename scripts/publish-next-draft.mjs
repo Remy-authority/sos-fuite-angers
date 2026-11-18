@@ -65,6 +65,25 @@ if (!fmMatch) {
   process.exit(1)
 }
 let fm = fmMatch[1]
+
+// Verrou des longueurs (règle #R50, 18/11/2026) : titre SERVI 30-60 caractères (metaTitle sinon
+// title, suffixe « , <marque> » compris quand il tient, même calcul que lib/seo.ts titreServi)
+// et description servie 120-160 (metaDescription sinon description). Hors limites = refus.
+const champ = (k) => (fm.match(new RegExp(`^${k}:\\s*"(.*)"\\s*$`, 'm')) || [])[1]
+const config = fs.readFileSync(path.join(ROOT, 'config', 'site.config.ts'), 'utf8')
+const marque = (config.match(/businessName:\s*["'`](.+?)["'`]/) || [])[1] || ''
+const titre = champ('metaTitle') || champ('title') || ''
+const desc = champ('metaDescription') || champ('description') || ''
+const suffixe = marque ? `, ${marque}`.length : 0
+const titreServi = titre.length + suffixe <= 60 ? titre.length + suffixe : titre.length
+if (titreServi < 30 || titreServi > 60 || desc.length < 120 || desc.length > 160) {
+  console.error(
+    `::error::${draftFile} refusé : titre servi ${titreServi} caractères (30-60), description ${desc.length} (120-160). ` +
+      'Ajoutez metaTitle / metaDescription dans le frontmatter. Publication annulée.'
+  )
+  process.exit(1)
+}
+
 if (/^date:.*$/m.test(fm)) {
   fm = fm.replace(/^date:.*$/m, `date: "${today}"`)
 } else {

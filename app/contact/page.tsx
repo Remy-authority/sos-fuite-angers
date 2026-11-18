@@ -5,7 +5,7 @@ import LeadForm from '@/components/ui/LeadForm'
 
 export const metadata: Metadata = buildMetadata({
   title: `Contact et devis, recherche de fuite`,
-  description: `Contactez ${siteConfig.businessName} pour une recherche de fuite d'eau à ${siteConfig.city}. Devis gratuit, réponse rapide.`,
+  description: `Demandez votre devis gratuit pour une recherche de fuite d'eau à ${siteConfig.city} et 40 km autour : trois questions en 30 secondes, puis nous revenons vers vous.`,
   path: '/contact',
 })
 
