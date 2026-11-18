@@ -2,23 +2,26 @@
   "slug": "sainte-gemmes-sur-loire",
   "name": "Sainte-Gemmes-sur-Loire",
   "postalCode": "49130",
-  "context": "Commune au sud d'Angers, en bord de Loire, aux nombreuses maisons avec jardin et zones maraîchères.",
+  "context": "Au sud d'Angers, entre Loire et Maine, des maisons avec jardin et des terres maraîchères.",
   "metaTitle": "Recherche de fuite d'eau à Sainte-Gemmes-sur-Loire (49)",
-  "metaDescription": "Recherche et détection de fuite d'eau à Sainte-Gemmes-sur-Loire, près d'Angers. Méthode non destructive, intervention rapide. Contactez-nous.",
+  "metaDescription": "Fuite d'eau à Sainte-Gemmes-sur-Loire : recherche sans casse, distinction entre fuite et humidité du sol, séchage après dégât des eaux. Devis gratuit.",
   "h1": "Recherche de fuite d'eau à Sainte-Gemmes-sur-Loire",
-  "intro": "Nous intervenons à Sainte-Gemmes-sur-Loire (49130) pour la recherche et la détection de fuite d'eau, en méthode non destructive. Commune du sud d'Angers installée sur les bords de Loire et de Maine, Sainte-Gemmes-sur-Loire compte de nombreuses maisons avec jardin et un tissu maraîcher marqué par la proximité de l'eau. Nous localisons la fuite précisément avant toute intervention, sans casse inutile.",
+  "intro": "Recherche de fuite à Sainte-Gemmes-sur-Loire (49130) : nous trouvons la fuite, puis aidons à sécher ce qu'elle a mouillé. Entre Loire et Maine, au sud d'Angers, la commune mêle maisons avec jardin et terres maraîchères.",
   "blocks": [
     {
-      "heading": "Nos prestations à Sainte-Gemmes-sur-Loire",
-      "body": "Nous intervenons à Sainte-Gemmes-sur-Loire pour toutes les situations de fuite d'eau : canalisation enterrée dans le jardin ou sous la terrasse, fuite encastrée dans un mur ou un plancher chauffant, fuite sur une piscine privée, dégât des eaux après une rupture de tuyauterie. Nos méthodes (gaz traceur, caméra thermique, corrélation acoustique) permettent de localiser la fuite sans casser carrelage, dallage ni revêtements. Nous remettons un rapport technique officiel reconnu par les assurances à l'issue de chaque intervention."
+      "heading": "Humidité du sol ou fuite à Sainte-Gemmes-sur-Loire ?",
+      "body": "Près de l'eau, le terrain garde une humidité naturelle. Avant tout travaux, il faut prouver qu'une fuite est active. Le test de pression montre si un circuit perd, la caméra thermique révèle le trajet de l'eau dans le mur ou la dalle. Sans fuite confirmée, nous vous le disons.",
+      "image": "/zones/zone-thermique.jpg",
+      "imageAlt": "Mains tenant une caméra thermique devant un mur, zone froide visible à l'écran",
+      "imageCaption": "Une zone froide à l'écran signale l'eau cachée derrière l'enduit."
     },
     {
-      "heading": "Fuite urgente à Sainte-Gemmes-sur-Loire",
-      "body": "En cas de fuite urgente à Sainte-Gemmes-sur-Loire, appelez-nous directement. En attendant notre arrivée, coupez l'alimentation en eau au robinet d'arrêt général (sous l'évier, dans le garage ou à l'entrée de la cave) pour limiter les dégâts. Nous intervenons 7j/7 sur Sainte-Gemmes-sur-Loire et les communes voisines du sud de l'agglomération angevine."
+      "heading": "Après la fuite : assécher et déclarer",
+      "body": "Une fois la fuite réparée, murs et sols restent mouillés. Nous mesurons l'humidité, plaçons le matériel de séchage puis vérifions que tout est sec avant les finitions. Notre rapport de recherche de fuite accompagne la déclaration de sinistre."
     },
     {
-      "heading": "Communes limitrophes desservies",
-      "body": "En plus de Sainte-Gemmes-sur-Loire, nous intervenons dans les communes voisines : Angers (tous quartiers), Les Ponts-de-Cé, Bouchemaine, Mûrs-Érigné et les autres communes du sud de l'agglomération d'Angers. Notre zone de couverture s'étend sur un rayon de 25 km autour d'Angers."
+      "heading": "Communes voisines de Sainte-Gemmes-sur-Loire",
+      "body": "Les Ponts-de-Cé, Bouchemaine, Mûrs-Érigné et Angers : tout le sud de l'agglomération entre dans notre rayon de 40 km autour d'Angers."
     }
   ],
   "neighbours": [
@@ -29,20 +32,25 @@
   ],
   "faq": [
     {
-      "q": "Intervenez-vous à Sainte-Gemmes-sur-Loire pour la recherche de fuite ?",
-      "a": "Oui. Nous intervenons à Sainte-Gemmes-sur-Loire (49130) pour toutes les recherches de fuite d'eau : canalisation enterrée, fuite encastrée dans un mur ou un plancher chauffant, fuite de piscine. Méthode non destructive, rapport pour assurance."
+      "q": "Faites-vous la recherche de fuite à Sainte-Gemmes-sur-Loire ?",
+      "a": "Oui, dans toute la commune (49130) : canalisation enterrée, fuite encastrée, plancher chauffant ou piscine, avec un rapport écrit pour l'assurance."
     },
     {
-      "q": "Quel est le délai d'intervention à Sainte-Gemmes-sur-Loire ?",
-      "a": "Sainte-Gemmes-sur-Loire est limitrophe d'Angers au sud, accessible rapidement depuis notre zone d'intervention. Nous vous donnons un délai estimatif lors de votre appel en fonction de notre planning du moment."
+      "q": "La proximité de la Loire favorise-t-elle l'humidité ?",
+      "a": "Oui, les terrains proches des cours d'eau restent humides. Un test de pression et une thermographie confirment ou écartent une fuite active avant tout travaux."
     },
     {
-      "q": "La proximité de la Loire favorise-t-elle les problèmes d'humidité ?",
-      "a": "Les terrains proches des cours d'eau peuvent présenter une humidité de fond naturelle. Il est donc important de distinguer cette humidité d'une vraie fuite sur le réseau : un test de pression et une thermographie permettent de confirmer la présence d'une fuite active avant d'engager des travaux."
+      "q": "Pouvez-vous aussi assécher après un dégât des eaux ?",
+      "a": "Oui. Après réparation, nous mesurons l'humidité des murs et des sols, installons le séchage et contrôlons le résultat avant les travaux de finition."
     },
     {
-      "q": "Intervenez-vous aussi aux Ponts-de-Cé et à Mûrs-Érigné ?",
-      "a": "Oui. Nous couvrons Les Ponts-de-Cé, Mûrs-Érigné, Bouchemaine et les autres communes du sud de l'agglomération angevine dans le cadre de notre zone d'intervention de 25 km autour d'Angers."
+      "q": "Quel tarif pour une recherche de fuite à Sainte-Gemmes-sur-Loire ?",
+      "a": "Il dépend de la méthode et de l'accès. Notre page Tarifs donne les fourchettes publiées en France ; le devis est gratuit."
     }
-  ]
+  ],
+  "image": "/services/assechement-degat-des-eaux.jpg",
+  "imageAlt": "Technicien qui règle un déshumidificateur et un ventilateur de séchage dans une pièce après un dégât des eaux",
+  "population": 3685,
+  "distanceKm": 5.8,
+  "codeInsee": "49278"
 }

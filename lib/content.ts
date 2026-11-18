@@ -68,6 +68,13 @@ export interface Zone {
   blocks: ContentBlock[]
   /** Communes limitrophes (maillage / contenu unique). */
   neighbours: string[]
+  /** Photo d'en-tête : LA PRESTATION, jamais une maison ni un paysage (#R60). */
+  image?: string
+  imageAlt?: string
+  /** Fait sourcé (geo.api.gouv.fr) : population légale et distance au centre d'Angers. */
+  population?: number
+  distanceKm?: number
+  codeInsee?: string
   faq: FaqItem[]
 }
 

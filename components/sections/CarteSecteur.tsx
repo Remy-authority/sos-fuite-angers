@@ -144,7 +144,7 @@ export default function CarteSecteur({ commune, titre, compacte }: { commune?: s
           <div className="flex flex-col justify-center text-center lg:text-left">
             <p className={`glisse mx-auto max-w-md leading-relaxed text-slate-600 lg:mx-0 ${compacte ? 'text-sm' : 'text-[15px] lg:text-base'}`}>
               {ici
-                ? `${ici.nom} se trouve à ${String(ici.km).replace('.', ',')} km d’Angers, au cœur du secteur où nous recherchons les fuites.`
+                ? `${ici.nom} est en vert sur la carte, avec les ${CARTE.servies - 1} autres communes du secteur où nous recherchons les fuites.`
                 : 'Chaque commune verte est dans notre secteur : Angers, sa première couronne, puis les bourgs du Maine-et-Loire jusqu’à 40 km.'}
             </p>
             {!compacte && (
