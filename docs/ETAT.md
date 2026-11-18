@@ -1,3 +1,15 @@
+## 18/11/2026 : mise à jour complète EN LIGNE (CEO du site, kickoff Rémy)
+Rémy : « il est catastrophique. Il n'y a même pas de photo de prestation. On voit un mec Thomas Mercier ». Refait sur la branche maj-complete-18-11, fusionnée sur main (112e3ec), GO « je valide tout ».
+- Bloc 1 : caméra thermique plein écran, titre court, formulaire 3 étapes (projet au clic, puis Nom | Prénom, Téléphone | Code postal, précisions). Aperçu qui n'envoie rien (GET /api/contact = {"envoi":false} en preview).
+- Bloc 3 : coupe de maison en scrollytelling, 5 étapes. Signes d'une fuite, logements d'Angers, carte 40 km tout en vert en bloc 7, formulaire de fin.
+- Retirés : Thomas Mercier, faux numéro, chiffres inventés (+500, 10 ans, 24h/24), « reconnu par les assurances », promesses de délai. Aucun numéro (pas de 09, Rémy n'a pas tranché).
+- Pages : /tarifs sourcée, /services, 6 prestations et 8 communes refaites (aLaCommune : « aux Ponts-de-Cé »), titles 30-60 / descriptions 120-160 sur 80 pages, script de publication qui refuse un brouillon hors limites.
+- Logo gardé tel quel (Rémy).
+- Preuves sur 112e3ec : footprint, design, navigation, visuels-articles, blocs-pages CODE 0 ; check-serie CODE 0 ; check-texte 712 mots CODE 0 ; check-fin-de-site www CODE 1 : seul reste Resend sans trace (aucun envoi depuis la création, chaîne d'envoi inchangée).
+- Notes : site 1/10 → 8/10 (9 vitesse non remesurée, 10 autoblog à 3/semaine) ; formulaire 2/10 → 9/10.
+- Restes mineurs : km de la carte ≠ distanceKm des communes (Avrillé, Trélazé), aria-expanded du menu ordinateur, 8 communes (12 visées), icônes 192/512 du manifeste.
+- Rank OS : travaux, notes, capture, formulaireCourtLe, 7 tâches cochées, accueil + /tarifs + /services à indexer (cockpit de1c20c4d).
+
 ## 02/10/2026 soir : publication débloquée (CEO-portefeuille)
 Les passages du 30/09 et du 02/10 ont échoué : la couverture pré-existante de l'article
 « fuite d'eau et électricité » était refusée par le garde-fou (étiquettes lisibles du tableau

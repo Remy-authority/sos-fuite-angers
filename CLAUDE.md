@@ -39,6 +39,9 @@
 
 ## 3. DOCTRINE SEO
 
+- Requête d'argent : « recherche de fuite angers » (volume non mesuré : Bing ne la mesure pas, DataForSEO à sec ; Search Console 90 j au 18/11/2026 : 125 vues sur l'accueil, 55e place). Dans le title d'accueil et le H1.
+- Mise à jour du 18/11/2026 : la règle portefeuille #R40 (le CEO code lui-même) prime sur le §5 ci-dessous.
+
 - **Pas de fiche Google Business, pas d'avis clients.** Tout repose sur le **SEO organique**
   et le **GEO** (être cité par les IA : ChatGPT, Perplexity, AI Overviews).
 - **Structure du site :**
